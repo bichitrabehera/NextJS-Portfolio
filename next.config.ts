@@ -11,11 +11,10 @@ const nextConfig: NextConfig = {
   // Compression
   compress: true,
   // Production optimizations
-  swcMinify: true,
   // React strict mode
   reactStrictMode: true,
   // Optimize fonts
-  optimizeFonts: true,
+  // Font optimization is automatic in Next.js 16; explicit option removed.
   // Power by header removal
   poweredByHeader: false,
 };
