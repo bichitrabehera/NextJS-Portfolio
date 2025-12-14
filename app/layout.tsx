@@ -1,7 +1,7 @@
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "Bichitra Behera | Full Stack Developer",
     template: "%s | Bichitra Behera",
@@ -25,35 +25,6 @@ export const metadata = {
   ],
   authors: [{ name: "Bichitra Behera" }],
   creator: "Bichitra Behera",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://bichitrabehera.dev",
-    title: "Bichitra Behera | Full Stack Developer",
-    description:
-      "Data Science Student (3rd Year) | MERN Stack & Generative AI Enthusiast",
-    siteName: "Bichitra Behera Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Bichitra Behera | Full Stack Developer",
-    description:
-      "Data Science Student (3rd Year) | MERN Stack & Generative AI Enthusiast",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    // Add your verification codes here if needed
-  },
 };
 
 export default function RootLayout({
@@ -62,17 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US" suppressHydrationWarning>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

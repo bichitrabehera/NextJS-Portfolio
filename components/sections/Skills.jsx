@@ -86,7 +86,7 @@ function Skills() {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="flex flex-wrap gap-6 mb-16"
+        className="flex flex-wrap gap-4 mb-16 mx-auto"
       >
         {skills.map((skill) => {
           const Icon = skill.icon;
@@ -132,7 +132,7 @@ function Skills() {
         sharpening my problem-solving skills.
       </p>
 
-      <div className="flex flex-wrap gap-6 pb-10">
+      <div className="flex flex-wrap gap-4 pb-10">
         {learning.map((item) => {
           const Icon = item.icon;
           return (

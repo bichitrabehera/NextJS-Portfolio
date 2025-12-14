@@ -49,7 +49,7 @@ export default function Experience() {
                 {experiences.map((item, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 0 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         whileHover={{ y: -4 }}
                         viewport={{ once: true }}

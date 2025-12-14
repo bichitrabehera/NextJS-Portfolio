@@ -17,7 +17,7 @@ const achievements = [
     },
     {
         "title": "1st Place – HackVerse Hackathon",
-        "description": "Won 1st place at HackVerse hackathon as Team Vayu Aarambh Innovations. Contributed to planning, execution, and successful completion of the event with strong teamwork, leadership, and innovation.",
+        "description": "Won 1st place at the HackVerse Hackathon, organized by the AI & ML Department in collaboration with Vayu Aarambh Innovations. Contributed to planning, execution, and the successful completion of the project through strong teamwork, leadership, and innovation..",
         "date": "2025",
         "link": ""
     },
