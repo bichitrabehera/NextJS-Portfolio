@@ -20,7 +20,7 @@ function Footer() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className="
-        relative w-full mt-24 py-10
+        relative w-full mt-4 pt-10
         bg-background/50 backdrop-blur-xl
         border-t border-border
         flex flex-col items-center gap-6

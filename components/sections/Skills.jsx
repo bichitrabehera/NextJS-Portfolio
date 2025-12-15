@@ -52,15 +52,13 @@ const skills = [
   { name: "npm", icon: SiNpm, color: "#CB3837" },
   { name: "Git", icon: DiGit, color: "#F05032" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-];
-
-// ===== Currently Learning =====
-const learning = [
   { name: "AI Agents (OpenAI)", icon: SiOpenai, color: "#10A37F" },
   { name: "Bash Scripting", icon: DiGit, color: "#4EAA25" },
   { name: "Linux", icon: SiLinux, color: "#FCC624" },
   { name: "Hack The Box", icon: DiDocker, color: "#9FEF00" },
 ];
+
+
 
 
 function Skills() {
@@ -71,10 +69,10 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="pt-20 max-w-4xl mx-auto px-6 text-foreground"
+      className="pt-10 max-w-3xl mx-auto px-6 text-foreground"
     >
       {/* ===== Title ===== */}
-      <h2 className="text-3xl underline mb-6">Skills</h2>
+      <h2 className="text-3xl underline decoration-wavy mb-6">Skills</h2>
 
       <p className="text-foreground/70 mb-10 max-w-3xl">
         Technologies and tools I use regularly to build scalable, performant,
@@ -123,50 +121,6 @@ function Skills() {
           );
         })}
       </motion.div>
-
-      {/* ===== Currently Learning ===== */}
-      <h3 className="text-2xl mb-4">Currently Learning</h3>
-
-      <p className="text-foreground/70 mb-6 max-w-3xl">
-        Exploring low-level systems, security, and AI-driven automation while
-        sharpening my problem-solving skills.
-      </p>
-
-      <div className="flex flex-wrap gap-4 pb-10">
-        {learning.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.name}
-              className="
-                group relative flex items-center justify-center
-                w-14 h-14 md:w-16 md:h-16
-                rounded-lg border border-border
-                bg-background/50
-                hover:scale-105 transition-all duration-200
-              "
-            >
-              <Icon
-                className="text-2xl md:text-3xl transition-colors duration-200"
-                style={{ color: item.color }}
-              />
-
-              <span
-                className="
-                  absolute -top-8 left-1/2 -translate-x-1/2
-                  opacity-0 group-hover:opacity-100
-                  text-xs px-2 py-1 rounded
-                  bg-foreground text-background
-                  transition-all duration-200
-                  whitespace-nowrap pointer-events-none
-                "
-              >
-                {item.name}
-              </span>
-            </div>
-          );
-        })}
-      </div>
     </section>
   );
 }

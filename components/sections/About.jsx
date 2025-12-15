@@ -14,18 +14,18 @@ function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={ref} className="pt-20 text-foreground">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="about" ref={ref} className="pt-10 text-foreground">
+      <div className="max-w-3xl mx-auto px-6">
 
         {/* Title */}
-        <h2 className="text-3xl underline mb-10">About Me</h2>
+        <h2 className="text-3xl underline decoration-wavy inline underline-offset-8 mb-10 bg-blue-500">About Me</h2>
 
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-foreground/80 space-y-6 leading-relaxed"
+          className="text-foreground/80 space-y-6 mt-6 leading-relaxed"
         >
           <p>
             I'm a <span className="text-[#06B6D4] font-semibold">full-stack developer</span> focused on building fast,

@@ -4,7 +4,7 @@ import { memo, useEffect, useState, useCallback } from "react";
 
 function TimeLocation() {
     const [time, setTime] = useState("");
-    const location = "Bangalore, India";
+    const location = "Bangalore";
 
     const updateTime = useCallback(() => {
         const now = new Date();
@@ -22,7 +22,7 @@ function TimeLocation() {
     }, [updateTime]);
 
     return (
-        <div className="flex items-center gap-1 py-0 text-gray-400 text-lg md:text-xl sm:text-base">
+        <div className="flex items-center gap-1 py-0 text-gray-400 md:text-xl sm:text-base">
             <span>{time}</span>
             <span className="opacity-40">•</span>
             <span>{location}</span>

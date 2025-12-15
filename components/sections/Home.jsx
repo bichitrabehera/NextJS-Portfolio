@@ -1,9 +1,8 @@
 "use client";
 
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Link } from "react-scroll";
 
 import {
   FaLinkedin,
@@ -12,8 +11,6 @@ import {
   FaDiscord,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-
-import TimeLocation from "../TimeLocation";
 
 const SOCIAL_LINKS = [
   { id: "github", icon: FaGithub, url: "https://github.com/bichitrabehera", label: "GitHub" },
@@ -25,38 +22,42 @@ const SOCIAL_LINKS = [
 
 function Home() {
   return (
-    <section
-      id="home"
-      className="pt-32 max-w-4xl px-6 mx-auto text-foreground"
-    >
+    <section id="home" className="max-w-3xl mx-auto text-foreground">
+
+      {/* ===== Banner ===== */}
+      <div className="relative min-h-58 mt-10 w-full">
+        <Image
+          src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8fDA%3D"
+          alt="Banner"
+          fill
+          className=" px-6  rounded-xl"
+          priority
+        />
+
+        {/* Profile image overlapping banner */}
+        <div className="absolute -bottom-12 left-6">
+          <div className="relative group">
+            <Image
+              src="/assets/me.jpg"
+              alt="profile"
+              width={112}
+              height={112}
+              className="rounded-full border-4 border-background shadow-lg object-cover"
+            />
+
+            {/* Online Dot */}
+            <span className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-4 border-background" />
+          </div>
+        </div>
+      </div>
+
+      {/* ===== Content ===== */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="flex flex-col gap-10"
+        className="px-6 pt-16 pb-6 flex flex-col gap-8"
       >
-        {/* Profile */}
-        <div className="relative shrink-0 group w-fit">
-          <Image
-            src="/assets/me.jpg"
-            alt="profile"
-            width={112}
-            height={112}
-            className="rounded-full shadow-lg object-cover"
-            priority
-          />
-
-          {/* Online Dot */}
-          <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-4 border-background" />
-
-          {/* Tooltip */}
-          <span className="absolute bottom-12 -right-12 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-foreground/10 backdrop-blur-sm text-foreground text-xs px-2 py-1 rounded-md border border-foreground/20 pointer-events-none">
-            Online
-          </span>
-        </div>
-
-        <TimeLocation />
-
         {/* Text */}
         <div className="space-y-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
@@ -101,19 +102,6 @@ function Home() {
                 </div>
               );
             })}
-          </div>
-
-          {/* Contact Scroll */}
-          <div className="mt-8">
-            <Link
-              to="contact"
-              smooth
-              duration={600}
-              offset={-80}
-              className="btn cursor-pointer px-3"
-            >
-              Contact
-            </Link>
           </div>
         </div>
       </motion.div>

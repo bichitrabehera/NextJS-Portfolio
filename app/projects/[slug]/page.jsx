@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }) {
   return (
 
     <>
-      <section className="max-w-3xl mx-auto px-6 py-20">
+      <section className="max-w-3xl mx-auto px-6 py-6">
         <Link href="/#projects" className="inline-flex items-center mb-6 text-sm px-4 py-2 border border-border rounded-lg hover:bg-foreground hover:text-background">
           ← Go Back
         </Link>

@@ -14,13 +14,13 @@ const projects = [
   },
   {
     id: 2,
-    name: "Synapse Landing Page",
+    name: "Synapse",
     slug: "synapse",
     image: "/assets/synapse.jpg",
   },
   {
     id: 3,
-    name: "Expense Tracker App",
+    name: "Expense Tracker",
     slug: "expense-tracker",
     image: "/assets/clearspend.png",
   },
@@ -29,8 +29,8 @@ const projects = [
 function Project() {
   return (
     <section id="projects" className="mx-auto bg-background text-foreground">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl underline mb-10">Projects</h2>
+      <div className="max-w-3xl mx-auto px-6">
+        <h2 className="text-3xl underline decoration-wavy mb-10">Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {projects.map((project) => (

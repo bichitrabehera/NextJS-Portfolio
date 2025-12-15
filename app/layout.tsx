@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   creator: "Bichitra Behera",
 };
 
+// app/layout.tsx
+import Navbar from "@/components/Navbar";
+
+
 export default function RootLayout({
   children,
 }: {
@@ -34,7 +38,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-1">
+          {children}
+        </main>
+
+      </body>
     </html>
   );
 }
+

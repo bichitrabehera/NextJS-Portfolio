@@ -68,7 +68,7 @@ function GithubActivity() {
     }, []);
 
     return (
-        <section className="pt-10 max-w-5xl mx-auto text-foreground">
+        <section className="pt-10 p-6 max-w-3xl mx-auto text-foreground">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ function GithubActivity() {
                 transition={{ duration: 0.4 }}
                 className="space-y-5"
             >
-                <h3 className="text-3xl underline">GitHub Activity</h3>
+                <h3 className="text-3xl underline decoration-wavy">GitHub Activity</h3>
 
                 <p className="text-foreground/70">
                     Total contributions:{" "}

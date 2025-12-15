@@ -33,17 +33,17 @@ export default function Achievements() {
     return (
         <section
             id="achievements"
-            className="pt-20 max-w-4xl mx-auto px-6 text-foreground"
+            className="pt-10 max-w-3xl mx-auto px-6 text-foreground"
         >
             {/* ===== Title ===== */}
-            <h2 className="text-3xl underline mb-6">Achievements</h2>
+            <h2 className="text-3xl underline decoration-wavy mb-6">Achievements</h2>
 
             <p className="text-foreground/70 mb-10 max-w-3xl">
                 Highlights of milestones, recognitions, and accomplishments throughout my journey.
             </p>
 
             {/* ===== Achievements Grid ===== */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex-col gap-6">
                 {achievements.map((item, index) => (
                     <motion.div
                         key={index}
@@ -52,10 +52,8 @@ export default function Achievements() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
                         className="
-              relative rounded-xl border border-border
+              relative rounded-xl
               bg-background/60 backdrop-blur-sm
-              p-6
-              hover:shadow-lg
               transition-all duration-300
             "
                     >
@@ -72,26 +70,9 @@ export default function Achievements() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-foreground/70 text-sm leading-relaxed">
+                        <p className="text-foreground/70 mb-10 text-sm leading-relaxed">
                             {item.description}
                         </p>
-
-                        {/* Optional Link */}
-                        {item.link && (
-                            <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                  inline-block mt-4 text-sm
-                  text-foreground underline
-                  underline-offset-4
-                  hover:text-foreground/70
-                "
-                            >
-                                View →
-                            </a>
-                        )}
                     </motion.div>
                 ))}
             </div>
