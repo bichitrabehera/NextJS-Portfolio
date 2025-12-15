@@ -5,7 +5,7 @@ import { ArrowUp } from "lucide-react";
 
 function BackToTop() {
   const scrollToTop = useCallback(() => {
-    const el = document.getElementById("home");
+    const el = document.getElementById("top");
     if (!el) return;
 
     el.scrollIntoView({ behavior: "smooth", block: "start" });
