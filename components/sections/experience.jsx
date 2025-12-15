@@ -37,8 +37,8 @@ export default function Experience() {
             className="pt-10 max-w-3xl mx-auto px-6 text-foreground"
         >
             {/* ===== Title ===== */}
-            <h2 className="text-3xl underline decoration-wavy inline underline-offset-8 mb-10">
-                Experience
+            <h2 className="text-3xl">
+                / / Experience
             </h2>
 
             <p className="text-foreground/70 mb-12 mt-6 max-w-3xl">
@@ -56,19 +56,16 @@ export default function Experience() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
                         className="
-    relative
-    grid grid-cols-1 md:grid-cols-[150px_1fr]
-    gap-4 md:gap-6
-    transition-all duration-300
-  "
-                    >
+                        relative
+                        grid grid-cols-1 md:grid-cols-[150px_1fr]
+                        gap-4 md:gap-6
+                        transition-all duration-300">
                         {/* LEFT: Year / Duration */}
-                        <div className="md:text-right">
+                        <div className="md:text-left">
                             <span className="
                             justify-start
-      inline-block text-xs px-2 py-1 rounded-md
-      bg-foreground/10 text-foreground/70
-    ">
+                            inline-block text-xs px-2 py-1 rounded-md
+                            bg-foreground/10 text-foreground/70">
                                 {item.duration}
                             </span>
                         </div>
@@ -76,7 +73,7 @@ export default function Experience() {
                         {/* RIGHT: Content */}
                         <div>
                             <h3 className="text-lg font-semibold">
-                                {item.role} <span className="text-blue-900">at</span> {item.company}
+                                {item.role} <span className="text-yellow-400">at</span> {item.company}
                             </h3>
 
                             <p className="text-foreground/70 text-sm leading-relaxed mt-2">

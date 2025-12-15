@@ -112,8 +112,6 @@ function Contact() {
     );
 }
 
-/* ===== UI Pieces ===== */
-
 function BotBubble({ text, success }) {
     return (
         <motion.div

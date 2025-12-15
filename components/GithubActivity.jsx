@@ -76,7 +76,7 @@ function GithubActivity() {
                 transition={{ duration: 0.4 }}
                 className="space-y-5"
             >
-                <h3 className="text-3xl underline decoration-wavy">GitHub Activity</h3>
+                <h3 className="text-3xl">/ / GitHub Activity</h3>
 
                 <p className="text-foreground/70">
                     Total contributions:{" "}

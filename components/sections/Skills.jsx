@@ -74,9 +74,9 @@ function Skills() {
       className="pt-10 max-w-3xl mx-auto px-6 text-foreground"
     >
       {/* ===== Title ===== */}
-      <h2 className="text-3xl underline decoration-wavy mb-6">Skills</h2>
+      <h2 className="text-3xl">/ / Skills</h2>
 
-      <p className="text-foreground/70 mb-10 max-w-3xl">
+      <p className="text-foreground/70 my-6 max-w-3xl">
         Technologies and tools I use regularly to build scalable, performant,
         and user-focused applications.
       </p>

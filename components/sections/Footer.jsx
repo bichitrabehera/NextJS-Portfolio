@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 
 function Footer() {
   const scrollToTop = useCallback(() => {
-    const el = document.getElementById("home");
+    const el = document.getElementById("top");
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
@@ -20,7 +20,7 @@ function Footer() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className="
-        relative w-full mt-4 pt-10
+        relative w-full mt-4 py-10
         bg-background/50 backdrop-blur-xl
         border-t border-border
         flex flex-col items-center gap-6

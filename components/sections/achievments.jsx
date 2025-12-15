@@ -36,7 +36,7 @@ export default function Achievements() {
             className="pt-10 max-w-3xl mx-auto px-6 text-foreground"
         >
             {/* ===== Title ===== */}
-            <h2 className="text-3xl underline decoration-wavy mb-6">Achievements</h2>
+            <h2 className="text-3xl mb-6">/ / Achievements</h2>
 
             <p className="text-foreground/70 mb-10 max-w-3xl">
                 Highlights of milestones, recognitions, and accomplishments throughout my journey.

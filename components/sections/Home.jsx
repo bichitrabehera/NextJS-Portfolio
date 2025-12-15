@@ -26,15 +26,18 @@ function Home() {
 
       {/* ===== Banner ===== */}
       <div className="relative min-h-48 mt-10 w-full">
-        <Image
-          src="/assets/hero_banner.png"
-          alt="Banner"
-          fill
-          className=" px-6  rounded-2xl object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-        />
+        <div className="rounded-2xl">
+          <Image
+            src="/assets/hero_banner.png"
+            alt="Banner"
+            fill
+            className="px-6 rounded"
+
+            priority
+            quality={100}
+            sizes="100vw"
+          />
+        </div>
 
         {/* Profile image overlapping banner */}
         <div className="absolute -bottom-12 left-6">
@@ -44,11 +47,14 @@ function Home() {
               alt="profile"
               width={112}
               height={112}
-              className="rounded-full shadow-lg object-cover"
+              quality={100}
+              sizes="100vw"
+
+              className="rounded-full border-2 object-cover object-center"
             />
 
             {/* Online Dot */}
-            <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full " />
+            <span className="absolute bottom-2 border-2 right-2 w-4 h-4 bg-green-500 rounded-full " />
           </div>
         </div>
       </div>
@@ -63,7 +69,7 @@ function Home() {
         {/* Text */}
         <div className="space-y-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-            Hi, I&apos;m <span className="text-foreground/90">Bichitra Behera</span>
+            Hi, I&apos;m <span className="text-rose-700 underline decoration-wavy "><span className="text-foreground/90">Bichitra Behera</span></span>
             <br />
             <span className="text-foreground/70 font-[Cursor]">
               A Full Stack web developer.
