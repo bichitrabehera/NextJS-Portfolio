@@ -25,7 +25,7 @@ const Navbar = () => {
           md:items-center
           md:justify-between
           pb-3
-          pt-14
+          pt-8
           gap-2 md:gap-0
         "
       >

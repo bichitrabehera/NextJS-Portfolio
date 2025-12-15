@@ -53,7 +53,6 @@ export default function Experience() {
                         key={index}
                         initial={{ opacity: 0, y: 0 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ y: -4 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
                         className="

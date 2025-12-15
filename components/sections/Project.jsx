@@ -40,20 +40,20 @@ function Project() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="border border-border rounded-2xl overflow-hidden"
+              className="border border-border rounded-xl overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-52">
+              <div className="relative h-40">
                 <Image
                   src={project.image}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-50 hover:opacity-100"
                 />
               </div>
 
               {/* Footer */}
-              <div className="p-5 flex items-center justify-between">
+              <div className="p-3 flex items-center justify-between">
                 <h3 className="text-lg font-semibold">{project.name}</h3>
 
                 <Link

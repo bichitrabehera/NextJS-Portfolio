@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const achievements = [
     {
-        "title": "3rd Place – Crack-a-thon (Vision AI Hackathon)",
+        "title": "3rd Place – Crack-a-thon",
         "description": "Secured 3rd place at Crack-a-thon, organized by CrackTheCampus in collaboration with the CSE-AIML Department, AMC Engineering College. Built an AI-powered web dashboard in 6 hours for real-time emotion detection, mood-based Spotify recommendations, an emotion-aware chatbot, and interactive mood analytics.",
         "date": "2025",
         "link": ""
@@ -65,7 +65,7 @@ export default function Achievements() {
                         )}
 
                         {/* Title */}
-                        <h3 className="text-lg font-semibold mt-1 mb-2">
+                        <h3 className="text-lg text-blue-500 font-semibold mt-1 mb-2">
                             {item.title}
                         </h3>
 

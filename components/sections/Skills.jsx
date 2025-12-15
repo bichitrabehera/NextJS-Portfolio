@@ -29,6 +29,8 @@ import {
   SiOpenai,
   SiLinux,
 } from "react-icons/si";
+import { PiDiceFourBold } from "react-icons/pi";
+import { BiCube } from "react-icons/bi";
 
 // ===== Skills =====
 // ===== Skills =====
@@ -52,10 +54,10 @@ const skills = [
   { name: "npm", icon: SiNpm, color: "#CB3837" },
   { name: "Git", icon: DiGit, color: "#F05032" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-  { name: "AI Agents (OpenAI)", icon: SiOpenai, color: "#10A37F" },
-  { name: "Bash Scripting", icon: DiGit, color: "#4EAA25" },
+  { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
+  { name: "Bash", icon: DiGit, color: "#4EAA25" },
   { name: "Linux", icon: SiLinux, color: "#FCC624" },
-  { name: "Hack The Box", icon: DiDocker, color: "#9FEF00" },
+  { name: "Hack The Box", icon: BiCube, color: "#9FEF00" },
 ];
 
 

@@ -25,13 +25,15 @@ function Home() {
     <section id="home" className="max-w-3xl mx-auto text-foreground">
 
       {/* ===== Banner ===== */}
-      <div className="relative min-h-58 mt-10 w-full">
+      <div className="relative min-h-48 mt-10 w-full">
         <Image
-          src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8fDA%3D"
+          src="/assets/hero_banner.png"
           alt="Banner"
           fill
-          className=" px-6  rounded-xl"
+          className=" px-6  rounded-2xl object-cover object-center"
           priority
+          quality={100}
+          sizes="100vw"
         />
 
         {/* Profile image overlapping banner */}
@@ -42,11 +44,11 @@ function Home() {
               alt="profile"
               width={112}
               height={112}
-              className="rounded-full border-4 border-background shadow-lg object-cover"
+              className="rounded-full shadow-lg object-cover"
             />
 
             {/* Online Dot */}
-            <span className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-4 border-background" />
+            <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full " />
           </div>
         </div>
       </div>
