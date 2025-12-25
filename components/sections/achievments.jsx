@@ -6,19 +6,19 @@ const achievements = [
     {
         "title": "3rd Place – Crack-a-thon",
         "description": "Secured 3rd place at Crack-a-thon, organized by CrackTheCampus in collaboration with the CSE-AIML Department, AMC Engineering College. Built an AI-powered web dashboard in 6 hours for real-time emotion detection, mood-based Spotify recommendations, an emotion-aware chatbot, and interactive mood analytics.",
-        "date": "2025",
+        "date": "November 2025",
         "link": ""
     },
     {
         "title": "Top 5 Finalists – HACKABHiGNA National Hackathon",
         "description": "Selected as Top 5 finalists at HACKABHiGNA, a 24-hour national-level hackathon on Fullstack Marketing Analytics & Agentic Flow Platforms. Developed a Predictive Lead & Conversion Optimization Agent using machine learning, automated segmentation, backend workflows, and a data-driven frontend dashboard.",
-        "date": "2025",
+        "date": "october 2025",
         "link": ""
     },
     {
         "title": "1st Place – HackVerse Hackathon",
         "description": "Won 1st place at the HackVerse Hackathon, organized by the AI & ML Department in collaboration with Vayu Aarambh Innovations. Contributed to planning, execution, and the successful completion of the project through strong teamwork, leadership, and innovation..",
-        "date": "2025",
+        "date": "December 2025",
         "link": ""
     },
     {
@@ -65,7 +65,7 @@ export default function Achievements() {
                         )}
 
                         {/* Title */}
-                        <h3 className="text-lg text-blue-500 font-semibold mt-1 mb-2">
+                        <h3 className="text-lg text-lime-600 font-semibold mt-1 mb-2">
                             {item.title}
                         </h3>
 

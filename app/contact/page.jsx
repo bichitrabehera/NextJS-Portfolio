@@ -24,8 +24,8 @@ function Contact() {
     }, []);
 
     return (
-        <section className="bg-background text-foreground px-6 py-6">
-            <div className="max-w-2xl mx-auto space-y-10">
+        <section className="bg-background text-foreground py-6">
+            <div className="max-w-3xl mx-auto space-y-10 px-6">
 
                 {/* Back */}
                 <Link
@@ -119,7 +119,7 @@ function BotBubble({ text, success }) {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-start gap-1"
         >
-            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-xs">
+            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text">
                 <Image
                     src="/assets/me.jpg"
                     alt="profile"
@@ -131,7 +131,7 @@ function BotBubble({ text, success }) {
             </div>
             <div
                 className={`
-          px-5 py-1 rounded-2xl text-sm max-w-[80%]
+          px-5 py-1 rounded-2xl text max-w-[80%]
           ${success
                         ? "bg-green-500/10 text-green-400"
                         : "bg-white/5 text-foreground"}

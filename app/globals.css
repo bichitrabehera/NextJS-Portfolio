@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
 
@@ -7,6 +8,14 @@ body {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+.font-space {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.imgpage{
+  background-image: url("/public/assets/img.png");
 }
 
 @font-face {

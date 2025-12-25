@@ -47,43 +47,39 @@ export default function Experience() {
             </p>
 
             {/* ===== Experience List ===== */}
-            <div className="space-y-6">
+            <div className="space-y-8">
                 {experiences.map((item, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, y: 0 }}
+                        initial={{ opacity: 0, y: 8 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: index * 0.05 }}
-                        className="
-                        relative
-                        grid grid-cols-1 md:grid-cols-[150px_1fr]
-                        gap-4 md:gap-6
-                        transition-all duration-300">
-                        {/* LEFT: Year / Duration */}
-                        <div className="md:text-left">
-                            <span className="
-                            justify-start
-                            inline-block text-xs px-2 py-1 rounded-md
-                            bg-foreground/10 text-foreground/70">
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        className="space-y-2"
+                    >
+                        {/* Role */}
+                        <h3 className="text-base md:text-lg font-bold leading-snug text-lime-600">
+                            {item.role}
+                        </h3>
+
+                        {/* Company + Duration */}
+                        <div className="flex flex-wrap items-center gap-x-3 text-sm text-foreground/60">
+                            <span className="font-medium text-foreground/80">
+                                {item.company}
+                            </span>
+                            <span className="text-xs">
                                 {item.duration}
                             </span>
                         </div>
 
-                        {/* RIGHT: Content */}
-                        <div>
-                            <h3 className="text-lg font-semibold">
-                                {item.role} <span className="text-yellow-400">at</span> {item.company}
-                            </h3>
-
-                            <p className="text-foreground/70 text-sm leading-relaxed mt-2">
-                                {item.description}
-                            </p>
-                        </div>
+                        {/* Description */}
+                        <p className=" text-foreground/70 leading-relaxed">
+                            {item.description}
+                        </p>
                     </motion.div>
-
                 ))}
             </div>
+
         </section>
     );
 }
