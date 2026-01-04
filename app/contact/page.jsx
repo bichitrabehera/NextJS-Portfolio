@@ -25,44 +25,37 @@ function Contact() {
 
     return (
         <section className="bg-background text-foreground py-6">
-            <div className="max-w-3xl mx-auto space-y-10 px-6">
+            <div className="max-w-2xl mx-auto space-y-10 px-6">
 
-                {/* Back */}
                 <Link
                     href="/"
                     className="inline-flex items-center text-sm px-4 py-2
-          border border-border rounded-lg
-          hover:bg-foreground hover:text-background transition"
+                    border border-border rounded-lg
+                    hover:bg-foreground hover:text-background transition"
                 >
-                    ← Go Back
+                    ← return
                 </Link>
 
-                <form ref={form} onSubmit={sendEmail} className="space-y-10">
+                <form ref={form} onSubmit={sendEmail} className="space-y-10 mx-auto max-w-lg">
 
-                    {/* BOT */}
                     <BotBubble text="hello. i'm listening. who is this?" />
 
-                    {/* NAME */}
                     <UserInput
                         name="user_name"
                         placeholder="your name ..."
                         required
                     />
 
-                    {/* BOT */}
                     <BotBubble text="where should i send my reply?" />
 
-                    {/* EMAIL */}
                     <UserInput
                         name="user_email"
                         placeholder="email ..."
                         type="email"
                     />
 
-                    {/* BOT */}
                     <BotBubble text="alright. what's on your mind?" />
 
-                    {/* MESSAGE */}
                     <motion.textarea
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -82,7 +75,6 @@ function Contact() {
             "
                     />
 
-                    {/* SEND */}
                     <div className="flex justify-end">
                         <motion.button
                             whileTap={{ scale: 0.96 }}

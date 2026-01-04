@@ -27,7 +27,6 @@ function Footer() {
         text-foreground
       "
     >
-      {/* Back to Top */}
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
@@ -53,10 +52,10 @@ function Footer() {
         />
       </button>
 
-      {/* Divider */}
+
       <div className="w-24 h-px bg-border" />
 
-      {/* Copyright */}
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -32,63 +32,78 @@ const projects = [
   },
 ];
 
+/* Animation */
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0 },
+};
+
 function Project() {
   return (
-    <section id="projects" className="mx-auto bg-background text-foreground">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl mb-6">/ / Projects</h2>
+    <section
+      id="projects"
+      className="mx-auto pt-10 bg-background text-foreground"
+    >
+      <div className="max-w-2xl mx-auto px-6">
+        <h2 className="text-lg uppercase mb-6">/ / Projects</h2>
+
         <p className="text-foreground/70 my-6 max-w-3xl">
-          Selected projects showcasing my work in full-stack development, UI engineering, and problem-driven product building.
+          Selected projects showcasing my work in full-stack development, UI
+          engineering, and problem-driven product building.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div
+          variants={container}
+          initial="hidden"
+          viewport={{ once: true }}
+          className="space-y-10 mt-10"
+        >
           {projects.map((project) => (
-            <motion.div
+            <div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="border border-border rounded-lg overflow-hidden"
+              variants={item}
+              className="group flex items-start justify-between gap-10 p-2"
             >
-              {/* Image */}
-              <div className="relative h-40">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-cover opacity-80"
-                />
-              </div>
+              <div className="flex gap-4">
+                <div className="relative w-9 h-9 shrink-0 rounded-md overflow-hidden bg-foreground/10">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
-              {/* Footer */}
-              <div className="p-3 flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold leading-tight">
+                  <h3 className="font-medium group-hover:underline">
                     {project.name}
                   </h3>
-                  <p className="text-sm text-foreground/60 mt-1 leading-snug line-clamp-2">
+                  <p className="text-sm text-foreground/60 max-w-md">
                     {project.description}
                   </p>
                 </div>
-
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="
-                    text-sm px-4 py-2
-                    border border-border rounded-lg
-                    transition
-                    hover:bg-foreground hover:text-background
-                    shrink-0
-                  "
-                  onClick={() =>
-                    console.log("navigate to project:", project.slug)
-                  }
-                >
-                  Read More
-                </Link>
               </div>
-            </motion.div>
+
+              <Link
+                href={`/projects/${project.slug}`}
+                className="text-foreground/40 transition
+                           group-hover:text-foreground
+                           group-hover:translate-x-1
+                           text-2xl px-2 border
+                           "
+              >
+                ↗
+              </Link>
+            </div>
           ))}
         </div>
       </div>

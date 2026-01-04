@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 import ThemeToggle from "./ThemeToggle";
 import TimeLocation from "./TimeLocation";
@@ -10,56 +10,71 @@ import BuyMeaCoffee from "./BuyMeaCoffee";
 
 const Navbar = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section id="top" ref={ref}>
+    <header id="top" ref={ref}>
       <nav
         className="
-         top-0 right-0 w-full z-50
-        backdrop-blur-[30px]
-        bg-background text-foreground
-        border-b border-border
-      "
+          sticky top-0 z-50
+          backdrop-blur-xl
+          bg-background/80
+          border-b border-border
+        "
         role="navigation"
         aria-label="Main navigation"
       >
         <div
           className="
-          max-w-3xl mx-auto px-6
-          flex flex-col md:flex-row
-          items-start
-          md:items-center
-          md:justify-between
-          pb-3
-          pt-8
-          gap-2 md:gap-0
-        "
+            max-w-2xl mx-auto px-6 mt-10
+            flex flex-col gap-1
+            md:flex-row md:items-center md:justify-between
+            py-4 md:py-3
+          "
         >
-          <div className="flex justify-center md:justify-start">
+          {/* LEFT */}
+          <div className="flex items-center justify-between md:justify-start">
             <TimeLocation />
           </div>
 
-          <div className="flex items-center text-sm  justify-end gap-6">
+          {/* RIGHT */}
+          <div
+            className="
+              flex items-center gap-6
+              text-sm
+              md:gap-8
+            "
+          >
             <Link
               href="/contact"
-              className="text underline hover:decoration-wavy underline-offset-4"
+              className="
+                underline underline-offset-4
+                hover:decoration-wavy
+                transition
+              "
             >
               /contact
             </Link>
+
             <Link
               href="https://drive.google.com/file/d/1kX3p9az3eeX0Vv47CuvsGWJKuMNc06e0/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="text underline hover:decoration-wavy underline-offset-4"
+              className="
+                underline underline-offset-4
+                hover:decoration-wavy
+                transition
+              "
             >
               /resume
             </Link>
+
             <BuyMeaCoffee />
             <ThemeToggle />
           </div>
         </div>
       </nav>
-    </section>
+    </header>
   );
 };
 

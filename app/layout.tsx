@@ -28,7 +28,6 @@ export const metadata: Metadata = {
 };
 
 // app/layout.tsx
-import Navbar from "@/components/Navbar";
 
 
 export default function RootLayout({
@@ -39,7 +38,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <Navbar />
         <main className="flex-1">
           {children}
         </main>

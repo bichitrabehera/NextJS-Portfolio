@@ -17,10 +17,8 @@ function About() {
     <section id="about" ref={ref} className="pt-10 text-foreground">
       <div className="max-w-3xl mx-auto px-6">
 
-        {/* Title */}
         <h2 className="text-3xl underline decoration-wavy inline underline-offset-8 mb-10 bg-blue-500">About Me</h2>
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -51,7 +49,6 @@ function About() {
           </p>
         </motion.div>
 
-        {/* GitHub Activity */}
         <GithubActivity />
 
       </div>

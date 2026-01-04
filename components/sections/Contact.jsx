@@ -41,7 +41,6 @@ function Contact() {
     >
       <motion.div className="container relative z-10 px-6 md:px-6 mx-auto">
 
-        {/* HEADER */}
         <div className="flex flex-col w-full mb-12 text-center">
           <div className="text-center mb-16">
             <h2 className="text-3xl text-left underline text-foreground">
@@ -55,7 +54,7 @@ function Contact() {
           </motion.p>
         </div>
 
-        {/* FORM */}
+
         <motion.div
           className="
             p-4 mx-auto rounded-xl
@@ -66,10 +65,10 @@ function Contact() {
         >
           <form ref={form} onSubmit={sendEmail} className="relative space-y-8">
 
-            {/* Inputs */}
+
             <div className="flex flex-col md:flex-row gap-6">
 
-              {/* Name */}
+
               <div className="flex-1">
                 <label
                   htmlFor="name"
@@ -99,7 +98,6 @@ function Contact() {
                 />
               </div>
 
-              {/* Email */}
               <div className="flex-1">
                 <label
                   htmlFor="email"
@@ -130,7 +128,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Message */}
             <div>
               <label
                 htmlFor="message"
@@ -160,7 +157,6 @@ function Contact() {
               />
             </div>
 
-            {/* Submit Button */}
             <div className="flex justify-center">
               <motion.button
                 type="submit"
@@ -171,7 +167,6 @@ function Contact() {
               </motion.button>
             </div>
 
-            {/* Success Message */}
             {isSent && (
               <motion.div
                 className="
@@ -194,7 +189,6 @@ function Contact() {
               </motion.div>
             )}
 
-            {/* Error Message */}
             {error && (
               <motion.div
                 className="
