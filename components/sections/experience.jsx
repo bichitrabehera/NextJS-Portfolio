@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-
 export default function Experience() {
   const experiences = [
     {
@@ -31,9 +28,9 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="pt-10 max-w-2xl mx-auto px-6 text-foreground"
+      className="py-12 max-w-2xl mx-auto px-6 text-foreground "
     >
-      <h2 className="text-lg uppercase mb-4">/ / Work Experience</h2>
+      <h2 className="text-lg mb-4 font-bold">Career</h2>
 
       <p className="text-foreground/70 mb-12 max-w-3xl">
         Hands-on experience gained through internships and real-world projects.
@@ -41,20 +38,17 @@ export default function Experience() {
 
       <div className="space-y-6">
         {experiences.map((exp, index) => (
-          <div key={index} className="grid grid-cols-3 gap-4 items-start">
-            <p className="text-sm text-foreground/60">{exp.duration}</p>
-
-            <div className="col-span-2">
-              <h3 className="font-foreground">
-                {exp.role} <span className="text-foreground/50">at </span>
+          <div key={index} className="flex gap-4 items-start">
+            <div className="col-span-2 space-y-1">
+              <h3 className="font-light tracking-wide text-foreground">
                 {exp.company}
               </h3>
 
-              {exp.description && (
-                <p className="mt-2 text-sm text-foreground/50">
-                  {exp.description}
-                </p>
-              )}
+              <p className="text-sm font-light tracking-wide opacity-60">
+                {exp.role} , {exp.duration}
+              </p>
+
+             
             </div>
           </div>
         ))}

@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -29,7 +30,6 @@ export const metadata: Metadata = {
 
 // app/layout.tsx
 
-
 export default function RootLayout({
   children,
 }: {
@@ -38,12 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <main className="flex-1">
-          {children}
-        </main>
+        <Navbar />
 
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
 }
-

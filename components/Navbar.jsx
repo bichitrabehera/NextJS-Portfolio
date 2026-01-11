@@ -19,17 +19,17 @@ const Navbar = () => {
           sticky top-0 z-50
           backdrop-blur-xl
           bg-background/80
-          border-b border-border
+          
         "
         role="navigation"
         aria-label="Main navigation"
       >
         <div
           className="
-            max-w-2xl mx-auto px-6 mt-10
+            max-w-2xl mx-auto px-6
             flex flex-col gap-1
             md:flex-row md:items-center md:justify-between
-            py-4 md:py-3
+            py-8
           "
         >
           {/* LEFT */}

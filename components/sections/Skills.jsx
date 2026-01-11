@@ -159,13 +159,13 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="pt-10 max-w-2xl mx-auto px-6 text-foreground"
+      className="py-12 max-w-2xl mx-auto px-6 text-foreground"
     >
-      <h2 className="text-lg uppercase">/ / Skills</h2>
+      <h2 className="text-lg font-bold">Skills</h2>
 
       <p className="text-foreground/70 my-6 max-w-3xl">
         Technologies and tools I use regularly to build scalable, performant,
-        and user-focused applications.
+        and user focused applications.
       </p>
 
       <motion.div
@@ -189,8 +189,8 @@ function Skills() {
               hover:bg-foreground/5 transition
             "
             >
-              <Icon className="text-lg" style={{ color: skill.color }} />
-              <span className="text-sm">{skill.name}</span>
+              <Icon className="text" style={{ color: skill.color }} />
+              <span className="text">{skill.name}</span>
             </a>
           );
         })}

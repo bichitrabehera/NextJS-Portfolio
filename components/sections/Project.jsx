@@ -4,6 +4,7 @@ import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -49,12 +50,9 @@ const item = {
 
 function Project() {
   return (
-    <section
-      id="projects"
-      className="mx-auto pt-10 bg-background text-foreground"
-    >
-      <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-lg uppercase mb-6">/ / Projects</h2>
+    <section id="projects" className="mx-auto  bg-background text-foreground ">
+      <div className="max-w-2xl mx-auto py-12 px-6">
+        <h2 className="text-lg mb-6 font-bold">What I Built</h2>
 
         <p className="text-foreground/70 my-6 max-w-3xl">
           Selected projects showcasing my work in full-stack development, UI
@@ -71,38 +69,29 @@ function Project() {
             <div
               key={project.id}
               variants={item}
-              className="group flex items-start justify-between gap-10 p-2"
+              className="group flex items-start justify-between gap-10"
             >
               <div className="flex gap-4">
-                <div className="relative w-9 h-9 shrink-0 rounded-md overflow-hidden bg-foreground/10">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
                 <div>
-                  <h3 className="font-medium group-hover:underline">
-                    {project.name}
+                  <h3 className="mb-2">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="
+                      inline-flex items-center gap-1
+                      text-foreground
+                      whitespace-nowrap
+                      "
+                    >
+                      {project.name}
+                      <span className="px-4"><ArrowUpRight className="w-4 h-4" /></span>
+                    </Link>
                   </h3>
-                  <p className="text-sm text-foreground/60 max-w-md">
+
+                  <p className="text text-foreground/60 max-w-md">
                     {project.description}
                   </p>
                 </div>
               </div>
-
-              <Link
-                href={`/projects/${project.slug}`}
-                className="text-foreground/40 transition
-                           group-hover:text-foreground
-                           group-hover:translate-x-1
-                           text-2xl px-2 border
-                           "
-              >
-                ↗
-              </Link>
             </div>
           ))}
         </div>

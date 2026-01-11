@@ -41,92 +41,80 @@ const SOCIAL_LINKS = [
 ];
 
 function Home() {
-  const date = Date.now()
+  const age = (() => {
+    const b = new Date(2005, 3, 6);
+    const t = new Date();
+    return (
+      t.getFullYear() -
+      b.getFullYear() -
+      (t < new Date(t.getFullYear(), b.getMonth(), b.getDate()))
+    );
+  })();
+
   return (
     <section
       id="home"
-      className="max-w-2xl mx-auto text-foreground bg-background"
+      className="
+        max-w-2xl mx-auto
+        px-6 py-12
+        text-foreground bg-background
+      "
     >
-      <div className="relative min-h-48 mt-5 w-full px-6">
-        <div className="relative h-40 overflow-hidden opacity-70 md:h-50">
+      {/* Banner + Avatar */}
+      <div className="relative mb-12">
+        <div className="relative h-50 overflow-hidden opacity-70">
           <Image
-            src="https://images.unsplash.com/photo-1766585605985-997ac7e3d6a5?w=500&auto=format&fit=crop&q=60"
+            src="https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D"
             alt="Banner"
             fill
-            className="object-cover object-center"
+            className="object-cover"
             priority
-            quality={75}
-            sizes="100vw"
           />
         </div>
 
-        <div className="absolute -bottom-5 left-6">
-          <div className="relative">
-            <Image
-              src="/assets/me.jpg"
-              alt="profile"
-              width={90}
-              height={90}
-              quality={75}
-              className="rounded-[25] border-2 object-cover"
-            />
-
-            <div className="relative group">
-              <span className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-2 border-background" />
-
-              <div
-                className="absolute bottom-6 -right-10 hidden group-hover:flex 
-                  bg-black text-white text-xs px-2 py-1 rounded"
-              >
-                Online
-              </div>
-            </div>
-          </div>
+        <div className="absolute -bottom-6 left-0">
+          <Image
+            src="/assets/me.jpg"
+            alt="Bichitra Behera"
+            width={90}
+            height={90}
+            className="rounded-2xl border border-border object-cover"
+          />
         </div>
       </div>
 
+      {/* Content */}
       <motion.div
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="px-6 flex flex-col gap-6"
+        transition={{ duration: 0.5 }}
+        className="flex flex-col gap-6"
       >
-        <div className="space-y-2 font-mono">
-          <h1 className="text-3xl mt-6 leading-tight font">
-            <span className="text-lime-400  decoration-wavy font-space">
-              <span className="text-foreground">Bichitra Behera</span>
-            </span>
-            <br />
-            <span className="text-foreground/70 text-lg py-3 font-[Cursor]">
-              A Full Stack web developer.
-            </span>
+        {/* Heading */}
+        <div className="space-y-1">
+          <h1 className="text-2xl font-light py-4 opacity-90 tracking-wide">
+            Bichitra Behera
           </h1>
 
-          <p className="text-foreground/70 md:text-lg py-3 leading-relaxed max-w-2xl">
-            I build modern digital experiences across{" "}
-            <span className="font-semibold  text-blue-400">web</span> and{" "}
-            <span className="font-semibold  text-blue-400">mobile</span>, and I
-            experiment with{" "}
-            <span className="font-semibold  text-blue-400">AI agents</span> and
-            automation systems.
-            <br />
-            With a focus on{" "}
-            <span className="font-semibold  text-blue-400">
-              clean UI
-            </span>,{" "}
-            <span className="font-semibold  text-blue-400">
-              smooth interactions
-            </span>
-            , and{" "}
-            <span className="font-semibold text-blue-400">
-              high-performance engineering
-            </span>
-            .
+          <p className="text font-light tracking-wide py-2 opacity90">
+            {age} , Product-focused Software Engineer
           </p>
         </div>
-        <div className="flex items-center gap-6 pt-2 text-[22px]">
+
+        {/* Description */}
+        <div className="space-y-4 max-w-xl">
+          <p className="text font-light tracking-wide leading-relaxed opacity90 max-w-xl">
+            I’m a full-stack developer building fast, reliable, user-centric
+            products across web and mobile. I focus on clean architecture,
+            thoughtful UI/UX, and scalable systems, with an emphasis on
+            performance and long-term maintainability.
+          </p>
+        </div>
+
+        {/* Socials */}
+        <div className="flex items-center gap-6 pt-4 text-[20px]">
           {SOCIAL_LINKS.map((s) => {
-            const IconComponent = s.icon;
+            const Icon = s.icon;
             return (
               <div key={s.id} className="relative group">
                 <a
@@ -134,12 +122,25 @@ function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-foreground/50 transition hover:text-foreground hover:scale-110"
+                  className="
+                    text-foreground opacity-70
+                    transition
+                    hover:opacity-100
+                  "
                 >
-                  <IconComponent />
+                  <Icon />
                 </a>
 
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 px-2 py-1 text-xs rounded bg-foreground text-background transition pointer-events-none whitespace-nowrap">
+                <span
+                  className="
+                    absolute -top-8 left-1/2 -translate-x-1/2
+                    px-2 py-1 text-xs
+                    rounded bg-foreground text-background
+                    opacity-0 group-hover:opacity-100
+                    transition pointer-events-none
+                    whitespace-nowrap
+                  "
+                >
                   {s.label}
                 </span>
               </div>
@@ -151,4 +152,4 @@ function Home() {
   );
 }
 
-export default memo(Home);
+export default Home;

@@ -1,5 +1,4 @@
 // app/page.tsx
-import Navbar from "@/components/Navbar";
 import Home from "@/components/sections/Home";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Project";
@@ -11,7 +10,6 @@ import Footer from "@/components/sections/Footer";
 export default function Page() {
   return (
     <>
-      <Navbar />
       <Home />
       <Experience />
       <Skills />
