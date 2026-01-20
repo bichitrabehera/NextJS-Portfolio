@@ -3,6 +3,43 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 const projects = {
+  readmeAI: {
+    name: "README.AI",
+    description:
+      "README.AI is an AI-powered web application that helps developers generate clean, professional, and resume-ready README files for their GitHub repositories. Users can log in using GitHub, select any repository, and instantly generate a well-structured README based on repository metadata, file structure, and configuration files. The platform focuses on clarity, minimal design, and real-world usability, making it especially helpful for students and early-stage developers who struggle with writing effective documentation.",
+    image: "/assets/readmeai.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "NextAuth",
+      "GitHub API",
+      "Local LLM (Docker / Ollama)",
+    ],
+    link: "https://readme-ai-sand.vercel.app/",
+  },
+  devarena: {
+    name: "DevArena",
+    description:
+      "DevArena is a full-stack hackathon discovery platform designed to help students and developers find upcoming hackathons in one place. The frontend provides a clean and distraction-free interface for browsing hackathons, while the backend continuously aggregates events from multiple platforms using automated scraping and scheduled updates. Together, the system simplifies hackathon discovery by centralizing data, eliminating duplicates, and keeping listings fresh and accessible.",
+    image: "/assets/devarena.png",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Playwright",
+      "BeautifulSoup",
+      "APScheduler",
+      "Vercel",
+      "Render",
+    ],
+    link: "https://dev-arena-nine.vercel.app/",
+  },
+
   dataverse: {
     name: "DataVerse",
     description:
@@ -32,13 +69,11 @@ const projects = {
 };
 
 export default async function ProjectPage({ params }) {
-  // `params` can be a Promise in the App Router; unwrap it.
   const resolvedParams = await params;
-  // normalize slug (handle possible array from catch-all)
   const slug = Array.isArray(resolvedParams?.slug)
     ? resolvedParams.slug[0]
     : resolvedParams?.slug;
-  console.log("ProjectPage received slug:", slug);
+  // console.log("ProjectPage received slug:", slug);
   const project = projects[slug];
 
   if (!project) {
@@ -60,7 +95,8 @@ export default async function ProjectPage({ params }) {
           alt={project.name}
           width={800}
           height={400}
-          className="rounded-xl mb-8"
+          className="rounded-xl mb-8 border"
+          loading="eager"
         />
 
         <div className="flex items-center justify-between gap-4 mb-6">
@@ -77,7 +113,6 @@ export default async function ProjectPage({ params }) {
       border border-border rounded-md
       transition
       hover:bg-foreground hover:text-background
-      focus-visible:outline focus-visible:outline-2
     "
           >
             Visit ↗
@@ -95,7 +130,7 @@ export default async function ProjectPage({ params }) {
               {tech}
             </span>
           ))}
-        </div>        
+        </div>
       </section>
     </>
   );

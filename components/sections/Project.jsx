@@ -1,39 +1,54 @@
 "use client";
 
 import { memo } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     id: 1,
+    name: "README.AI",
+    slug: "readmeAI",
+    image: "/assets/readmeai.png",
+    description:
+      "AI-powered tool that connects with GitHub to fetch repositories and generate clean, professional README files instantly.",
+  },
+  {
+    id: 2,
     name: "DataVerse",
     slug: "dataverse",
     image: "/assets/dataverse.jpg",
     description:
-      "Official department website with admin dashboard and event management.",
+      "Official department website featuring event management, registrations, and an admin dashboard for streamlined operations.",
   },
   {
-    id: 2,
+    id: 3,
+    name: "DevArena",
+    slug: "devarena",
+    image: "/assets/devarena.jpg",
+    description:
+      "Full-stack hackathon discovery platform that aggregates events from multiple platforms into one clean interface.",
+  },
+  {
+    id: 4,
     name: "Synapse",
     slug: "synapse",
     image: "/assets/synapse.jpg",
     description:
-      "Workflow-driven platform exploring AI-powered automation and integrations.",
+      "Workflow-based platform exploring AI-driven automation, integrations, and intelligent task orchestration.",
   },
   {
-    id: 3,
+    id: 5,
     name: "Expense Tracker",
     slug: "expense-tracker",
     image: "/assets/clearspend.png",
     description:
-      "Personal finance tracker for managing expenses and visualizing spending.",
+      "Personal finance application for tracking expenses, categorizing spending, and visualizing monthly insights.",
   },
 ];
 
-/* Animation */
 const container = {
   hidden: {},
   show: {
@@ -83,7 +98,9 @@ function Project() {
                       "
                     >
                       {project.name}
-                      <span className="px-4"><ArrowUpRight className="w-4 h-4" /></span>
+                      <span className="p-2 ml-4 border rounded-full">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   </h3>
 

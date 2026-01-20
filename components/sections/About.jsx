@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 const GithubActivity = dynamic(() => import("@/components/GithubActivity"), {
   ssr: false,
-  loading: () => <div className="min-h-[300px]" />,
+  loading: () => <div className="min-h-75" />,
 });
 
 function About() {
@@ -26,8 +26,8 @@ function About() {
           className="text-foreground/80 space-y-6 mt-6 leading-relaxed"
         >
           <p>
-            I'm a <span className="text-[#06B6D4] font-semibold">full-stack developer</span> focused on building fast,
-            reliable, and user-centric applications. Whether it's{" "}
+            Im a <span className="text-[#06B6D4] font-semibold">full-stack developer</span> focused on building fast,
+            reliable, and user-centric applications. Whether its{" "}
             <span className="text-[#F97316] font-semibold">web</span> or{" "}
             <span className="text-[#F97316] font-semibold">mobile</span>, I enjoy turning ideas into smooth, intuitive digital experiences.
           </p>

@@ -1,12 +1,11 @@
 "use client";
 import { memo, useRef, useState, useCallback } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
   const form = useRef();
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { triggerOnce: true, threshold: 0.2 });
 
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(null);
@@ -50,7 +49,7 @@ function Contact() {
 
           <motion.p className="text-foreground/70 text-left leading-relaxed">
             Have a project in mind or want to discuss opportunities? Drop me a
-            message and I'll get back to you within 24 hours.
+            message and I`ll get back to you within 24 hours.
           </motion.p>
         </div>
 
@@ -184,7 +183,7 @@ function Contact() {
                 </svg>
                 <div>
                   <p className="font-medium">Message sent successfully!</p>
-                  <p className="text-sm text-green-300">I'll get back to you soon.</p>
+                  <p className="text-sm text-green-300">I`ll get back to you soon.</p>
                 </div>
               </motion.div>
             )}

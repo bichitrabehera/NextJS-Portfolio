@@ -5,14 +5,11 @@ import { motion, useInView } from "framer-motion";
 
 // Icons
 import {
-  DiHtml5,
-  DiCss3,
   DiJavascript1,
   DiReact,
   DiNodejsSmall,
   DiGit,
   DiDocker,
-  DiGithub,
   DiGithubBadge,
 } from "react-icons/di";
 
@@ -23,20 +20,15 @@ import {
   SiFramer,
   SiMongodb,
   SiExpress,
-  SiFigma,
   SiRedis,
   SiRender,
   SiVercel,
   SiNpm,
-  SiOpenai,
   SiLinux,
+  SiOpenai,
 } from "react-icons/si";
-import { BiCube } from "react-icons/bi";
 
-// ===== Skills with Links =====
 const skills = [
-  // { name: "HTML", icon: DiHtml5, color: "#E44D26", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  // { name: "CSS", icon: DiCss3, color: "#1572B6", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
   {
     name: "JavaScript",
     icon: DiJavascript1,
@@ -134,8 +126,12 @@ const skills = [
     color: "#888888",
     link: "https://git-scm.com/doc",
   },
-  // { name: "Figma", icon: SiFigma, color: "#F24E1E", link: "https://help.figma.com/" },
-  // { name: "OpenAI", icon: SiOpenai, color: "#10A37F", link: "https://platform.openai.com/docs" },
+  {
+    name: "OpenAI",
+    icon: SiOpenai,
+    color: "#10A37F",
+    link: "https://platform.openai.com/docs",
+  },
   {
     name: "Bash",
     icon: DiGit,
@@ -148,7 +144,6 @@ const skills = [
     color: "#FCC624",
     link: "https://www.kernel.org/doc/html/latest/",
   },
-  // { name: "Hack The Box", icon: BiCube, color: "#9FEF00", link: "https://www.hackthebox.com/" },
 ];
 
 function Skills() {
