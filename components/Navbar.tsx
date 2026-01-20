@@ -29,20 +29,18 @@ const Navbar = () => {
             max-w-2xl mx-auto px-6
             flex flex-col gap-1
             md:flex-row md:items-center md:justify-between
-            py-8
+            py-6
           "
         >
-          {/* LEFT */}
           <div className="flex items-center justify-between md:justify-start">
             <TimeLocation />
           </div>
 
-          {/* RIGHT */}
           <div
             className="
               flex items-center gap-6
               text-sm
-              md:gap-8
+              md:gap-4
             "
           >
             <Link
@@ -54,6 +52,17 @@ const Navbar = () => {
               "
             >
               /contact
+            </Link>
+
+            <Link
+              href="/allprojects"
+              className="
+                underline underline-offset-4
+                hover:decoration-wavy
+                transition
+              "
+            >
+              /projects
             </Link>
 
             <Link

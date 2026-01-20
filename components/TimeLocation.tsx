@@ -1,8 +1,10 @@
 "use client";
 
-import { memo, useEffect, useCallback } from "react";
+import { memo, useEffect, useCallback, useState } from "react";
 
 function TimeLocation() {
+  const [time, setTime] = useState("");
+  const location = "Bangalore, India";
   const updateTime = useCallback(() => {
     const now = new Date();
     const formatted = now.toLocaleTimeString("en-IN", {

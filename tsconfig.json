@@ -35,7 +35,7 @@
     "global.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "components/sections/Contact.jsx", "app/projects/[slug]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,4 +1,3 @@
-// app/page.tsx
 import Navbar from "@/components/Navbar";
 
 import Home from "@/components/sections/Home";
@@ -8,19 +7,21 @@ import Experience from "@/components/sections/experience";
 import Achievements from "@/components/sections/achievments";
 import GithubActivity from "../components/GithubActivity";
 import Footer from "@/components/sections/Footer";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 export default function Page() {
   return (
     <>
-      <Navbar />
-
-      <Home />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Achievements />
-      <GithubActivity />
-      <Footer />
+      <SmoothScrollProvider>
+        <Navbar />
+        <Home />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Achievements />
+        <GithubActivity />
+        <Footer />
+      </SmoothScrollProvider>
     </>
   );
 }

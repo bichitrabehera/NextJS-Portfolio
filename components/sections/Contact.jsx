@@ -58,7 +58,7 @@ function Contact() {
           className="
             p-4 mx-auto rounded-xl
             border border-border
-            bg-background/80
+            bg-background
             max-w-5xl
           "
         >

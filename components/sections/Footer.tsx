@@ -28,8 +28,7 @@ function Footer() {
       "
     >
       <p className="text-sm font-light tracking-wide opacity-60 text-center">
-        © {currentYear} — Built with a focus on performance, accessibility, and
-        maintainability by{" "}
+        © {currentYear} - Built by{" "}
         <a
           href="https://bichitrabehera-blue.vercel.app/"
           target="_blank"

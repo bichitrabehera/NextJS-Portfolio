@@ -47,7 +47,7 @@ function Home() {
     return (
       t.getFullYear() -
       b.getFullYear() -
-      (t < new Date(t.getFullYear(), b.getMonth(), b.getDate()))
+      +(t < new Date(t.getFullYear(), b.getMonth(), b.getDate()))
     );
   })();
 
@@ -60,7 +60,6 @@ function Home() {
         text-foreground bg-background
       "
     >
-      {/* Banner + Avatar */}
       <div className="relative mb-12">
         <div className="relative h-50 overflow-hidden opacity-70">
           <Image
@@ -76,21 +75,19 @@ function Home() {
           <Image
             src="/assets/me.jpg"
             alt="Bichitra Behera"
-            width={90}
-            height={90}
-            className="rounded-2xl border border-border object-cover"
+            width={150}
+            height={150}
+            className="rounded-2xl  object-cover "
           />
         </div>
       </div>
 
-      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col gap-6"
       >
-        {/* Heading */}
         <div className="space-y-1">
           <h1 className="text-2xl font-light py-4 opacity-90 tracking-wide">
             Bichitra Behera
@@ -101,7 +98,6 @@ function Home() {
           </p>
         </div>
 
-        {/* Description */}
         <div className="space-y-4 max-w-xl">
           <p className="text font-light tracking-wide leading-relaxed opacity90 max-w-xl">
             I’m a full-stack developer building fast, reliable, user-centric
@@ -111,7 +107,6 @@ function Home() {
           </p>
         </div>
 
-        {/* Socials */}
         <div className="flex items-center gap-6 pt-4 text-[20px]">
           {SOCIAL_LINKS.map((s) => {
             const Icon = s.icon;
