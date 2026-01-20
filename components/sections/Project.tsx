@@ -1,10 +1,9 @@
 "use client";
 
 import { memo } from "react";
-// import Image from "next/image";
 import Link from "next/link";
-// import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -74,14 +73,15 @@ function Project() {
           engineering, and problem-driven product building.
         </p>
 
-        <div
+        <motion.div
           variants={container}
           initial="hidden"
+          animate="show"
           viewport={{ once: true }}
           className="space-y-10 mt-10"
         >
           {projects.map((project) => (
-            <div
+            <motion.div
               key={project.id}
               variants={item}
               className="group flex items-start justify-between gap-10"
@@ -109,9 +109,9 @@ function Project() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
