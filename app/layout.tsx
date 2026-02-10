@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <main className="flex-1">{children}</main>
+        <SmoothScrollProvider>
+          <main className="flex-1">{children}</main>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

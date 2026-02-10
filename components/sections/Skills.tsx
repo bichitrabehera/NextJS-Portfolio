@@ -1,9 +1,7 @@
 "use client";
 
 import { memo, useRef } from "react";
-import { motion, useInView } from "framer-motion";
 
-// Icons
 import {
   DiJavascript1,
   DiReact,
@@ -148,7 +146,6 @@ const skills = [
 
 function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
@@ -156,19 +153,14 @@ function Skills() {
       ref={ref}
       className="py-12 max-w-2xl mx-auto px-6 text-foreground"
     >
-      <h2 className="text-lg font-bold">Skills</h2>
+      <h2 className="text-xl font-bold text-blue-600">Skills</h2>
 
       <p className="text-foreground/70 my-6 max-w-3xl">
         Technologies and tools I use regularly to build scalable, performant,
         and user focused applications.
       </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.4 }}
-        className="flex flex-wrap gap-6"
-      >
+      <div className="flex flex-wrap gap-6">
         {skills.map((skill) => {
           const Icon = skill.icon;
           return (
@@ -179,7 +171,7 @@ function Skills() {
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
-              px-3 py-2
+              px-3 py-1.5
               border border-border rounded-lg
               hover:bg-foreground/5 transition
             "
@@ -189,7 +181,7 @@ function Skills() {
             </a>
           );
         })}
-      </motion.div>
+      </div>
     </section>
   );
 }

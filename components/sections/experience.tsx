@@ -6,22 +6,16 @@ export default function Experience() {
       role: "App Developer Intern",
       company: "Vayu Aarambh Innovations",
       duration: "Jan 2026 – Present",
-      // description:
-      // "Contributing to production-grade applications with a focus on UI improvements, feature development, and scalable workflows.",
     },
     {
       role: "Web Developer Intern",
       company: "Nuericorn Syndicate",
       duration: "Sept 2025 – Present",
-      description:
-        "Built REST APIs, MongoDB workflows, and reusable React + Tailwind components for a SaaS platform.",
     },
     {
       role: "Full Stack Developer",
       company: "Synapse",
       duration: "June 2025 – Present",
-      description:
-        "Developed and deployed a high-performance landing page focused on UX, performance, and modern frontend practices.",
     },
   ];
 
@@ -30,7 +24,7 @@ export default function Experience() {
       id="experience"
       className="py-12 max-w-2xl mx-auto px-6 text-foreground "
     >
-      <h2 className="text-lg mb-4 font-bold">Career</h2>
+      <h2 className="text-xl mb-4 font-bold text-blue-600">Career</h2>
 
       <p className="text-foreground/70 mb-12 max-w-3xl">
         Hands-on experience gained through internships and real-world projects.
@@ -47,8 +41,6 @@ export default function Experience() {
               <p className="text-sm font-light tracking-wide opacity-60">
                 {exp.role} , {exp.duration}
               </p>
-
-             
             </div>
           </div>
         ))}

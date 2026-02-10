@@ -35,7 +35,7 @@ const SOCIAL_LINKS = [
   {
     id: "email",
     icon: MdEmail,
-    url: "mailto:bichitrabehera.amcec@gmail.com",
+    url: "mailto:bichitrabehera.345@gmail.com",
     label: "Email",
   },
 ];
@@ -89,21 +89,70 @@ function Home() {
         className="flex flex-col gap-6"
       >
         <div className="space-y-1">
-          <h1 className="text-2xl font-light py-4 opacity-90 tracking-wide">
+          <h1 className="text-2xl font py-4 opacity-90 tracking-wide">
             Bichitra Behera
           </h1>
 
-          <p className="text font-light tracking-wide py-2 opacity90">
+          <p className="text font tracking-wide py-2 opacity90">
             {age} , Product-focused Software Engineer
           </p>
         </div>
 
         <div className="space-y-4 max-w-xl">
-          <p className="text font-light tracking-wide leading-relaxed opacity90 max-w-xl">
-            I’m a full-stack developer building fast, reliable, user-centric
-            products across web and mobile. I focus on clean architecture,
-            thoughtful UI/UX, and scalable systems, with an emphasis on
-            performance and long-term maintainability.
+          <p className="text font tracking-wide leading-relaxed">
+            I’m a{" "}
+            <span className="text-blue-500 font-semibold">
+              Full-Stack Developer
+            </span>{" "}
+            who builds <span className="text-blue-500 font-semibold">fast</span>
+            , <span className="text-blue-500 font-semibold">reliable</span>, and{" "}
+            <span className="text-blue-500 font-semibold">user-centric</span>{" "}
+            products across{" "}
+            <span className="text-blue-500 font-semibold">web</span> and{" "}
+            <span className="text-blue-500 font-semibold">mobile</span>.
+          </p>
+
+          <p className="text font tracking-wide leading-relaxed">
+            I care deeply about{" "}
+            <span className="text-blue-500 font-semibold">
+              clean architecture
+            </span>
+            ,{" "}
+            <span className="text-blue-500 font-semibold">
+              thoughtful UI/UX
+            </span>
+            , and{" "}
+            <span className="text-blue-500 font-semibold">
+              scalable systems
+            </span>{" "}
+            that are easy to maintain and extend.
+          </p>
+
+          <p className="text font tracking-wide leading-relaxed">
+            My work focuses on building{" "}
+            <span className="text-blue-500 font-semibold">
+              high-performance
+            </span>{" "}
+            applications, writing{" "}
+            <span className="text-blue-500 font-semibold">
+              robust backend APIs
+            </span>
+            , and designing{" "}
+            <span className="text-blue-500 font-semibold">
+              production-ready
+            </span>{" "}
+            solutions that stay stable as products grow.
+          </p>
+
+          <p className="text font tracking-wide leading-relaxed">
+            I’m also exploring{" "}
+            <span className="text-blue-500 font-semibold">GenAI + LLMs</span> to
+            create smarter user experiences, and I enjoy learning modern tools
+            like <span className="text-blue-500 font-semibold">Docker</span> and{" "}
+            <span className="text-blue-500 font-semibold">
+              cloud deployment
+            </span>{" "}
+            to ship projects end-to-end.
           </p>
         </div>
 

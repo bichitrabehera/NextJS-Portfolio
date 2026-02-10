@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const achievements = [
   {
     title: "Crack-a-thon",
@@ -39,39 +37,26 @@ export default function Achievements() {
         text-foreground
       "
     >
-      {/* Section Header */}
       <div className="space-y-2 mb-12">
-        <h2 className="text-lg font-bold">
-          Achievements
-        </h2>
+        <h2 className="text-xl font-bold text-blue-600">Achievements</h2>
 
         <p className="text font-light tracking-wide opacity-60 max-w-xl">
           Selected milestones and recognitions from hackathons and competitions.
         </p>
       </div>
 
-      {/* List */}
       <div className="space-y-8">
         {achievements.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 6 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="space-y-1"
-          >
-            {/* Title */}
+          <div key={index} className="space-y-1">
             <h3 className="text-base font-light tracking-wide">
               {item.title}
               <span className="opacity-50"> · {item.date}</span>
             </h3>
 
-            {/* Description */}
             <p className="text-sm font-light tracking-wide leading-relaxed opacity-60">
               {item.description}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
