@@ -6,7 +6,7 @@ import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
   const getInitialTheme = () => {
-    if (typeof window === "undefined") return "light";
+    if (typeof window === "undefined") return "dark";
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) return savedTheme;

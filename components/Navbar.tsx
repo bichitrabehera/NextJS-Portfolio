@@ -66,14 +66,9 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="https://drive.google.com/file/d/1kX3p9az3eeX0Vv47CuvsGWJKuMNc06e0/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                underline underline-offset-4
-                hover:decoration-wavy
-                transition
-              "
+              href="/resume.pdf"
+              download="Bichitra_Behera_Resume.pdf"
+              className="underline underline-offset-4 hover:decoration-wavy transition"
             >
               /resume
             </Link>

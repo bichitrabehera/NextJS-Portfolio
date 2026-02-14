@@ -29,22 +29,6 @@ const projects = [
     description:
       "Full-stack hackathon discovery platform that aggregates events from multiple platforms into one clean interface.",
   },
-  {
-    id: 4,
-    name: "Synapse",
-    slug: "synapse",
-    image: "/assets/synapse.jpg",
-    description:
-      "Workflow-based platform exploring AI-driven automation, integrations, and intelligent task orchestration.",
-  },
-  {
-    id: 5,
-    name: "Expense Tracker",
-    slug: "expense-tracker",
-    image: "/assets/clearspend.png",
-    description:
-      "Personal finance application for tracking expenses, categorizing spending, and visualizing monthly insights.",
-  },
 ];
 
 function Project() {
@@ -82,13 +66,24 @@ function Project() {
                     </Link>
                   </h3>
 
-                  <p className="text text-foreground/60 max-w-md">
+                  <p className="text text-foreground/60">
                     {project.description}
                   </p>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* import Link from "next/link"; */}
+
+        <div className="mt-10 flex justify-end">
+          <Link
+            href="/allprojects"
+            className="border px-6 py-3 rounded font-medium transition hover:bg-foreground hover:text-background"
+          >
+            View More →
+          </Link>
         </div>
       </div>
     </section>

@@ -3,19 +3,14 @@
 export default function Experience() {
   const experiences = [
     {
-      role: "App Developer Intern",
-      company: "Vayu Aarambh Innovations",
-      duration: "Jan 2026 – Present",
+      role: "Web Team Lead/ Full Stack Dev",
+      company: "SheBuilds Bangalore",
+      duration: "Feb 2026 – Present",
     },
     {
       role: "Web Developer Intern",
       company: "Nuericorn Syndicate",
       duration: "Sept 2025 – Present",
-    },
-    {
-      role: "Full Stack Developer",
-      company: "Synapse",
-      duration: "June 2025 – Present",
     },
   ];
 
