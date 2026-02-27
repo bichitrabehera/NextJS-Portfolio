@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = {
@@ -5,7 +6,7 @@ const projects = {
     name: "SheBuilds BLR",
     description:
       "Official platform for the SheBuilds Bangalore community, built to showcase events, updates, and initiatives in one place. I led the web team, built most of the frontend, and integrated Cloudinary uploads for managing media content.",
-    image: "/assets/shebuildsblr.png",
+    image: "/assets/shebuildsblr.jpeg",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -46,18 +47,25 @@ const projects = {
     description:
       "A department website for Data Science & Engineering that centralizes event updates, registrations, and announcements, reducing manual work through an admin panel.",
     image: "/assets/dataverse.jpg",
-    techStack: ["React", "Node.js", "Tailwind CSS"],
+    techStack: [
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "Vercel",
+      "Cloudinary",
+    ],
     link: "https://dataverseamcec.vercel.app/",
   },
 
-  synapse: {
-    name: "Synapse",
-    description:
-      "A landing page for a digital identity product that lets users share multiple links using one dynamic QR code. Built for fast performance and clear product communication.",
-    image: "/assets/synapse.jpg",
-    techStack: ["React", "JavaScript", "Tailwind CSS"],
-    link: "https://synapseeee.vercel.app",
-  },
+  // synapse: {
+  //   name: "Synapse",
+  //   description:
+  //     "A landing page for a digital identity product that lets users share multiple links using one dynamic QR code. Built for fast performance and clear product communication.",
+  //   image: "/assets/synapse.jpg",
+  //   techStack: ["React", "JavaScript", "Tailwind CSS"],
+  //   link: "https://synapseeee.vercel.app",
+  // },
 
   "expense-tracker": {
     name: "Expense Tracker",
@@ -72,7 +80,7 @@ const projects = {
 export default async function Projects() {
   return (
     <>
-      <section className="max-w-2xl mx-auto px-6 py-6">
+      <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
         <Link
           href="/"
           className="inline-flex items-center text-sm px-4 py-2 border border-border rounded-lg hover:bg-foreground hover:text-background"
@@ -81,15 +89,25 @@ export default async function Projects() {
         </Link>
 
         <div className="py-10 ">
-          <h1 className="text-2xl">My Projects</h1>
+          <h1 className="text-2xl font-bold">My Projects</h1>
         </div>
 
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
             Object.entries(projects).map(([key, project]) => (
               <div key={key} className="space-y-6">
+                <div className=" border border-dashed border-foreground/40">
+                  <Image
+                    src={project.image}
+                    alt={`Screenshot of ${project.name}`}
+                    width={800}
+                    height={400}
+                    className=" border border-border/60"
+                  />
+                </div>
+
                 <div className="flex items-center justify-between gap-4">
-                  <h2 className="text-2xl font-semibold tracking-tight">
+                  <h2 className="text-xl font-bold tracking-tight">
                     {project.name}
                   </h2>
 
