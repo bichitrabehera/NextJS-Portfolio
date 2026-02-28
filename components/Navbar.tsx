@@ -1,16 +1,16 @@
 "use client";
 
 import { memo, useRef } from "react";
-import { useInView } from "framer-motion";
+// import { useInView } from "framer-motion";
 
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 import TimeLocation from "./TimeLocation";
 import Link from "next/link";
 import BuyMeaCoffee from "./BuyMeaCoffee";
 
 const Navbar = () => {
   const ref = useRef(null);
-  useInView(ref, { once: true, margin: "-100px" });
+  // useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <header id="top" ref={ref}>
@@ -26,7 +26,7 @@ const Navbar = () => {
       >
         <div
           className="
-            max-w-2xl mx-auto px-6
+            max-w-2xl mx-auto px-6 
             flex flex-col gap-1
             md:flex-row md:items-center md:justify-between
             py-6
@@ -39,42 +39,40 @@ const Navbar = () => {
           <div
             className="
               flex items-center gap-6
-              text-sm
+              text
               md:gap-4
             "
           >
             <Link
               href="/contact"
               className="
-                underline underline-offset-4
-                hover:decoration-wavy
+                text-white/50 hover:text-white
                 transition
               "
             >
-              /contact
+              contact
             </Link>
 
             <Link
               href="/allprojects"
               className="
-                underline underline-offset-4
-                hover:decoration-wavy
+                text-white/50 hover:text-white
                 transition
               "
             >
-              /projects
+              projects
             </Link>
 
             <Link
               href="/resume.pdf"
               download="Bichitra_Behera_Resume.pdf"
-              className="underline underline-offset-4 hover:decoration-wavy transition"
+              className="text-white/50 hover:text-white transition"
             >
-              /resume
+              resume
             </Link>
 
             <BuyMeaCoffee />
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
         </div>
       </nav>

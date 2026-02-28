@@ -6,7 +6,7 @@ const projects = {
     name: "SheBuilds BLR",
     description:
       "Official platform for the SheBuilds Bangalore community, built to showcase events, updates, and initiatives in one place. I led the web team, built most of the frontend, and integrated Cloudinary uploads for managing media content.",
-    image: "/assets/shebuildsblr.jpeg",
+    image: "/assets/shebuildsblr.png",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -83,7 +83,7 @@ export default async function Projects() {
       <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
         <Link
           href="/"
-          className="inline-flex items-center text-sm px-4 py-2 border border-border rounded-lg hover:bg-foreground hover:text-background"
+          className="inline-flex items-center text-sm px-4 py-2 border border-border rounded-full hover:bg-foreground hover:text-background"
         >
           ← return
         </Link>
@@ -96,13 +96,13 @@ export default async function Projects() {
           {projects &&
             Object.entries(projects).map(([key, project]) => (
               <div key={key} className="space-y-6">
-                <div className=" border border-dashed border-foreground/40">
+                <div className=" border border-dashed rounded-full border-foreground/40">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     width={800}
                     height={400}
-                    className=" border border-border/60"
+                    className=" border border-border/60 rounded-2xl"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ export default async function Projects() {
               text-sm font-medium
               px-4 py-2
               border border-border/60
-              rounded-lg
+              rounded-full
               bg-white/5
               transition
               hover:bg-foreground hover:text-background
@@ -140,7 +140,7 @@ export default async function Projects() {
                       className="
                 px-3 py-1
                 text-xs sm:text-sm
-                rounded-full
+                rounded
                 border border-border/60
                 bg-white/5
                 text-foreground/70

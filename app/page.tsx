@@ -12,7 +12,7 @@ import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 export default function Page() {
   return (
     <>
-      <SmoothScrollProvider>
+      {/* <SmoothScrollProvider> */}
         <Navbar />
         <Home />
         <Experience />
@@ -21,7 +21,7 @@ export default function Page() {
         <Achievements />
         <GithubActivity />
         <Footer />
-      </SmoothScrollProvider>
+      {/* </SmoothScrollProvider> */}
     </>
   );
 }

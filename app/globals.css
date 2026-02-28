@@ -53,7 +53,7 @@ html {
   --color-ring: var(--ring);
 }
 
-:root {
+/* :root {
   --radius: 0.625rem;
 
   --background: #ffffff;
@@ -62,6 +62,15 @@ html {
   --border: rgba(9, 10, 11, 0.12);
   --input: rgba(9, 10, 11, 0.08);
   --ring: rgba(9, 10, 11, 0.35);
+} */
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+
+  --border: rgba(250, 250, 250, 0.12);
+  --input: rgba(250, 250, 250, 0.08);
+  --ring: rgba(250, 250, 250, 0.35);
 }
 
 .dark {

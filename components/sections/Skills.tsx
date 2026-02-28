@@ -172,11 +172,10 @@ function Skills() {
               className="
               flex items-center gap-2
               px-3 py-1.5
-              border border-border rounded-lg
-              hover:bg-foreground/5 transition
-            "
+              border border-border rounded-full hover:border-blue-600
+              hover:bg-foreground/5 transition text           "
             >
-              <Icon className="text" style={{ color: skill.color }} />
+              <Icon className="text-2xl" style={{ color: skill.color }} />
               <span className="text">{skill.name}</span>
             </a>
           );

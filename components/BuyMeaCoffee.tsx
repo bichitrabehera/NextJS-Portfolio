@@ -1,6 +1,6 @@
 // import Image from "next/image";
 
-import { SiBuymeacoffee } from "react-icons/si";
+// import { SiBuymeacoffee } from "react-icons/si";
 
 export default function BuyMeaCoffee() {
   return (
@@ -8,11 +8,10 @@ export default function BuyMeaCoffee() {
       href="https://buymeacoffee.com/bichitrabehera"
       target="_blank"
       rel="noopener noreferrer"
+      className=" text-white/50 hover:text-white
+                transition"
     >
-      <SiBuymeacoffee
-        size={24}
-        className="hover:text-primary hover:text-yellow-200 transition-colors duration-300"
-      />
+      coffee
     </a>
   );
 }
