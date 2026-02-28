@@ -1,27 +1,26 @@
-import Navbar from "@/components/Navbar";
-
-import Home from "@/components/sections/Home";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
 import Skills from "@/components/sections/Skills";
-import Projects from "@/components/sections/Project";
-import Experience from "@/components/sections/experience";
-import Achievements from "@/components/sections/achievments";
-import GithubActivity from "../components/GithubActivity";
-import Footer from "@/components/sections/Footer";
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import Projects from "@/components/sections/Projects";
+import Experience from "@/components/sections/Experience";
+import Achievements from "@/components/sections/Achievements";
+import GithubActivity from "@/components/ui/GithubActivity";
+import Footer from "@/components/layout/Footer";
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 
 export default function Page() {
   return (
     <>
-      {/* <SmoothScrollProvider> */}
+      <SmoothScrollProvider>
         <Navbar />
-        <Home />
+        <Hero />
         <Experience />
         <Skills />
         <Projects />
         <Achievements />
         <GithubActivity />
         <Footer />
-      {/* </SmoothScrollProvider> */}
+      </SmoothScrollProvider>
     </>
   );
 }

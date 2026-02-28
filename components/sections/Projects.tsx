@@ -3,33 +3,13 @@
 import { memo } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { projects as allProjects } from "@/data/projects";
 
-const projects = [
-  {
-    id: 1,
-    name: "README.AI",
-    slug: "readmeAI",
-    image: "/assets/readmeai.png",
-    description:
-      "AI-powered tool that connects with GitHub to fetch repositories and generate clean, professional README files instantly.",
-  },
-  {
-    id: 2,
-    name: "DataVerse",
-    slug: "dataverse",
-    image: "/assets/dataverse.jpg",
-    description:
-      "Official department website featuring event management, registrations, and an admin dashboard for streamlined operations.",
-  },
-  {
-    id: 3,
-    name: "DevArena",
-    slug: "devarena",
-    image: "/assets/devarena.jpg",
-    description:
-      "Full-stack hackathon discovery platform that aggregates events from multiple platforms into one clean interface.",
-  },
-];
+const selectedSlugs = ["readmeAI", "dataverse", "devarena"];
+const projects = selectedSlugs.map((slug) => ({
+  ...allProjects[slug],
+  slug,
+}));
 
 function Project() {
   return (
@@ -45,7 +25,7 @@ function Project() {
         <div className="space-y-10 mt-10">
           {projects.map((project) => (
             <div
-              key={project.id}
+              key={project.slug}
               className="group flex items-start justify-between gap-10"
             >
               <div className="flex gap-4">

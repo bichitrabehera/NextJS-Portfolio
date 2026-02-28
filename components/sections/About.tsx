@@ -1,10 +1,9 @@
 "use client";
 
 import { memo, useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 
-const GithubActivity = dynamic(() => import("@/components/GithubActivity"), {
+const GithubActivity = dynamic(() => import("@/components/ui/GithubActivity"), {
   ssr: false,
   loading: () => <div className="min-h-75" />,
 });

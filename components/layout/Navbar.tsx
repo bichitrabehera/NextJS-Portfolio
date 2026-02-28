@@ -4,9 +4,9 @@ import { memo, useRef } from "react";
 // import { useInView } from "framer-motion";
 
 // import ThemeToggle from "./ThemeToggle";
-import TimeLocation from "./TimeLocation";
+import TimeLocation from "@/components/ui/TimeLocation";
 import Link from "next/link";
-import BuyMeaCoffee from "./BuyMeaCoffee";
+import BuyMeaCoffee from "@/components/ui/BuyMeaCoffee";
 
 const Navbar = () => {
   const ref = useRef(null);

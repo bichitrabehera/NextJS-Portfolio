@@ -1,5 +1,5 @@
 export async function GET() {
-  const username = "YOUR_GITHUB_USERNAME"; // change this
+  const username = process.env.GITHUB_USERNAME || "bichitrabehera"; // Default to your username
 
   try {
     const response = await fetch(
@@ -24,7 +24,7 @@ export async function GET() {
         "Content-Type": "image/svg+xml",
       },
     });
-  } catch (error) {
+  } catch {
     return new Response("Error fetching data", { status: 500 });
   }
 }

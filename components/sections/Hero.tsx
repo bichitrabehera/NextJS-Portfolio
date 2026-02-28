@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { FaLinkedin, FaGithub, FaInstagram, FaDiscord } from "react-icons/fa";
