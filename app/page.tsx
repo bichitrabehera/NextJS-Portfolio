@@ -4,9 +4,9 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Achievements from "@/components/sections/Achievements";
-import GithubActivity from "@/components/ui/GithubActivity";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
+import Github from "@/components/sections/Github";
 
 export default function Page() {
   return (
@@ -14,11 +14,11 @@ export default function Page() {
       <SmoothScrollProvider>
         <Navbar />
         <Hero />
+        <Github />
         <Experience />
         <Skills />
         <Projects />
         <Achievements />
-        <GithubActivity />
         <Footer />
       </SmoothScrollProvider>
     </>

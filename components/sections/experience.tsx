@@ -19,7 +19,7 @@ export default function Experience() {
       id="experience"
       className="py-12 max-w-2xl mx-auto px-6 text-foreground "
     >
-      <h2 className="text-xl mb-4 font-bold text-blue-600">Career</h2>
+      <h2 className="text-xl mb-4 font-bold text-white/60 font-mono uppercase">Experience</h2>
 
       <p className="text-foreground/70 mb-12 max-w-3xl">
         Hands-on experience gained through internships and real-world projects.

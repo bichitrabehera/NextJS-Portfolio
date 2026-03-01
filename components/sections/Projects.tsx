@@ -15,7 +15,7 @@ function Project() {
   return (
     <section id="projects" className="mx-auto  bg-background text-foreground ">
       <div className="max-w-2xl mx-auto py-12 px-6">
-        <h2 className="text-xl mb-6 font-bold text-blue-600">What I Built</h2>
+        <h2 className="text-xl mb-4 font-bold text-white/60 font-mono uppercase">What I Built</h2>
 
         <p className="text-foreground/70 my-6 max-w-3xl">
           Selected projects showcasing my work in full-stack development, UI

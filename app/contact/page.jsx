@@ -2,8 +2,8 @@
 import { useRef, useCallback, useState, memo } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import Link from "next/link";
 import Image from "next/image";
+import ReturnButton from "@/components/ui/ReturnButton";
 
 function Contact() {
   const form = useRef(null);
@@ -33,18 +33,7 @@ function Contact() {
           max-w-2xl
         "
       >
-        <Link
-          href="/"
-          className="
-            inline-flex items-center text-sm mb-8
-            px-4 py-2
-            border border-border rounded-2xl
-            hover:bg-foreground hover:text-background
-            transition
-          "
-        >
-          ← return
-        </Link>
+        <ReturnButton/>
 
         <div className="rounded-3xl py-10">
           <form

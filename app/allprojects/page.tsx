@@ -1,17 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import { projects } from "@/data/projects";
+import ReturnButton from "@/components/ui/ReturnButton";
 
 export default async function Projects() {
   return (
     <>
       <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm px-4 py-2 border border-border rounded-full hover:bg-foreground hover:text-background"
-        >
-          ← return
-        </Link>
+        <ReturnButton/>
 
         <div className="py-10 ">
           <h1 className="text-2xl font-bold">My Projects</h1>

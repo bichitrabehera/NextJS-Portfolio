@@ -1,12 +1,6 @@
 "use client";
 
 import { memo, useRef } from "react";
-import dynamic from "next/dynamic";
-
-const GithubActivity = dynamic(() => import("@/components/ui/GithubActivity"), {
-  ssr: false,
-  loading: () => <div className="min-h-75" />,
-});
 
 function About() {
   const ref = useRef(null);
@@ -54,8 +48,6 @@ function About() {
             <span className="text-[#10B981]">innovative architectures</span>.
           </p>
         </div>
-
-        <GithubActivity />
       </div>
     </section>
   );
