@@ -26,23 +26,13 @@ function Home() {
       "
     >
       <div className="relative mb-12">
-        <div className="relative h-0 overflow-hidden opacity-70">
-          {/* <Image
-            src="https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Banner"
-            fill
-            className="object-cover"
-            priority
-          /> */}
-        </div>
-
         <div className="">
           <Image
-            src="/assets/mee.jpg"
+            src="/assets/mee.jpeg"
             alt="Bichitra Behera"
-            width={250}
+            width={220}
             height={250}
-            className="rounded-2xl  object-cover "
+            className="rounded object-cover "
             loading="eager"
           />
         </div>
@@ -152,17 +142,7 @@ function Home() {
             solutions that stay stable as products grow.
           </p>
 
-          <p className="text font tracking-wide leading-relaxed">
-            I’m also exploring{" "}
-            <span className="text-neutral-100 font-semibold">GenAI + LLMs</span>{" "}
-            to create smarter user experiences, and I enjoy learning modern
-            tools like{" "}
-            <span className="text-neutral-100 font-semibold">Docker</span> and{" "}
-            <span className="text-neutral-100 font-semibold">
-              cloud deployment
-            </span>{" "}
-            to ship projects end-to-end.
-          </p>
+          
         </div>
       </motion.div>
     </section>

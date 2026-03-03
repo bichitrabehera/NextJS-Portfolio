@@ -1,35 +1,24 @@
 "use client";
 
-export default function Experience() {
-  const experiences = [
-    {
-      role: "Web Team Lead/ Full Stack Dev",
-      company: "SheBuilds Bangalore",
-      duration: "Feb 2026 – Present",
-    },
-    {
-      role: "Web Developer Intern",
-      company: "Nuericorn Syndicate",
-      duration: "Sept 2025 – Present",
-    },
-  ];
+import Heading from "../ui/Heading";
+import { experiences } from "@/data/exp";
 
+export default function Experience() {
   return (
     <section
       id="experience"
       className="py-12 max-w-2xl mx-auto px-6 text-foreground "
     >
-      <h2 className="text-xl mb-4 font-bold text-white/60 font-mono uppercase">Experience</h2>
-
-      <p className="text-foreground/70 mb-12 max-w-3xl">
-        Hands-on experience gained through internships and real-world projects.
-      </p>
+      <Heading
+        heading="Experience"
+        description="Hands-on experience gained through internships and real-world projects."
+      />
 
       <div className="space-y-6">
         {experiences.map((exp, index) => (
           <div key={index} className="flex gap-4 items-start">
             <div className="col-span-2 space-y-1">
-              <h3 className="font-light tracking-wide text-foreground">
+              <h3 className="font uppercase font-mono tracking text-foreground">
                 {exp.company}
               </h3>
 

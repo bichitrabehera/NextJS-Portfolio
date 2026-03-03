@@ -29,7 +29,7 @@ const Navbar = () => {
             max-w-2xl mx-auto px-6 
             flex flex-col gap-1
             md:flex-row md:items-center md:justify-between
-            py-6
+            pt-6
           "
         >
           <div className="flex items-center justify-between md:justify-start">

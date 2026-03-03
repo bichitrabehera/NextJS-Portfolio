@@ -1,6 +1,7 @@
 "use client";
 
 import { achievements } from "@/data/achievements";
+import Heading from "../ui/Heading";
 
 export default function Achievements() {
   return (
@@ -12,18 +13,16 @@ export default function Achievements() {
         text-foreground
       "
     >
-      <div className="space-y-2 mb-12">
-        <h2 className="text-xl mb-4 font-bold text-white/60 font-mono uppercase">Achievements</h2>
-
-        <p className="text font-light tracking-wide opacity-60 max-w-xl">
-          Selected milestones and recognitions from hackathons and competitions.
-        </p>
-      </div>
+      <Heading
+        heading="Achievements"
+        description="Selected milestones and recognitions from hackathons and competitions.
+"
+      />
 
       <div className="space-y-8">
         {achievements.map((item, index) => (
           <div key={index} className="space-y-1">
-            <h3 className="text-base font-light tracking-wide">
+            <h3 className="text-base tracking-wide">
               {item.title}
               <span className="opacity-50"> · {item.date}</span>
             </h3>

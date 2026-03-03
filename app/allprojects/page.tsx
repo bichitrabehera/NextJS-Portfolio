@@ -1,28 +1,27 @@
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import ReturnButton from "@/components/ui/ReturnButton";
+import Heading from "@/components/ui/Heading";
 
 export default async function Projects() {
   return (
     <>
       <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
-        <ReturnButton/>
+        <ReturnButton />
 
-        <div className="py-10 ">
-          <h1 className="text-2xl font-bold">My Projects</h1>
-        </div>
+        <Heading heading="Projects" description="Stuffs i crafted"/>
 
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
             Object.entries(projects).map(([key, project]) => (
               <div key={key} className="space-y-6">
-                <div className=" border border-dashed rounded-full border-foreground/40">
+                <div className=" border border-dashed rounded border-foreground/40">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     width={800}
                     height={400}
-                    className=" border border-border/60 rounded-2xl"
+                    className=" border border-border/60 rounded"
                   />
                 </div>
 

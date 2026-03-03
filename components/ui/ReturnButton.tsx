@@ -9,7 +9,7 @@ const ReturnButton = () => {
         className="
                     inline-flex items-center text-sm mb-8
                     px-4 py-2
-                    border border-border rounded-2xl
+                    border border-border rounded
                     hover:bg-foreground hover:text-background
                     transition"
       >

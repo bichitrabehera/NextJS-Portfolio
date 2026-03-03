@@ -8,12 +8,26 @@ export interface Project {
 }
 
 export const projects: Record<string, Project> = {
+  githubContributionsUI: {
+    name: "GitHub Contributions UI",
+    description:
+      "A lightweight open-source React component for rendering GitHub contribution heatmaps in portfolios and dashboards. Built with TypeScript and Tailwind CSS, featuring plug-and-play integration, theme customization, and npm distribution for easy developer adoption.",
+    image: "/assets/githubui.png",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "npm"],
+    link: "https://github-contributions-ui.vercel.app/",
+  },
   sheBuildsBLR: {
     name: "SheBuilds BLR",
     description:
       "Official platform for the SheBuilds Bangalore community, built to showcase events, updates, and initiatives in one place. I led the web team, built most of the frontend, and integrated Cloudinary uploads for managing media content.",
     image: "/assets/shebuildsblr.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudinary", "Vercel"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cloudinary",
+      "Vercel",
+    ],
     link: "https://shebuildsblr.vercel.app/",
   },
   readmeAI: {
@@ -59,18 +73,16 @@ export const projects: Record<string, Project> = {
     description:
       "DataVerse is a full-featured website developed for the Department of Data Science and Engineering at AMC Engineering College. The platform serves as a central hub for department-related activities, including event announcements, registrations, and information sharing.",
     image: "/assets/dataverse.jpg",
-    techStack: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Vercel", "Cloudinary"],
+    techStack: [
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "Vercel",
+      "Cloudinary",
+    ],
     link: "https://dataverseamcec.vercel.app/",
     slug: "dataverse",
-  },
-  synapse: {
-    name: "Synapse",
-    description:
-      "The Synapse Landing Page is a modern and visually engaging website built to introduce and promote Synapse, a digital identity platform. It allows users to understand how Synapse enables sharing multiple online profiles and important links through a single dynamic QR code.",
-    image: "/assets/synapse.jpg",
-    techStack: ["React", "JavaScript", "Tailwind CSS"],
-    link: "https://synapseeee.vercel.app",
-    slug: "synapse",
   },
   "expense-tracker": {
     name: "Expense Tracker",

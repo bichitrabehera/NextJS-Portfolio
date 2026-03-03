@@ -1,5 +1,6 @@
 "use client";
-import { GithubActivity } from "github-contributions-ui";
+// import { GithubActivity } from "github-contributions-ui";
+import GithubActivity from "../ui/GithubActivity";
 const Github = () => {
   return (
     <>

@@ -2,6 +2,7 @@
 
 import { memo, useRef } from "react";
 import { skills } from "@/data/skills";
+import Heading from "../ui/Heading";
 
 function Skills() {
   const ref = useRef(null);
@@ -12,14 +13,11 @@ function Skills() {
       ref={ref}
       className="py-12 max-w-2xl mx-auto px-6 text-foreground"
     >
-      <h2 className="text-xl mb-4 font-bold text-white/60 font-mono uppercase">
-        Skills
-      </h2>
-
-      <p className="text-foreground/70 my-6 max-w-3xl">
-        Technologies and tools I use regularly to build scalable, performant,
-        and user focused applications.
-      </p>
+      <Heading
+        heading="Skills"
+        description="Technologies and tools I use regularly to build scalable, performant,
+        and user focused applications."
+      />
 
       <div className="flex flex-wrap gap-6">
         {skills.map((skill) => {
@@ -32,12 +30,12 @@ function Skills() {
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
-              px-3 py-1.5
-              border border-border rounded-2xl hover:border-blue-600
+              px-4 py-2
+              border border-border rounded hover:border-blue-600
               hover:bg-foreground/5 transition text           "
             >
-              <Icon className="text-2xl" style={{ color: skill.color }} />
-              <span className="text">{skill.name}</span>
+              <Icon className="text-xl" style={{ color: skill.color }} />
+              <span className="text opacity-75">{skill.name}</span>
             </a>
           );
         })}
