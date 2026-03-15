@@ -13,8 +13,6 @@ function Project() {
       <div className="max-w-3xl mx-auto py-12 px-6">
         <Heading
           heading="What I Built"
-          description="Selected projects showcasing my work in full-stack development, UI
-          engineering, and problem-driven product building."
         />
 
         <div className="space-y-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">

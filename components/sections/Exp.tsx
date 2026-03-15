@@ -11,7 +11,6 @@ export default function Experience() {
     >
       <Heading
         heading="Experience"
-        description="Hands-on experience gained through internships and real-world projects."
       />
 
       <div className="space-y-6">

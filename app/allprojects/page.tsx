@@ -9,7 +9,7 @@ export default async function Projects() {
       <section className="max-w-3xl mx-auto px-6 py-6 mb-30">
         <ReturnButton />
 
-        <Heading heading="Projects" description="Stuffs i crafted" />
+        <Heading heading="Projects" />
 
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&

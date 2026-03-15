@@ -1,17 +1,12 @@
 "use client";
 
 import { memo, useRef } from "react";
-// import { useInView } from "framer-motion";
-
-// import ThemeToggle from "./ThemeToggle";
-import TimeLocation from "@/components/ui/TimeLocation";
 import Link from "next/link";
 import BuyMeaCoffee from "@/components/ui/BuyMeaCoffee";
-import ThemeToggle from "../ui/ThemeToggle";
+
 
 const Navbar = () => {
   const ref = useRef(null);
-  // useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <header id="top" ref={ref}>

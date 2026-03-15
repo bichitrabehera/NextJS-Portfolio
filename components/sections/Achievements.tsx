@@ -13,11 +13,7 @@ export default function Achievements() {
         text-foreground
       "
     >
-      <Heading
-        heading="Achievements"
-        description="Selected milestones and recognitions from hackathons and competitions.
-"
-      />
+      <Heading heading="Achievements" />
 
       <div className="space-y-8">
         {achievements.map((item, index) => (

@@ -15,8 +15,8 @@ function Skills() {
     >
       <Heading
         heading="Skills"
-        description="Technologies and tools I use regularly to build scalable, performant,
-        and user focused applications."
+        // description="Technologies and tools I use regularly to build scalable, performant,
+        // and user focused applications."
       />
 
       <div className="flex flex-wrap gap-3">
