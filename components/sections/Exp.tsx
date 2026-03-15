@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-12 max-w-2xl mx-auto px-6 text-foreground "
+      className="py-12 max-w-3xl mx-auto px-6 text-foreground "
     >
       <Heading
         heading="Experience"

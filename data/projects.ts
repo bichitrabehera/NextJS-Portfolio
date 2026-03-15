@@ -34,7 +34,7 @@ export const projects: Record<string, Project> = {
     name: "README.AI",
     description:
       "README.AI is an AI-powered web application that helps developers generate clean, professional, and resume-ready README files for their GitHub repositories. Users can log in using GitHub, select any repository, and instantly generate a well-structured README based on repository metadata, file structure, and configuration files.",
-    image: "/assets/readmeai.png",
+    image: "/assets/readme.png",
     techStack: [
       "Next.js",
       "TypeScript",

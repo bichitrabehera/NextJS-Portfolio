@@ -305,7 +305,7 @@ function GithubActivity({
       </div>
 
       {/* Card */}
-      <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl p-4 bg-white dark:bg-neutral-950">
+      <div className=" rounded-xl p-4 bg-white dark:bg-black">
         {error ? (
           <p className="text-sm italic text-neutral-400">
             GitHub activity unavailable.
@@ -337,19 +337,7 @@ function GithubActivity({
 
                 {/* Grid */}
                 <div className="flex gap-[3px]">
-                  <div
-                    className="flex flex-col gap-[3px] pt-px shrink-0"
-                    style={{ width: DAY_COL_W - GAP }}
-                  >
-                    {Array.from({ length: 7 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="h-[13px] text-[10px] leading-[13px] text-right pr-1.5 select-none text-neutral-500 dark:text-neutral-400"
-                      >
-                        {DAY_LABELS[i] ?? ""}
-                      </div>
-                    ))}
-                  </div>
+                 
 
                   {grid.map((week, wi) => (
                     <div key={wi} className="flex flex-col gap-[3px]">

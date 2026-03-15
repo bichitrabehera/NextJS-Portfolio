@@ -11,7 +11,7 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-12 max-w-2xl mx-auto px-6 text-foreground"
+      className="py-12 max-w-3xl mx-auto px-6 text-foreground"
     >
       <Heading
         heading="Skills"
@@ -19,7 +19,7 @@ function Skills() {
         and user focused applications."
       />
 
-      <div className="flex flex-wrap gap-6">
+      <div className="flex flex-wrap gap-3">
         {skills.map((skill) => {
           const Icon = skill.icon;
           return (
@@ -30,7 +30,7 @@ function Skills() {
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
-              px-4 py-2
+              px-4 py-1
               border border-border rounded hover:border-blue-600
               hover:bg-foreground/5 transition text           "
             >

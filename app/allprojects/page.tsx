@@ -6,10 +6,10 @@ import Heading from "@/components/ui/Heading";
 export default async function Projects() {
   return (
     <>
-      <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
+      <section className="max-w-3xl mx-auto px-6 py-6 mb-30">
         <ReturnButton />
 
-        <Heading heading="Projects" description="Stuffs i crafted"/>
+        <Heading heading="Projects" description="Stuffs i crafted" />
 
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
@@ -38,7 +38,7 @@ export default async function Projects() {
               text-sm font-medium
               px-4 py-2
               border border-border/60
-              rounded-full
+              rounded
               bg-white/5
               transition
               hover:bg-foreground hover:text-background

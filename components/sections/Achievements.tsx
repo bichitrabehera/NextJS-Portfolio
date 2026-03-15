@@ -8,7 +8,7 @@ export default function Achievements() {
     <section
       id="achievements"
       className="
-        max-w-2xl mx-auto
+        max-w-3xl mx-auto
         px-6 py-12
         text-foreground
       "

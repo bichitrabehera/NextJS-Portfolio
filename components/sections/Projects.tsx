@@ -10,23 +10,22 @@ import { projects } from "@/data/projects";
 function Project() {
   return (
     <section id="projects" className="mx-auto  bg-background text-foreground ">
-      <div className="max-w-2xl mx-auto py-12 px-6">
+      <div className="max-w-3xl mx-auto py-12 px-6">
         <Heading
           heading="What I Built"
           description="Selected projects showcasing my work in full-stack development, UI
           engineering, and problem-driven product building."
         />
 
-        <div className="space-y-10 mt-10">
+        <div className="space-y-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           {projects &&
-            Object.entries(projects).slice(0,3).map(([key, project]) => (
+            Object.entries(projects).slice(0,4).map(([key, project]) => (
               <div key={key} className="space-y-6">
-                <div className=" border border-dashed rounded border-foreground/40">
+                <div className=" border h-50 border-dashed rounded border-foreground/40">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
-                    width={800}
-                    height={400}
+                    fill
                     className=" border border-border/60 rounded opacity-65"
                   />
                 </div>

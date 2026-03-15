@@ -35,7 +35,7 @@ function Contact() {
       >
         <ReturnButton/>
 
-        <div className="rounded-3xl py-10">
+        <div className="rounded-3xl">
           <form
             ref={form}
             onSubmit={sendEmail}
