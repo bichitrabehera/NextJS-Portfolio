@@ -41,7 +41,7 @@ const Navbar = () => {
             contact
           </Link>
           <Link
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1WjtKJCYhuJ57Fisz69cOJRuGxZvoJORH/view?usp=sharing"
             download="Bichitra_Behera_Resume.pdf"
             className="text-white/50 hover:text-white transition"
           >
