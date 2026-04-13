@@ -1,9 +1,8 @@
 "use client";
+import { FiSend } from "react-icons/fi";
 import { useRef, useCallback, useState, memo } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
-import ReturnButton from "@/components/ui/ReturnButton";
 
 function Contact() {
   const form = useRef(null);
@@ -26,22 +25,20 @@ function Contact() {
   }, []);
 
   return (
-    <section className="bg-background text-foreground py-10">
+    <section className="bg-background text-foreground py-6">
       <div
         className="
           mx-auto px-6
           max-w-2xl
         "
       >
-        <ReturnButton/>
-
         <div className="rounded-3xl">
           <form
             ref={form}
             onSubmit={sendEmail}
             className="space-y-8 mx-auto max-w-3xl"
           >
-            <BotBubble text="hello. i'm listening. who is this?" />
+            <BotBubble text="hello. who is this?" />
 
             <UserInput name="user_name" placeholder="your name ..." required />
 
@@ -76,17 +73,29 @@ function Contact() {
 
             <div className="flex justify-end pt-2">
               <motion.button
-                whileTap={{ scale: 0.96 }}
+                whileTap={{ scale: 0.92 }}
+                whileHover={{ scale: 1.05 }}
                 type="submit"
                 className="
-                  w-12 h-12 rounded-full
-                  bg-blue-500 text-white
-                  hover:bg-blue-400 transition
-                  flex items-center justify-center
-                  text-lg
-                "
+    group relative
+    w-12 h-12 rounded-full
+    bg-gradient-to-br from-blue-500 to-indigo-600
+    text-white
+    flex items-center justify-center
+    
+    transition-all duration-300
+    hover:shadow-xl hover:shadow-blue-500/40
+    active:shadow-md
+  "
               >
-                →
+                <FiSend
+                  className="
+      relative z-10
+      text-xl
+      transition-transform duration-200
+      group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+    "
+                />
               </motion.button>
             </div>
 
@@ -110,16 +119,6 @@ function BotBubble({ text, success }) {
       animate={{ opacity: 1, y: 0 }}
       className="flex items-start gap-1"
     >
-      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text">
-        <Image
-          src="/assets/me.jpg"
-          alt="profile"
-          width={112}
-          height={112}
-          className="rounded-full shadow-lg object-cover"
-          priority
-        />
-      </div>
       <div
         className={`
           px-5 py-1 rounded-2xl text max-w-[80%]

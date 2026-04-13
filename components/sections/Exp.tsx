@@ -1,5 +1,6 @@
 "use client";
 
+import { Divider } from "../ui/Divider";
 import Heading from "../ui/Heading";
 import { experiences } from "@/data/exp";
 
@@ -7,7 +8,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-12 max-w-3xl mx-auto px-6 text-foreground "
+      className=" max-w-2xl mx-auto px-6 text-foreground "
     >
       <Heading
         heading="Experience"
@@ -17,7 +18,7 @@ export default function Experience() {
         {experiences.map((exp, index) => (
           <div key={index} className="flex gap-4 items-start">
             <div className="col-span-2 space-y-1">
-              <h3 className="font uppercase font-mono tracking text-foreground">
+              <h3 className="font tracking text-foreground">
                 {exp.company}
               </h3>
 
@@ -28,6 +29,7 @@ export default function Experience() {
           </div>
         ))}
       </div>
+      <Divider/>
     </section>
   );
 }

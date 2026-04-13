@@ -3,6 +3,7 @@
 import { memo, useRef } from "react";
 import { skills } from "@/data/skills";
 import Heading from "../ui/Heading";
+import { Divider } from "../ui/Divider";
 
 function Skills() {
   const ref = useRef(null);
@@ -11,7 +12,7 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-12 max-w-3xl mx-auto px-6 text-foreground"
+      className=" max-w-2xl mx-auto px-6 text-foreground"
     >
       <Heading
         heading="Skills"
@@ -25,21 +26,21 @@ function Skills() {
           return (
             <a
               key={skill.name}
-              href={skill.link}
               target="_blank"
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
               px-4 py-1
-              border border-border rounded hover:border-blue-600
+              border border-border rounded-2xl hover:border-neutral-600
               hover:bg-foreground/5 transition text           "
             >
-              <Icon className="text-xl" style={{ color: skill.color }} />
+              <Icon className="text-xl" size={20} />
               <span className="text opacity-75">{skill.name}</span>
             </a>
           );
         })}
       </div>
+      <Divider/>
     </section>
   );
 }

@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 function Project() {
   return (
     <section id="projects" className="mx-auto  bg-background text-foreground ">
-      <div className="max-w-3xl mx-auto py-12 px-6">
+      <div className="max-w-xl mx-auto py-12 px-6">
         <Heading
           heading="What I Built"
         />

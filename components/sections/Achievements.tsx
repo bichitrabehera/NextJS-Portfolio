@@ -2,14 +2,15 @@
 
 import { achievements } from "@/data/achievements";
 import Heading from "../ui/Heading";
+import { Divider } from "../ui/Divider";
 
 export default function Achievements() {
   return (
     <section
       id="achievements"
       className="
-        max-w-3xl mx-auto
-        px-6 py-12
+        max-w-2xl mx-auto
+        px-6
         text-foreground
       "
     >
@@ -29,6 +30,7 @@ export default function Achievements() {
           </div>
         ))}
       </div>
+      <Divider/>
     </section>
   );
 }
