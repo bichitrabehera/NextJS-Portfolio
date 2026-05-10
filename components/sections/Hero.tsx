@@ -26,7 +26,7 @@ function Home() {
       </div>
 
       <div
-        className="space-y-3 text-white/35"
+        className="space-y-4 text-white/35"
         style={{
           lineHeight: 2,
           wordSpacing: "0.1em",
@@ -41,7 +41,22 @@ function Home() {
           </span>{" "}
           a full-stack developer building modern web products. i focus on fast,
           reliable systems, clean architecture, and thoughtful developer
-          experience. i build cool stuff with tech i love, always shipping{" "}
+          experience.
+        </p>
+
+        <p className="text-white">
+          building{" "}
+          <a
+            href="https://tixly.bichitrabehera.dev/"
+            target="_blank"
+            className="font-semibold underline underline-offset-4 hover:opacity-80"
+          >
+            tixlyai
+          </a>{" "}
+        </p>
+
+        <p>
+          i build cool stuff with tech i love, always shipping{" "}
           <span className="text-white font-semibold tracking-wide">
             <InlineChip
               href="https://github.com/bichitrabehera"
@@ -58,7 +73,7 @@ function Home() {
             >
               LinkedIn
             </InlineChip>
-          </span>{" "}
+          </span>
         </p>
 
         <p>
@@ -76,9 +91,9 @@ function Home() {
           </InlineChip>
         </p>
       </div>
-      <Divider/>
+
+      <Divider />
     </section>
-    
   );
 }
 

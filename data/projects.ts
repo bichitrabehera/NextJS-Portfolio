@@ -8,6 +8,21 @@ export interface Project {
 }
 
 export const projects: Record<string, Project> = {
+  tixlyAI: {
+    name: "TixlyAI",
+    description:
+      "An AI-powered developer tool that converts screenshots of bugs and UI issues into structured, ready-to-use tickets. Built for speed and simplicity, it extracts context using OCR and LLMs, then formats output with title, steps, and expected vs actual behavior. Features Slack integration for instant sharing, with upcoming support for Jira, authentication, and team workflows.",
+    image: "/assets/tixlyai.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Tesseract.js",
+      "OpenAI",
+      "Vercel",
+    ],
+    link: "https://tixly.bichitrabehera.dev/",
+  },
   githubContributionsUI: {
     name: "GitHub Contributions UI",
     description:

@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 export default async function Projects() {
   return (
     <>
-      <section className="max-w-xl mx-auto px-6 py-6 mb-30">
+      <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
 
 
         <div className="max-w-3xl mx-auto space-y-20">

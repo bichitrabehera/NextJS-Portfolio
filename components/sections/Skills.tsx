@@ -31,7 +31,7 @@ function Skills() {
               className="
               flex items-center gap-2
               px-4 py-1
-              border border-border rounded-2xl hover:border-neutral-600
+              border border-border rounded-xl hover:border-neutral-600
               hover:bg-foreground/5 transition text           "
             >
               <Icon className="text-xl" size={20} />
