@@ -38,7 +38,7 @@ export default async function ProjectPage({
             target="_blank"
             rel="noopener noreferrer"
             className="
-      text-sm px-4 py-2
+      text-sm px-3 py-1.5
       border border-border rounded-md
       transition
       hover:bg-foreground hover:text-background
@@ -54,7 +54,7 @@ export default async function ProjectPage({
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 text-sm border border-border rounded-md"
+              className="px-2 py-0.5 text-sm border border-border rounded-md"
             >
               {tech}
             </span>

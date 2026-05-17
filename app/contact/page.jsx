@@ -61,7 +61,7 @@ function Contact() {
               rows={4}
               placeholder="write your query ..."
               className="
-                w-full rounded-2xl px-6 py-4
+                w-full rounded-2xl px-5 py-3
                 bg-background text-foreground
                 placeholder:text-foreground/30
                 border outline-none
@@ -145,7 +145,7 @@ function UserInput({ placeholder, name, type = "text", required }) {
       required={required}
       placeholder={placeholder}
       className="
-        w-full rounded-2xl px-6 py-2
+        w-full rounded-2xl px-5 py-2
         bg-background text-foreground
         placeholder:text-foreground/30
         border

@@ -8,7 +8,7 @@ const Heading = ({
   // description?: string;
 }) => {
   return (
-    <div className="py-4">
+    <div className="py-2">
       <h1 className="text mb-2 text-white/60 uppercase " style={{letterSpacing:"2px"}}>
         {heading}
       </h1>

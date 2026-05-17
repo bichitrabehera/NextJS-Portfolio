@@ -2,7 +2,14 @@
 
 import { memo } from "react";
 import Image from "next/image";
-import { GithubIcon, LinkedinIcon, MailIcon, XIcon } from "lucide-react";
+import Link from "next/link";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  XIcon,
+  ArrowUpRight,
+} from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 import { Divider } from "../ui/Divider";
 
@@ -10,10 +17,11 @@ function Home() {
   return (
     <section
       id="home"
-      className="max-w-2xl mx-auto px-6 pt-12 text-foreground bg-background"
+      className="max-w-2xl mx-auto px-6 pt-0 text-foreground bg-background"
     >
-      <div className="relative mb-10">
-        <div className="rounded-2xl border border-foreground/20 w-fit">
+      {/* Profile Image */}
+      <div className="relative mb-8">
+        <div className="rounded-2xl border border-white/10 w-fit">
           <Image
             src="/assets/me.jpg"
             alt="Bichitra Behera"
@@ -25,48 +33,49 @@ function Home() {
         </div>
       </div>
 
-      <div
-        className="space-y-4 text-white/35"
-        style={{
-          lineHeight: 2,
-          wordSpacing: "0.1em",
-          letterSpacing: "0.015em",
-          fontSize: "16px",
-        }}
-      >
+      {/* Current Work */}
+      <p className="text-white mb-8">
+        building{" "}
+        <a
+          href="https://tixly.bichitrabehera.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+        >
+          tixlyai
+        </a>
+      </p>
+
+      {/* Main Bio */}
+      <div className="space-y-6 text-white/60 leading-relaxed">
         <p>
-          hi, i&apos;m{" "}
-          <span className="text-white font-semibold tracking-wide">
-            Bichitra
-          </span>{" "}
-          a full-stack developer building modern web products. i focus on fast,
-          reliable systems, clean architecture, and thoughtful developer
-          experience.
+          hi, i'm <span className="text-white font-semibold">Bichitra</span>{" "}
+          — a full-stack developer building modern web products. i focus on
+          fast, reliable systems, clean architecture, and thoughtful
+          developer experience.
         </p>
 
-        <p className="text-white">
-          building{" "}
-          <a
-            href="https://tixly.bichitrabehera.dev/"
-            target="_blank"
-            className="font-semibold underline underline-offset-4 hover:opacity-80"
-          >
-            tixlyai
-          </a>{" "}
-        </p>
+        {/* AI Quote */}
+        <Link
+          href="/ai"
+          className="group my-8 py-6 border-y border-white/10 block hover:border-white/20 transition-colors"
+        >
+          What AI thinks about Bichitra ? Click here
+        </Link>
 
+        {/* Social Links */}
         <p>
           i build cool stuff with tech i love, always shipping{" "}
-          <span className="text-white font-semibold tracking-wide">
+          <span className="inline-flex flex-wrap gap-2 items-center">
             <InlineChip
               href="https://github.com/bichitrabehera"
               icon={GithubIcon}
             >
               GitHub
-            </InlineChip>{" "}
+            </InlineChip>
             <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
               Twitter
-            </InlineChip>{" "}
+            </InlineChip>
             <InlineChip
               href="https://www.linkedin.com/in/bichitrabehera"
               icon={LinkedinIcon}
@@ -76,19 +85,22 @@ function Home() {
           </span>
         </p>
 
+        {/* CTA */}
         <p>
           got an idea worth building?{" "}
-          <span className="text-white">let&apos;s chat</span>{" "}
-          <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
-            Twitter DM
-          </InlineChip>{" "}
-          <span className="text-white/35 text-xs mx-1">or</span>{" "}
-          <InlineChip
-            href="mailto:bichitrabehera.345@gmail.com"
-            icon={MailIcon}
-          >
-            Email me
-          </InlineChip>
+          <span className="text-white">let's chat</span>{" "}
+          <span className="inline-flex flex-wrap gap-2 items-center">
+            <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
+              Twitter DM
+            </InlineChip>
+            <span className="text-white/35 text-xs">or</span>
+            <InlineChip
+              href="mailto:bichitrabehera.345@gmail.com"
+              icon={MailIcon}
+            >
+              Email me
+            </InlineChip>
+          </span>
         </p>
       </div>
 
@@ -104,7 +116,7 @@ function InlineChip({
   children,
 }: {
   href: string;
-  icon?: LucideIcon; // or IconType for react-icons
+  icon?: LucideIcon;
   children: React.ReactNode;
 }) {
   return (

@@ -30,7 +30,7 @@ function Skills() {
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
-              px-4 py-1
+              px-3 py-0.5
               border border-border rounded-xl hover:border-neutral-600
               hover:bg-foreground/5 transition text           "
             >

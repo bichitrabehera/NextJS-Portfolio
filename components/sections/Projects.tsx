@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 function Project() {
   return (
     <section id="projects" className="mx-auto  bg-background text-foreground ">
-      <div className="max-w-xl mx-auto py-12 px-6">
+      <div className="max-w-xl mx-auto py-8 px-6">
         <Heading
           heading="What I Built"
         />
@@ -39,7 +39,7 @@ function Project() {
                     rel="noopener noreferrer"
                     className="
                          text-sm font-medium
-                         px-4 py-2
+                         px-3 py-1.5
                          border border-border/60
                          rounded
                          bg-white/5
@@ -60,8 +60,8 @@ function Project() {
                     <span
                       key={tech}
                       className="
-                           px-3 py-1
-                           text-xs sm:text-sm
+                            px-2 py-0.5
+                            text-xs sm:text-sm
                            rounded
                            border border-border/60
                            bg-white/5
@@ -76,10 +76,10 @@ function Project() {
             ))}
         </div>
 
-        <div className="mt-10 flex justify-end">
+        <div className="mt-6 flex justify-end">
           <Link
             href="/allprojects"
-            className="border px-4 py-2 rounded font-medium transition hover:bg-foreground hover:text-background"
+            className="border px-3 py-1.5 rounded font-medium transition hover:bg-foreground hover:text-background"
           >
             View More →
           </Link>

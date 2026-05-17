@@ -12,7 +12,7 @@ function BackToTop() {
   }, []);
 
   return (
-    <div className="py-10 left-1/2 -translate-x-1/2">
+    <div className="py-8 left-1/2 -translate-x-1/2">
       <button
         onClick={scrollToTop}
         aria-label="Back to top"

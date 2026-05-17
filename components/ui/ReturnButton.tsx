@@ -9,7 +9,7 @@ const ReturnButton = () => {
         href="/"
         className="
                     inline-flex items-center text-sm mb-8
-                    px-3 py-3
+                    px-2 py-2
                     border border-border rounded-full
                     hover:bg-foreground hover:text-background
                     transition"

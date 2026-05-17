@@ -23,7 +23,7 @@ function TimeLocation() {
   }, []);
 
   return (
-    <div className="flex items-center px-10 gap-1 py-10 text-foreground/50 sm:text-base">
+    <div className="flex items-center px-6 gap-1 py-4 text-foreground/50 sm:text-base">
       <span>{time}</span>
       <span className="opacity-40">•</span>
       <span>{location}</span>

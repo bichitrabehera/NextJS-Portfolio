@@ -10,9 +10,7 @@ export default function Experience() {
       id="experience"
       className=" max-w-2xl mx-auto px-6 text-foreground "
     >
-      <Heading
-        heading="Experience"
-      />
+      <Heading heading="Experience" />
 
       <div className="space-y-6">
         {experiences.map((exp, index) => (
@@ -29,7 +27,7 @@ export default function Experience() {
           </div>
         ))}
       </div>
-      <Divider/>
+      <Divider />
     </section>
   );
 }

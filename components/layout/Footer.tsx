@@ -17,7 +17,7 @@ function Footer() {
     <footer
       className="
         max-w-2xl mx-auto
-        px-6 py-16
+        px-6 py-10
         text-foreground
         flex flex-col items-center gap-4
       "

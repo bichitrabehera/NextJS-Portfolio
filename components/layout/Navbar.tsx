@@ -12,48 +12,52 @@ const Navbar = () => {
       <nav
         className="
           sticky top-0 z-50
-          backdrop-blur-xl
+          backdrop-blur-xl px-6
           bg-background/80
-          max-w-2xl mx-auto mt-6
+          max-w-2xl mx-auto py-3
         "
       >
         <div
           className="
-            flex gap-6 md:gap-4
+            flex gap-6 md:gap-4 text-sm
             items-center
-            px-6 py-3 hover:shadow-md transition 
+             pt-2 hover:shadow-md transition
           "
         >
           <Link
             href="/"
-            className="text-white/50 hover:text-white transition hover:bg-neutral-700 rounded-xl px-2 py-2"
+            className="text-white/50 hover:text-white transition"
           >
             home
           </Link>
           <Link
             href="/allprojects"
-            className="text-white/50 hover:text-white transition hover:bg-neutral-700 rounded-xl px-2 py-2"
+            className="text-white/50 hover:text-white transition"
           >
             projects
           </Link>
           <Link
             href="/contact"
-            className="text-white/50 hover:text-white transition hover:bg-neutral-700 rounded-xl px-2 py-2"
+            className="text-white/50 hover:text-white transition"
           >
             contact
           </Link>
           <Link
+            href="/ai"
+            className="text-white/50 hover:text-white transition"
+          >
+            ai
+          </Link>
+          <Link
             href="https://drive.google.com/file/d/1WjtKJCYhuJ57Fisz69cOJRuGxZvoJORH/view?usp=sharing"
             download="Bichitra_Behera_Resume.pdf"
-            className="text-white/50 hover:text-white transition hover:bg-neutral-700 rounded-xl px-2 py-2"
+            className="text-white/50 hover:text-white transition"
           >
             resume
           </Link>
         </div>
 
-        <div className="px-6">
-          <Divider />
-        </div>
+        <Divider />
       </nav>
     </header>
   );

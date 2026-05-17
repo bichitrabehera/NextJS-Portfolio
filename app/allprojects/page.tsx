@@ -32,7 +32,7 @@ export default async function Projects() {
                     rel="noopener noreferrer"
                     className="
               text-sm font-medium
-              px-4 py-2
+              px-3 py-1.5
               border border-border/60
               rounded
               bg-white/5
@@ -53,7 +53,7 @@ export default async function Projects() {
                     <span
                       key={tech}
                       className="
-                px-3 py-1
+                px-2 py-0.5
                 text-xs sm:text-sm
                 rounded
                 border border-border/60
