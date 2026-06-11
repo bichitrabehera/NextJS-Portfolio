@@ -4,20 +4,18 @@ import { projects } from "@/data/projects";
 export default async function Projects() {
   return (
     <>
-      <section className="max-w-2xl mx-auto px-6 py-6 mb-30">
-
-
+      <section className="max-w-3xl mx-auto px-6 py-6 pb-30 bg-neutral-900">
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
             Object.entries(projects).map(([key, project]) => (
               <div key={key} className="space-y-6">
-                <div className="rounded-2xl">
+                <div className="rounded-2xl border-white">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     width={800}
                     height={400}
-                    className="rounded-2xl"
+                    className="rounded-2xl opacity-50"
                   />
                 </div>
 

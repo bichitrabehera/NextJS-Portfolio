@@ -11,15 +11,10 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
-import { Divider } from "../ui/Divider";
 
 function Home() {
   return (
-    <section
-      id="home"
-      className="max-w-2xl mx-auto px-6 pt-0 text-foreground bg-background"
-    >
-      {/* Profile Image */}
+    <section id="home" className=" mx-auto py-8 flex-col md:flex-row">
       <div className="relative mb-8">
         <div className="rounded-2xl border border-white/10 w-fit">
           <Image
@@ -27,45 +22,42 @@ function Home() {
             alt="Bichitra Behera"
             width={120}
             height={120}
-            className="rounded-2xl object-cover"
+            className="rounded object-cover"
             priority
           />
         </div>
       </div>
 
-      {/* Current Work */}
-      <p className="text-white mb-8">
-        building{" "}
-        <a
-          href="https://tixly.bichitrabehera.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
-        >
-          tixlyai
-        </a>
-      </p>
-
-      {/* Main Bio */}
       <div className="space-y-6 text-white/60 leading-relaxed">
+        <p className="text-white mb-8">
+          Building{" "}
+          <a
+            href="https://tixly.bichitrabehera.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+          >
+            Tixly
+          </a>{" "}
+          &{" "}
+          <a
+            href="https://costapi.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+          >
+            CostAPI
+          </a>
+        </p>
         <p>
-          hi, i'm <span className="text-white font-semibold">Bichitra</span>{" "}
-          — a full-stack developer building modern web products. i focus on
-          fast, reliable systems, clean architecture, and thoughtful
-          developer experience.
+          Hi, I'm <span className="text-white font-semibold">Bichitra</span> — a
+          full-stack developer building modern web products. I focus on fast,
+          reliable systems, clean architecture, and thoughtful developer
+          experience.
         </p>
 
-        {/* AI Quote */}
-        <Link
-          href="/ai"
-          className="group my-8 py-6 border-y border-white/10 block hover:border-white/20 transition-colors"
-        >
-          What AI thinks about Bichitra ? Click here
-        </Link>
-
-        {/* Social Links */}
         <p>
-          i build cool stuff with tech i love, always shipping{" "}
+          I build cool stuff with tech I love, always shipping{" "}
           <span className="inline-flex flex-wrap gap-2 items-center">
             <InlineChip
               href="https://github.com/bichitrabehera"
@@ -85,9 +77,8 @@ function Home() {
           </span>
         </p>
 
-        {/* CTA */}
         <p>
-          got an idea worth building?{" "}
+          Got an idea worth building?{" "}
           <span className="text-white">let's chat</span>{" "}
           <span className="inline-flex flex-wrap gap-2 items-center">
             <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
@@ -103,8 +94,6 @@ function Home() {
           </span>
         </p>
       </div>
-
-      <Divider />
     </section>
   );
 }

@@ -42,3 +42,8 @@ export const skills = [
   { name: "Bash", icon: Bash },
   { name: "Linux", icon: Linux },
 ];
+
+// Convenient lookup by name
+export const skillMap = Object.fromEntries(
+  skills.map((skill) => [skill.name, skill.icon]),
+);

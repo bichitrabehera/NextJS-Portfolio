@@ -3,17 +3,12 @@
 import { memo, useRef } from "react";
 import { skills } from "@/data/skills";
 import Heading from "../ui/Heading";
-import { Divider } from "../ui/Divider";
 
 function Skills() {
   const ref = useRef(null);
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className=" max-w-2xl mx-auto px-6 text-foreground"
-    >
+    <section id="skills" ref={ref} className="py-8">
       <Heading
         heading="Skills"
         // description="Technologies and tools I use regularly to build scalable, performant,
@@ -30,17 +25,16 @@ function Skills() {
               rel="noopener noreferrer"
               className="
               flex items-center gap-2
-              px-3 py-0.5
-              border border-border rounded-xl hover:border-neutral-600
+              px-4 py-2
+              border border-border rounded hover:border-neutral-600
               hover:bg-foreground/5 transition text           "
             >
               <Icon className="text-xl" size={20} />
-              <span className="text opacity-75">{skill.name}</span>
+              <span className="text-sm opacity-75">{skill.name}</span>
             </a>
           );
         })}
       </div>
-      <Divider/>
     </section>
   );
 }

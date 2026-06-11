@@ -11,9 +11,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <Navbar/>
-          <main className="flex-1 " style={{ lineHeight: 2, wordSpacing: "0.1em", letterSpacing: "0.015em", fontSize: "16px" }}>{children}</main>
-        
+        {/*<Navbar />*/}
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export const experiences = [
   {
     role: "App Developer",
     company: "Vayu Aarambh Innovations",
-    duration: "Jan 2026 - Present",
+    duration: "Jan 2026 - May 2026",
   },
   {
     role: "Web Developer Intern",

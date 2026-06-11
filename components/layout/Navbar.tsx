@@ -8,26 +8,23 @@ const Navbar = () => {
   const ref = useRef(null);
 
   return (
-    <header id="top" ref={ref}>
+    <header id="home" ref={ref}>
       <nav
         className="
           sticky top-0 z-50
           backdrop-blur-xl px-6
-          bg-background/80
-          max-w-2xl mx-auto py-3
+          bg-neutral-900
+          max-w-3xl mx-auto py-8
         "
       >
         <div
           className="
-            flex gap-6 md:gap-4 text-sm
+            flex gap-6 md:gap-4
             items-center
              pt-2 hover:shadow-md transition
           "
         >
-          <Link
-            href="/"
-            className="text-white/50 hover:text-white transition"
-          >
+          <Link href="/" className="text-white/50 hover:text-white transition">
             home
           </Link>
           <Link
@@ -36,12 +33,12 @@ const Navbar = () => {
           >
             projects
           </Link>
-          <Link
+          {/*<Link
             href="/contact"
             className="text-white/50 hover:text-white transition"
           >
             contact
-          </Link>
+          </Link>*/}
           <Link
             href="/ai"
             className="text-white/50 hover:text-white transition"
@@ -56,8 +53,6 @@ const Navbar = () => {
             resume
           </Link>
         </div>
-
-        <Divider />
       </nav>
     </header>
   );

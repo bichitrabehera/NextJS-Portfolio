@@ -42,7 +42,7 @@ const aiOpinions = [
 export default function AIPage() {
   return (
     <>
-      <section className="max-w-2xl mx-auto px-6 text-foreground bg-background">
+      <section className="max-w-3xl mx-auto px-6 py-8 flex-1 min-h-screen text-foreground bg-neutral-900">
         <div className="mb-12">
           <h1 className="text-lg font-semibold text-white mb-2">
             what ai thinks about bichitra
@@ -60,9 +60,7 @@ export default function AIPage() {
                   {ai.icon}
                 </div>
                 <div>
-                  <p className="text-white font-medium text-sm">
-                    {ai.name}
-                  </p>
+                  <p className="text-white font-medium text-sm">{ai.name}</p>
                   <p className="text-white/30 text-xs">{ai.by}</p>
                 </div>
               </div>
@@ -78,10 +76,6 @@ export default function AIPage() {
           ))}
         </div>
       </section>
-
-      <div className="max-w-2xl mx-auto px-6">
-        <Divider />
-      </div>
     </>
   );
 }

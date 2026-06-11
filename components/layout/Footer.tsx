@@ -1,56 +1,40 @@
 "use client";
 
-import { memo, useCallback, useMemo } from "react";
-import { ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
-function Footer() {
-  const scrollToTop = useCallback(() => {
-    document.getElementById("top")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, []);
-
-  const currentYear = useMemo(() => new Date().getFullYear(), []);
-
+export default function Footer() {
   return (
-    <footer
-      className="
-        max-w-2xl mx-auto
-        px-6 py-10
-        text-foreground
-        flex flex-col items-center gap-4
-      "
-    >
-      <p className="text-sm font-light tracking-wide opacity-60 text-center">
-        © {currentYear} - Built by{" "}
-        <a
-          href="https://bichitrabehera-blue.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline underline-offset-4"
-        >
-          Bichitra Behera
-        </a>
-      </p>
+    <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-white/10">
+      <div className="flex items-center justify-between text-sm text-white/50">
+        <p>© 2026 Bichitra Behera</p>
 
-      <button
-        onClick={scrollToTop}
-        aria-label="Back to top"
-        className="
-          w-10 h-10
-          flex items-center justify-center
-          rounded-full
-          border border-border
-          opacity-60
-          transition
-          hover:opacity-100
-        "
-      >
-        <ArrowUp className="w-4 h-4" />
-      </button>
+        <div className="flex gap-4">
+          <Link
+            href="https://github.com/bichitrabehera"
+            target="_blank"
+            className="hover:text-white transition"
+          >
+            <BsGithub />
+          </Link>
+
+          <Link
+            href="https://linkedin.com/in/bichitrabehera"
+            target="_blank"
+            className="hover:text-white transition"
+          >
+            <BsLinkedin />
+          </Link>
+
+          <Link
+            href="mailto:bichitrabehera.345@gmail.com"
+            className="hover:text-white transition"
+          >
+            <MdEmail />
+          </Link>
+        </div>
+      </div>
     </footer>
   );
 }
-
-export default memo(Footer);
