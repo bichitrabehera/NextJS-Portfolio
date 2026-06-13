@@ -65,7 +65,7 @@ export default function AIPage() {
                 </div>
               </div>
 
-              <p className="text-white/60 text-sm leading-relaxed mb-4">
+              <p className="text-white/60 text-sm mb-4">
                 {ai.quote}
               </p>
 

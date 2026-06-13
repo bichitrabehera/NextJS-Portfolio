@@ -9,12 +9,12 @@ const ReturnButton = () => {
         href="/"
         className="
                     inline-flex items-center text-sm mb-8
-                    px-2 py-2
-                    border border-border rounded-full
+                    px-4 py-2
+                    border border-border rounded
                     hover:bg-foreground hover:text-background
                     transition"
       >
-       <HomeIcon className=" w-5 h-5" />
+        Home
       </Link>
     </div>
   );

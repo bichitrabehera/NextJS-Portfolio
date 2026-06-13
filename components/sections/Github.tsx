@@ -84,29 +84,6 @@ function buildGrid(dayMap: Map<string, ContributionDay>) {
   return weeks;
 }
 
-function getMonthLabels(grid: (ContributionDay | null)[][]) {
-  const labels: { label: string; col: number }[] = [];
-  let previousMonth = -1;
-
-  grid.forEach((week, index) => {
-    const first = week.find(Boolean);
-
-    if (!first) return;
-
-    const month = new Date(first.date).getMonth();
-
-    if (month !== previousMonth) {
-      labels.push({
-        label: MONTHS[month],
-        col: index,
-      });
-
-      previousMonth = month;
-    }
-  });
-
-  return labels;
-}
 
 export default function GithubHeatmap() {
   const [allDays, setAllDays] = useState<Map<string, ContributionDay>>(
@@ -140,7 +117,6 @@ export default function GithubHeatmap() {
   }, []);
 
   const grid = useMemo(() => buildGrid(allDays), [allDays]);
-  const labels = useMemo(() => getMonthLabels(grid), [grid]);
 
   return (
     <section className="w-full py-8 overflow-x-auto">
@@ -150,33 +126,7 @@ export default function GithubHeatmap() {
           minWidth: DAY_COL_W + grid.length * STEP,
         }}
       >
-        {/* Months */}
-        <div className="relative mb-2 h-4" style={{ marginLeft: DAY_COL_W }}>
-          {labels.map(({ label, col }) => (
-            <span
-              key={`${label}-${col}`}
-              className="absolute text-[10px] text-neutral-500"
-              style={{ left: col * STEP }}
-            >
-              {label}
-            </span>
-          ))}
-        </div>
-
         <div className="flex gap-[3px]">
-          {/* Day labels */}
-          <div
-            className="flex flex-col gap-[3px] text-[10px] text-neutral-500"
-            style={{ width: DAY_COL_W }}
-          >
-            {Array.from({ length: 7 }).map((_, index) => (
-              <div key={index} className="h-[13px]">
-                {DAY_LABELS[index] ?? ""}
-              </div>
-            ))}
-          </div>
-
-          {/* Contribution squares */}
           {grid.map((week, weekIndex) => (
             <div key={weekIndex} className="flex flex-col gap-[3px]">
               {week.map((day, dayIndex) => (

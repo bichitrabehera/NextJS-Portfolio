@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import { skillMap } from "@/data/skills";
+import ReturnButton from "@/components/ui/ReturnButton";
 
 export default async function Projects() {
   return (
     <>
       <section className="max-w-3xl mx-auto px-6 py-6 pb-30 bg-neutral-900">
+        <ReturnButton />
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
             Object.entries(projects).map(([key, project]) => (
@@ -38,30 +41,26 @@ export default async function Projects() {
               hover:bg-foreground hover:text-background
             "
                   >
-                    Visit ↗
+                    Visit
                   </a>
                 </div>
 
-                <p className="text-foreground/70 leading-relaxed text-[15px]">
+                <p className="text-foreground/70 text-[15px]">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="
-                px-2 py-0.5
-                text-xs sm:text-sm
-                rounded
-                border border-border/60
-                bg-white/5
-                text-foreground/70
-              "
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="flex w-fit  items-center border-1 border-foreground/10 rounded px-2 py-2 gap-2">
+                  {project.techStack.map((tech) => {
+                    const Icon = skillMap[tech];
+
+                    if (!Icon) return null;
+
+                    return (
+                      <div key={tech} title={tech} className="text-foreground ">
+                        <Icon size={16} />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}

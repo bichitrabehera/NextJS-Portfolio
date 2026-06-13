@@ -15,27 +15,16 @@ import { type LucideIcon } from "lucide-react";
 function Home() {
   return (
     <section id="home" className=" mx-auto py-8 flex-col md:flex-row">
-      <div className="relative mb-8">
-        <div className="rounded-2xl border border-white/10 w-fit">
-          <Image
-            src="/assets/me.jpg"
-            alt="Bichitra Behera"
-            width={120}
-            height={120}
-            className="rounded object-cover"
-            priority
-          />
-        </div>
-      </div>
+      
 
-      <div className="space-y-6 text-white/60 leading-relaxed">
+      <div className="space-y-6 text-white/60">
         <p className="text-white mb-8">
           Building{" "}
           <a
             href="https://tixly.bichitrabehera.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+            className=" underline underline-offset-4 hover:opacity-80 transition-opacity"
           >
             Tixly
           </a>{" "}
@@ -44,13 +33,13 @@ function Home() {
             href="https://costapi.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+            className=" underline underline-offset-4 hover:opacity-80 transition-opacity"
           >
             CostAPI
           </a>
         </p>
         <p>
-          Hi, I'm <span className="text-white font-semibold">Bichitra</span> — a
+          Hi, I'm <span className="text-white ">Bichitra</span> — a
           full-stack developer building modern web products. I focus on fast,
           reliable systems, clean architecture, and thoughtful developer
           experience.
@@ -114,7 +103,6 @@ function InlineChip({
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-1.5 underline decoration-dotted italic"
-      style={{ wordSpacing: 0, letterSpacing: "0.01em" }}
     >
       {children}
     </a>

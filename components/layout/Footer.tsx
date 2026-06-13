@@ -6,11 +6,11 @@ import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="max-w-3xl mx-auto px-6 py-8 border-t border-white/10">
+    <footer className="max-w-3xl mx-auto py-16 border-t border-white/10">
       <div className="flex items-center justify-between text-sm text-white/50">
         <p>© 2026 Bichitra Behera</p>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-lg">
           <Link
             href="https://github.com/bichitrabehera"
             target="_blank"

@@ -9,7 +9,7 @@ const Heading = ({
 }) => {
   return (
     <div className="py-2">
-      <h1 className="text mb-2 text-white/60 uppercase " style={{letterSpacing:"2px"}}>
+      <h1 className="mb-2 text-xl">
         {heading}
       </h1>
       {/* <p className="text-foreground/70 my-6 max-w-3xl">{description}</p> */}

@@ -8,14 +8,27 @@ export default function Experience() {
     <section id="experience" className=" py-8">
       <Heading heading="Experience" />
 
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {experiences.map((exp, index) => (
-          <div key={index} className="flex gap-4 items-start">
-            <div className="col-span-2 space-y-1">
-              <h3 className="font tracking text-foreground">{exp.company}</h3>
+          <div key={index} className="h-full">
+            <div
+              className="
+    border border-foreground/10
+    rounded
+    p-4
+    min-h-[140px]
+    flex flex-col border border-border rounded hover:border-neutral-600
+              hover:bg-foreground/5 transition
+  "
+            >
+              <h3 className="font-medium">{exp.company}</h3>
 
-              <p className="text-sm font-light tracking-wide opacity-60">
-                {exp.role} , {exp.duration}
+              <p className="text-sm text-foreground/60 mt-1">
+                {exp.role} · {exp.duration}
+              </p>
+
+              <p className="text-sm text-foreground/70 mt-3">
+                {exp.description}
               </p>
             </div>
           </div>

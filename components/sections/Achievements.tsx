@@ -9,8 +9,7 @@ export default function Achievements() {
     <section
       id="achievements"
       className="
-        max-w-2xl mx-auto
-        px-6
+        py-8
         text-foreground
       "
     >
@@ -18,19 +17,18 @@ export default function Achievements() {
 
       <div className="space-y-8">
         {achievements.map((item, index) => (
-          <div key={index} className="space-y-1">
-            <h3 className="text-base tracking-wide">
+          <div key={index} className="space-y-1 border border-foreground/10 rounded p-4 hover:border-neutral-600 transition hover:bg-foreground/5">
+            <h3 className="text-base">
               {item.title}
               <span className="opacity-50"> · {item.date}</span>
             </h3>
 
-            <p className="text-sm font-light tracking-wide leading-relaxed opacity-60">
+            <p className="text-sm opacity-60">
               {item.description}
             </p>
           </div>
         ))}
       </div>
-      <Divider/>
     </section>
   );
 }
