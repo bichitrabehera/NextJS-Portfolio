@@ -11,7 +11,7 @@ export default function Projects() {
     <section className="py-8">
       <Heading heading="Projects" />
 
-      <div className="max-w-3xl mx-auto space-y-6">
+      <div className="max-w-3xl mx-auto space-y-4">
         {featuredProjects.map(([key, project]) => (
           <a
             key={key}

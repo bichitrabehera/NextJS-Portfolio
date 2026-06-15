@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
+    "@upstash/redis": "^1.38.0",
     "developer-icons": "^6.0.5",
     "framer-motion": "^12.23.26",
     "github-contributions-ui": "^1.0.18",

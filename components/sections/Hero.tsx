@@ -17,7 +17,7 @@ function Home() {
     <section id="home" className=" mx-auto py-8 flex-col md:flex-row">
       
 
-      <div className="space-y-6 text-white/60">
+      <div className="space-y-6 text-white/60 mt-10">
         <p className="text-white mb-8">
           Building{" "}
           <a

@@ -12,11 +12,8 @@ export default function Page() {
   return (
     <>
       <>
-        <div className="max-w-3xl mx-auto border-x border-foreground/20">
+        <div className="px-6 max-w-3xl mx-auto text-foreground bg-[#08090B] ">
           <Banner />
-        </div>
-
-        <div className="px-6 max-w-3xl mx-auto text-foreground bg-neutral-900 ">
           <Hero />
           <Github />
           <Experience />

@@ -6,19 +6,19 @@ import ReturnButton from "@/components/ui/ReturnButton";
 export default async function Projects() {
   return (
     <>
-      <section className="max-w-3xl mx-auto px-6 py-6 pb-30 bg-neutral-900">
+      <section className="max-w-3xl mx-auto px-6 py-6 pb-30 bg-[#08090B]">
         <ReturnButton />
         <div className="max-w-3xl mx-auto space-y-20">
           {projects &&
             Object.entries(projects).map(([key, project]) => (
               <div key={key} className="space-y-6">
-                <div className="rounded-2xl border-white">
+                <div className="rounded border-white">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     width={800}
                     height={400}
-                    className="rounded-2xl opacity-50"
+                    className="rounded opacity-80"
                   />
                 </div>
 

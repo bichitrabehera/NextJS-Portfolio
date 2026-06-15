@@ -16,8 +16,8 @@ export default function Experience() {
     border border-foreground/10
     rounded
     p-4
-    min-h-[140px]
-    flex flex-col border border-border rounded hover:border-neutral-600
+    h-50
+    flex flex-col hover:border-neutral-600
               hover:bg-foreground/5 transition
   "
             >
@@ -27,7 +27,7 @@ export default function Experience() {
                 {exp.role} · {exp.duration}
               </p>
 
-              <p className="text-sm text-foreground/70 mt-3">
+              <p className="text-sm text-foreground/50 mt-3">
                 {exp.description}
               </p>
             </div>
