@@ -1,27 +1,76 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bichitrabehera.dev"),
+
   title: {
-    default: "Bichitra Behera | Full Stack Developer",
+    default: "Bichitra Behera | Full-Stack Developer & AI Builder",
     template: "%s | Bichitra Behera",
   },
+
   description:
-    "Data Science Student (3rd Year) | MERN Stack & Generative AI Enthusiast | Skilled in JavaScript, React, Node.js, Express & MongoDB | Exploring LLMs & Prompt Engineering | Open to Internships",
+    "Full-stack developer building AI-powered products and scalable web applications. Creator of Tixly and CostAPI. Experienced with React, Next.js, Node.js, TypeScript, PostgreSQL, Redis, Docker, and modern AI tooling.",
+
   keywords: [
     "Bichitra Behera",
+    "Bichitra",
     "Full Stack Developer",
-    "MERN Stack",
+    "Software Engineer",
+    "AI Engineer",
+    "Founding Engineer",
     "React Developer",
-    "Next.js",
-    "Web Developer",
-    "JavaScript",
+    "Next.js Developer",
     "TypeScript",
+    "JavaScript",
     "Node.js",
+    "Express.js",
+    "PostgreSQL",
     "MongoDB",
-    "Generative AI",
+    "Redis",
+    "Docker",
+    "OpenAI",
     "LLM",
+    "Generative AI",
+    "Tixly",
+    "CostAPI",
+    "Web Development",
     "Portfolio",
   ],
+
   authors: [{ name: "Bichitra Behera" }],
   creator: "Bichitra Behera",
+  publisher: "Bichitra Behera",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  alternates: {
+    canonical: "https://bichitrabehera.dev",
+  },
+
+  openGraph: {
+    title: "Bichitra Behera | Full-Stack Developer & AI Builder",
+    description:
+      "Building Tixly, CostAPI, and modern AI-powered products. Full-stack developer focused on scalable systems, developer tools, and exceptional user experiences.",
+    url: "https://bichitrabehera.dev",
+    siteName: "Bichitra Behera",
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Bichitra Behera | Full-Stack Developer & AI Builder",
+    description:
+      "Building AI products, developer tools, and scalable web applications with Next.js, TypeScript, Node.js, and modern cloud infrastructure.",
+    creator: "@yourhandle",
+  },
+
+  category: "Technology",
 };
