@@ -1,77 +1,63 @@
 import {
-  JavaScript,
-  TypeScript,
   React,
   NextJs,
   TailwindCSS,
+  ShadcnUI,
   FramerLight,
   NodeJs,
   ExpressJsLight,
+  PostgreSQL,
   MongoDB,
   Redis,
   Docker,
   Git,
   GitHubLight,
-  Linux,
-  Bash,
   OpenAI,
   VercelLight,
-  Render,
+  Figma,
+  Bash,
+  Linux,
   NPM,
-
-  // Add these if available
-  Python,
-  Firebase,
-  PostgreSQL,
+  JavaScript,
+  TypeScript,
   MySQL,
   Prisma,
   Supabase,
-  Figma,
-  AWS,
+  Render,
   Postman,
 } from "developer-icons";
-export const skills = [
-  // Frontend
+
+import { PacmanIcon } from "@/components/ui/pacman-icon";
+
+export const skillStacks = [
   { name: "JavaScript", icon: JavaScript },
   { name: "TypeScript", icon: TypeScript },
   { name: "React", icon: React },
   { name: "Next.js", icon: NextJs },
   { name: "Tailwind CSS", icon: TailwindCSS },
-  { name: "Framer Motion", icon: FramerLight },
-
-  // Backend
+  { name: "shadcn/ui", icon: ShadcnUI },
+  { name: "Motion", icon: FramerLight },
   { name: "Node.js", icon: NodeJs },
-  { name: "Express.js", icon: ExpressJsLight },
-
-  // Databases
-  { name: "MongoDB", icon: MongoDB },
+  { name: "Express", icon: ExpressJsLight },
   { name: "PostgreSQL", icon: PostgreSQL },
   { name: "MySQL", icon: MySQL },
+  { name: "MongoDB", icon: MongoDB },
   { name: "Redis", icon: Redis },
   { name: "Prisma", icon: Prisma },
   { name: "Supabase", icon: Supabase },
-
-  // AI & Research
-  { name: "OpenAI", icon: OpenAI },
-
-  // IoT
-
-  // DevOps
   { name: "Docker", icon: Docker },
-  { name: "Vercel", icon: VercelLight },
-  { name: "Render", icon: Render },
-
-  // Tools
   { name: "Git", icon: Git },
   { name: "GitHub", icon: GitHubLight },
+  { name: "OpenAI", icon: OpenAI },
+  { name: "Vercel", icon: VercelLight },
+  { name: "Render", icon: Render },
   { name: "Postman", icon: Postman },
-  { name: "Figma", icon: Figma },
+  { name: "npm", icon: NPM },
   { name: "Linux", icon: Linux },
   { name: "Bash", icon: Bash },
-  { name: "npm", icon: NPM },
+  { name: "Figma", icon: Figma }, // or PacmanIcon
 ];
 
-// Convenient lookup by name
 export const skillMap = Object.fromEntries(
-  skills.map((skill) => [skill.name, skill.icon]),
+  skillStacks.map((skill) => [skill.name, skill.icon]),
 );

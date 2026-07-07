@@ -1,37 +1,24 @@
-"use client";
-
-import { memo, useRef } from "react";
-import { skills } from "@/data/skills";
+import { memo } from "react";
+import { skillStacks } from "@/data/skills";
 import Heading from "../ui/Heading";
 
 function Skills() {
-  const ref = useRef(null);
-
   return (
-    <section id="skills" ref={ref} className="py-8">
-      <Heading
-        heading="Skills"
-        // description="Technologies and tools I use regularly to build scalable, performant,
-        // and user focused applications."
-      />
+    <section id="skills" className="py-8">
+      <Heading heading="Skills" />
 
       <div className="flex flex-wrap gap-3">
-        {skills.map((skill) => {
+        {skillStacks.map((skill) => {
           const Icon = skill.icon;
+
           return (
-            <a
+            <div
               key={skill.name}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              flex items-center gap-2
-              px-4 py-2
-              border border-border rounded hover:border-neutral-600
-              hover:bg-foreground/5 transition text           "
+              className="border-border hover:bg-foreground/5 flex items-center gap-2 rounded border px-4 py-2 transition hover:border-neutral-600"
             >
-              <Icon className="text-xl" size={20} />
-              <span className="text-sm opacity-75">{skill.name}</span>
-            </a>
+              <Icon size={24} className="text-xl" />
+              <span className="text-sm">{skill.name}</span>
+            </div>
           );
         })}
       </div>

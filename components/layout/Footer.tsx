@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="max-w-3xl mx-auto py-16 border-t border-white/10">
+    <footer className="mx-auto max-w-3xl border-t border-white/10 py-16">
       <div className="flex items-center justify-between text-sm text-white/50">
         <p>© 2026 Bichitra Behera</p>
 
@@ -14,7 +14,7 @@ export default function Footer() {
           <Link
             href="https://github.com/bichitrabehera"
             target="_blank"
-            className="hover:text-white transition"
+            className="transition hover:text-white"
           >
             <BsGithub />
           </Link>
@@ -22,14 +22,14 @@ export default function Footer() {
           <Link
             href="https://linkedin.com/in/bichitrabehera"
             target="_blank"
-            className="hover:text-white transition"
+            className="transition hover:text-white"
           >
             <BsLinkedin />
           </Link>
 
           <Link
             href="mailto:bichitrabehera.345@gmail.com"
-            className="hover:text-white transition"
+            className="transition hover:text-white"
           >
             <MdEmail />
           </Link>

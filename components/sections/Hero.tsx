@@ -14,40 +14,37 @@ import { type LucideIcon } from "lucide-react";
 
 function Home() {
   return (
-    <section id="home" className=" mx-auto py-8 flex-col md:flex-row">
-      
-
-      <div className="space-y-6 text-white/60 mt-10">
-        <p className="text-white mb-8">
-          Building{" "}
+    <section id="home" className="mx-auto flex-col py-8 md:flex-row">
+      <div className="mt-10 space-y-6 text-white/60">
+        <p className="mb-8 text-white">
+          Currently shipping{" "}
           <a
             href="https://tixly.bichitrabehera.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className=" underline underline-offset-4 hover:opacity-80 transition-opacity"
+            className="underline underline-offset-4 transition-opacity hover:opacity-80"
           >
             Tixly
           </a>{" "}
           &{" "}
           <a
-            href="https://costapi.vercel.app/"
+            href="https://iconora.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className=" underline underline-offset-4 hover:opacity-80 transition-opacity"
+            className="underline underline-offset-4 transition-opacity hover:opacity-80"
           >
-            CostAPI
-          </a>
+            Iconora
+          </a>{" "}
         </p>
         <p>
-          Hi, I'm <span className="text-white ">Bichitra</span> — a
-          full-stack developer building modern web products. I focus on fast,
-          reliable systems, clean architecture, and thoughtful developer
-          experience.
+          Hi, I'm <span className="text-white">Bichitra</span> — a full-stack
+          developer building modern web products. I focus on fast, reliable
+          systems, clean architecture, and thoughtful developer experience.
         </p>
 
         <p>
           I build cool stuff with tech I love, always shipping{" "}
-          <span className="inline-flex flex-wrap gap-2 items-center">
+          <span className="inline-flex flex-wrap items-center gap-2">
             <InlineChip
               href="https://github.com/bichitrabehera"
               icon={GithubIcon}
@@ -69,11 +66,11 @@ function Home() {
         <p>
           Got an idea worth building?{" "}
           <span className="text-white">let's chat</span>{" "}
-          <span className="inline-flex flex-wrap gap-2 items-center">
+          <span className="inline-flex flex-wrap items-center gap-2">
             <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
               Twitter DM
             </InlineChip>
-            <span className="text-white/35 text-xs">or</span>
+            <span className="text-xs text-white/35">or</span>
             <InlineChip
               href="mailto:bichitrabehera.345@gmail.com"
               icon={MailIcon}
@@ -102,7 +99,7 @@ function InlineChip({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 underline decoration-dotted italic"
+      className="inline-flex items-center gap-1.5 italic underline decoration-blue-600 decoration-dotted underline-offset-4"
     >
       {children}
     </a>

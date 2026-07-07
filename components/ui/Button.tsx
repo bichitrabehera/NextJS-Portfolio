@@ -63,7 +63,7 @@ const Button: React.FC<ButtonProps> = ({
       className={classes}
     >
       {loading && (
-        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
       )}
       {text}
     </button>

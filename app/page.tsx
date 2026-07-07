@@ -7,18 +7,20 @@ import Footer from "@/components/layout/Footer";
 import Github from "@/components/sections/Github";
 import Banner from "@/components/sections/Banner";
 import Achievements from "@/components/sections/Achievements";
+import Certifications from "@/components/sections/Certifications";
 
 export default function Page() {
   return (
     <>
       <>
-        <div className="px-6 max-w-3xl mx-auto text-foreground bg-[#08090B] ">
+        <div className="text-foreground mx-auto max-w-3xl bg-[#08090B] px-6">
           <Banner />
           <Hero />
           <Github />
           <Experience />
           <Skills />
           <Projects />
+          <Certifications />
           <Achievements />
           <Footer />
         </div>

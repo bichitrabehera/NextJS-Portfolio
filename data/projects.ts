@@ -9,6 +9,14 @@ export interface Project {
 }
 
 export const projects: Record<string, Project> = {
+  iconora: {
+    name: "Iconora",
+    description: "A collection of open-source icons for developers.",
+    image: "/assets/iconor.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Motion"],
+    link: "https://iconora.vercel.app/",
+    linkUrl: "iconora.vercel.app",
+  },
   tixlyAI: {
     name: "Tixly",
     description:

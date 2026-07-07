@@ -16,7 +16,7 @@ export const experiences = [
   {
     role: "Web Developer Intern",
     company: "Nuericorn Syndicate",
-    duration: "Sept 2025 – Present",
+    duration: "Sept 2025 – Jan 2026",
     description:
       "Designed the website flow, database structure, and UI, contributing to a responsive and user-friendly web experience.",
   },
