@@ -18,10 +18,10 @@ export default function Projects() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-foreground/10 hover:bg-foreground/5 block rounded border px-4 py-4 transition-all hover:border-neutral-600"
+            className="border-foreground/10 hover:bg-foreground/5 block rounded border px-4 py-4 transition-all hover:border-neutral-900"
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex-col space-y-4">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-col space-y-2">
                 <div>
                   <h2 className="text-foreground text-base">{project.name}</h2>
                 </div>

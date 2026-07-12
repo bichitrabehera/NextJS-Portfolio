@@ -1,48 +1,110 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+
+const SYNC_DELAY = 500;
 
 const Banner = () => {
   const [pats, setPats] = useState<number | null>(null);
-  const [loading, setLoading] = useState(false);
+
+  const pendingPatsRef = useRef(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+  const syncingRef = useRef(false);
 
   useEffect(() => {
     const getPats = async () => {
-      const res = await fetch("/api/pat");
-      const data = await res.json();
-      setPats(data.count);
+      try {
+        const res = await fetch("/api/pat");
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch pats");
+        }
+
+        const data = await res.json();
+
+        setPats(data.count);
+      } catch (error) {
+        console.error(error);
+        setPats(0);
+      }
     };
 
     getPats();
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
-  const handlePat = async () => {
-    if (loading) return;
+  const syncPats = async () => {
+    if (syncingRef.current) return;
 
-    setLoading(true);
+    const pendingPats = pendingPatsRef.current;
+
+    if (pendingPats === 0) return;
+
+    pendingPatsRef.current = 0;
+    syncingRef.current = true;
 
     try {
       const res = await fetch("/api/pat", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          count: pendingPats,
+        }),
       });
 
+      if (!res.ok) {
+        throw new Error("Failed to sync pats");
+      }
+
       const data = await res.json();
-      setPats(data.count);
+
+      setPats(data.count + pendingPatsRef.current);
+    } catch (error) {
+      console.error(error);
+
+      pendingPatsRef.current += pendingPats;
     } finally {
-      setLoading(false);
+      syncingRef.current = false;
+
+      if (pendingPatsRef.current > 0) {
+        timeoutRef.current = setTimeout(syncPats, SYNC_DELAY);
+      }
     }
+  };
+
+  const handlePat = () => {
+    pendingPatsRef.current += 1;
+
+    setPats((current) => (current ?? 0) + 1);
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(syncPats, SYNC_DELAY);
   };
 
   return (
     <div className="mt-10 flex justify-start">
       <div className="flex items-center gap-4">
         <motion.button
+          type="button"
           onClick={handlePat}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9, rotate: -5 }}
           className="cursor-pointer"
+          aria-label="Pat the Sauropod"
         >
           <Image
             src="/assets/sauropod.svg"

@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <>
-        <div className="text-foreground mx-auto max-w-3xl bg-[#08090B] px-6">
+        <div className="text-foreground mx-auto max-w-3xl px-6">
           <Banner />
           <Hero />
           <Github />

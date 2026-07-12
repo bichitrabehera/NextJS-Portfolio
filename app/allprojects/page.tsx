@@ -6,7 +6,7 @@ import ReturnButton from "@/components/ui/ReturnButton";
 export default async function Projects() {
   return (
     <>
-      <section className="mx-auto max-w-3xl bg-[#08090B] px-6 py-6 pb-30">
+      <section className="mx-auto max-w-3xl px-6 py-6 pb-30">
         <ReturnButton />
         <div className="mx-auto max-w-3xl space-y-20">
           {projects &&
@@ -18,6 +18,7 @@ export default async function Projects() {
                     alt={`Screenshot of ${project.name}`}
                     width={800}
                     height={400}
+                    sizes="(max-width: 768px) 100vw, 800px"
                     className="rounded opacity-80"
                   />
                 </div>

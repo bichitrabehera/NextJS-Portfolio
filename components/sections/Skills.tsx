@@ -14,7 +14,7 @@ function Skills() {
           return (
             <div
               key={skill.name}
-              className="border-border hover:bg-foreground/5 flex items-center gap-2 rounded border px-4 py-2 transition hover:border-neutral-600"
+              className="border-foreground/10 hover:bg-foreground/5 flex cursor-pointer items-center gap-2 border px-4 py-2 transition hover:border-neutral-900"
             >
               <Icon size={24} className="text-xl" />
               <span className="text-sm">{skill.name}</span>

@@ -1,5 +1,3 @@
-"use client";
-
 import { achievements } from "@/data/achievements";
 import Heading from "../ui/Heading";
 
@@ -11,7 +9,7 @@ export default function Achievements() {
       <div className="space-y-4">
         {achievements.map((item, index) => (
           <div
-            className="border-foreground/10 hover:bg-foreground/5 space-y-1 rounded border p-4 transition hover:border-neutral-600"
+            className="border-foreground/10 hover:bg-foreground/5 cursor-pointer space-y-1 rounded border p-4 transition hover:border-neutral-900"
             key={index}
           >
             <h3 className="text-base">{item.title}</h3>

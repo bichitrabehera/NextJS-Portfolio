@@ -27,8 +27,6 @@ import {
   Postman,
 } from "developer-icons";
 
-import { PacmanIcon } from "@/components/ui/pacman-icon";
-
 export const skillStacks = [
   { name: "JavaScript", icon: JavaScript },
   { name: "TypeScript", icon: TypeScript },
@@ -55,7 +53,7 @@ export const skillStacks = [
   { name: "npm", icon: NPM },
   { name: "Linux", icon: Linux },
   { name: "Bash", icon: Bash },
-  { name: "Figma", icon: Figma }, // or PacmanIcon
+  { name: "Figma", icon: Figma },
 ];
 
 export const skillMap = Object.fromEntries(

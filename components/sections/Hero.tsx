@@ -1,17 +1,3 @@
-"use client";
-
-import { memo } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-  XIcon,
-  ArrowUpRight,
-} from "lucide-react";
-import { type LucideIcon } from "lucide-react";
-
 function Home() {
   return (
     <section id="home" className="mx-auto flex-col py-8 md:flex-row">
@@ -37,7 +23,7 @@ function Home() {
           </a>{" "}
         </p>
         <p>
-          Hi, I'm <span className="text-white">Bichitra</span> — a full-stack
+          Hi, I&apos;m <span className="text-white">Bichitra</span> — a full-stack
           developer building modern web products. I focus on fast, reliable
           systems, clean architecture, and thoughtful developer experience.
         </p>
@@ -45,19 +31,13 @@ function Home() {
         <p>
           I build cool stuff with tech I love, always shipping{" "}
           <span className="inline-flex flex-wrap items-center gap-2">
-            <InlineChip
-              href="https://github.com/bichitrabehera"
-              icon={GithubIcon}
-            >
+            <InlineChip href="https://github.com/bichitrabehera">
               GitHub
             </InlineChip>
-            <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
+            <InlineChip href="https://x.com/bichitradotdev">
               Twitter
             </InlineChip>
-            <InlineChip
-              href="https://www.linkedin.com/in/bichitrabehera"
-              icon={LinkedinIcon}
-            >
+            <InlineChip href="https://www.linkedin.com/in/bichitrabehera">
               LinkedIn
             </InlineChip>
           </span>
@@ -65,16 +45,13 @@ function Home() {
 
         <p>
           Got an idea worth building?{" "}
-          <span className="text-white">let's chat</span>{" "}
+          <span className="text-white">let&apos;s chat</span>{" "}
           <span className="inline-flex flex-wrap items-center gap-2">
-            <InlineChip href="https://x.com/bichitradotdev" icon={XIcon}>
+            <InlineChip href="https://x.com/bichitradotdev">
               Twitter DM
             </InlineChip>
             <span className="text-xs text-white/35">or</span>
-            <InlineChip
-              href="mailto:bichitrabehera.345@gmail.com"
-              icon={MailIcon}
-            >
+            <InlineChip href="mailto:bichitrabehera.345@gmail.com">
               Email me
             </InlineChip>
           </span>
@@ -84,14 +61,13 @@ function Home() {
   );
 }
 
-export default memo(Home);
+export default Home;
 
 function InlineChip({
   href,
   children,
 }: {
   href: string;
-  icon?: LucideIcon;
   children: React.ReactNode;
 }) {
   return (
@@ -99,7 +75,7 @@ function InlineChip({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 italic underline decoration-blue-600 decoration-dotted underline-offset-4"
+      className="inline-flex items-center gap-1.5 underline underline-offset-4"
     >
       {children}
     </a>

@@ -1,21 +1,47 @@
-// app/api/pat/route.ts
-
 import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
 
-export async function GET() {
-  const count = (await redis.get("portfolio:sauropod-pats")) ?? 0;
+const PAT_KEY = "portfolio:sauropod-pats";
+const MAX_PATS_PER_REQUEST = 100;
 
-  return Response.json({
-    count,
-  });
+export async function GET() {
+  try {
+    const count = (await redis.get<number>(PAT_KEY)) ?? 0;
+
+    return Response.json({ count });
+  } catch {
+    return Response.json(
+      { error: "Failed to fetch pats" },
+      { status: 500 },
+    );
+  }
 }
 
-export async function POST() {
-  const count = await redis.incr("portfolio:sauropod-pats");
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const requestedCount = Number(body.count);
 
-  return Response.json({
-    count,
-  });
+    if (!Number.isInteger(requestedCount) || requestedCount < 1) {
+      return Response.json(
+        { error: "Invalid pat count" },
+        { status: 400 },
+      );
+    }
+
+    const increment = Math.min(
+      requestedCount,
+      MAX_PATS_PER_REQUEST,
+    );
+
+    const count = await redis.incrby(PAT_KEY, increment);
+
+    return Response.json({ count });
+  } catch {
+    return Response.json(
+      { error: "Failed to record pats" },
+      { status: 500 },
+    );
+  }
 }

@@ -41,40 +41,70 @@ function getLevel(count: number) {
   if (count <= 3) return 1;
   if (count <= 6) return 2;
   if (count <= 9) return 3;
+
   return 4;
 }
 
+function formatDate(date: string) {
+  const [year, month, day] = date.split("-");
+
+  return `${day}/${month}/${year}`;
+}
+
 export default function GithubHeatmap() {
-  const [days, setDays] = useState<Map<string, ContributionDay>>(new Map());
+  const [days, setDays] = useState<Map<string, ContributionDay>>(
+    () => new Map(),
+  );
+
+  const [endDate, setEndDate] = useState<Date | null>(null);
 
   useEffect(() => {
+    setEndDate(new Date());
+
     async function load() {
-      const username = "bichitrabehera";
+      try {
+        const username = "bichitrabehera";
 
-      const res = await fetch(
-        `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
-      );
+        const res = await fetch(
+          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
+        );
 
-      const data = await res.json();
+        if (!res.ok) {
+          throw new Error("Failed to fetch contributions");
+        }
 
-      const map = new Map<string, ContributionDay>();
+        const data = await res.json();
 
-      data.contributions.forEach((d: { date: string; count: number }) => {
-        map.set(d.date, {
-          date: d.date,
-          count: d.count,
-          level: getLevel(d.count),
-        });
-      });
+        const map = new Map<string, ContributionDay>();
 
-      setDays(map);
+        data.contributions.forEach(
+          (d: { date: string; count: number }) => {
+            map.set(d.date, {
+              date: d.date,
+              count: d.count,
+              level: getLevel(d.count),
+            });
+          },
+        );
+
+        setDays(map);
+      } catch (error) {
+        console.error("Failed to load GitHub contributions:", error);
+      }
     }
 
     load();
   }, []);
 
   const { weeks, months } = useMemo(() => {
-    const end = new Date();
+    if (!endDate) {
+      return {
+        weeks: [],
+        months: [],
+      };
+    }
+
+    const end = new Date(endDate);
 
     const start = new Date(end);
     start.setFullYear(start.getFullYear() - 1);
@@ -84,7 +114,6 @@ export default function GithubHeatmap() {
     gridStart.setDate(gridStart.getDate() - gridStart.getDay());
 
     const weeks: (ContributionDay | null)[][] = [];
-
     const months: { label: string; week: number }[] = [];
 
     const cursor = new Date(gridStart);
@@ -92,44 +121,54 @@ export default function GithubHeatmap() {
     let weekIndex = 0;
 
     while (cursor <= end) {
-      if (cursor.getDay() === 0) {
-        const week: (ContributionDay | null)[] = [];
+      const week: (ContributionDay | null)[] = [];
 
-        for (let i = 0; i < 7; i++) {
-          if (cursor < start || cursor > end) {
-            week.push(null);
-          } else {
-            const iso = cursor.toISOString().slice(0, 10);
+      for (let i = 0; i < 7; i++) {
+        if (cursor < start || cursor > end) {
+          week.push(null);
+        } else {
+          const year = cursor.getFullYear();
+          const month = String(cursor.getMonth() + 1).padStart(2, "0");
+          const day = String(cursor.getDate()).padStart(2, "0");
 
-            week.push(
-              days.get(iso) ?? {
-                date: iso,
-                count: 0,
-                level: 0,
-              },
-            );
+          const iso = `${year}-${month}-${day}`;
 
-            if (
-              cursor.getDate() === 1 &&
-              !months.some((m) => m.label === MONTHS[cursor.getMonth()])
-            ) {
+          week.push(
+            days.get(iso) ?? {
+              date: iso,
+              count: 0,
+              level: 0,
+            },
+          );
+
+          if (cursor.getDate() === 1) {
+            const monthLabel = MONTHS[cursor.getMonth()];
+
+            if (!months.some((item) => item.label === monthLabel)) {
               months.push({
-                label: MONTHS[cursor.getMonth()],
+                label: monthLabel,
                 week: weekIndex,
               });
             }
           }
-
-          cursor.setDate(cursor.getDate() + 1);
         }
 
-        weeks.push(week);
-        weekIndex++;
+        cursor.setDate(cursor.getDate() + 1);
       }
+
+      weeks.push(week);
+      weekIndex++;
     }
 
-    return { weeks, months };
-  }, [days]);
+    return {
+      weeks,
+      months,
+    };
+  }, [days, endDate]);
+
+  if (!endDate) {
+    return null;
+  }
 
   return (
     <section className="overflow-x-auto py-8">
@@ -162,27 +201,31 @@ export default function GithubHeatmap() {
             {day.label}
           </div>
         ))}
+
         <div
           className="flex gap-[3px]"
           style={{
             marginLeft: DAY_COL_W,
           }}
         >
-          {weeks.map((week, i) => (
-            <div key={i} className="flex flex-col gap-[3px]">
-              {week.map((day, j) => (
+          {weeks.map((week, weekIndex) => (
+            <div
+              key={weekIndex}
+              className="flex flex-col gap-[3px]"
+            >
+              {week.map((day, dayIndex) => (
                 <div
-                  key={j}
+                  key={day?.date ?? dayIndex}
                   title={
                     day
-                      ? `${day.count} contributions on ${new Date(
-                          day.date,
-                        ).toLocaleDateString()}`
-                      : ""
+                      ? `${day.count} contributions on ${formatDate(day.date)}`
+                      : undefined
                   }
                   className="h-[12px] w-[12px] rounded-[2px] transition-all hover:ring-1 hover:ring-white/30"
                   style={{
-                    backgroundColor: day ? COLORS[day.level] : "transparent",
+                    backgroundColor: day
+                      ? COLORS[day.level]
+                      : "transparent",
                   }}
                 />
               ))}

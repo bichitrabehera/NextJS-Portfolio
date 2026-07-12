@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
