@@ -13,7 +13,6 @@ export default function Achievements() {
             key={index}
           >
             <h3 className="text-base">{item.title}</h3>
-            <span className="opacity-50">{item.date}</span>
             <p className="text-sm opacity-60">{item.description}</p>
             {item.link && (
               <a

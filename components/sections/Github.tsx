@@ -171,7 +171,7 @@ export default function GithubHeatmap() {
   }
 
   return (
-    <section className="overflow-x-auto py-8">
+    <section id="github" className="overflow-x-auto py-8">
       <div
         className="relative"
         style={{

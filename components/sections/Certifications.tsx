@@ -3,7 +3,7 @@ import Heading from "../ui/Heading";
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="text-foreground py-8">
+    <section id="certifications" className="text-foreground py-8">
       <Heading heading="Certifications" />
 
       <div className="space-y-4">

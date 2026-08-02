@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { GitHubIcon } from "../ui/github-icon";
+import { LinkedInIcon } from "../ui/linkedin-icon";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-3xl border-t border-white/10 py-16">
+    <footer className="mx-auto max-w-3xl py-16">
       <div className="flex items-center justify-between text-sm text-white/50">
-        <p>© 2026 Bichitra Behera</p>
+        <p>Made by Bichitra Behera</p>
 
         <div className="flex gap-4 text-lg">
           <Link
@@ -14,7 +16,7 @@ export default function Footer() {
             target="_blank"
             className="transition hover:text-white"
           >
-            <BsGithub />
+            <GitHubIcon/>
           </Link>
 
           <Link
@@ -22,7 +24,7 @@ export default function Footer() {
             target="_blank"
             className="transition hover:text-white"
           >
-            <BsLinkedin />
+           <LinkedInIcon/>
           </Link>
 
           <Link

@@ -2,7 +2,7 @@ function Home() {
   return (
     <section id="home" className="mx-auto flex-col py-8 md:flex-row">
       <div className="mt-10 space-y-6 text-white/60">
-        <p className="mb-8 text-white">
+        {/* <p className="mb-8 text-white">
           Currently shipping{" "}
           <a
             href="https://tixly.bichitrabehera.dev/"
@@ -21,7 +21,7 @@ function Home() {
           >
             Iconora
           </a>{" "}
-        </p>
+        </p> */}
         <p>
           Hi, I&apos;m <span className="text-white">Bichitra</span> — a full-stack
           developer building modern web products. I focus on fast, reliable
@@ -75,7 +75,7 @@ function InlineChip({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 underline underline-offset-4"
+      className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:text-white"
     >
       {children}
     </a>

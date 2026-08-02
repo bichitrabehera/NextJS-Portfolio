@@ -8,7 +8,7 @@ export default function Projects() {
   const featuredProjects = Object.entries(projects).slice(0, 3);
 
   return (
-    <section className="py-8">
+    <section id="projects" className="py-8">
       <Heading heading="Projects" />
 
       <div className="mx-auto max-w-3xl space-y-4">
