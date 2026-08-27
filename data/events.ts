@@ -29,14 +29,6 @@ export const events = [
     stats: "25 Teams",
   },
   {
-    title: "College Esports Tournament",
-    organization: "College",
-    description:
-      "Organized a campus-wide esports tournament with over 120 participants, managing registrations, match scheduling, volunteers, and event operations.",
-    year: "2026",
-    stats: "120+ Participants",
-  },
-  {
     title: "AI & Vibe Coding Workshop",
     organization: "Compassion Crew × PES College, Banashankari",
     description:

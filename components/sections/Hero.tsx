@@ -29,6 +29,12 @@ function Home() {
         </p>
 
         <p>
+          I build to ship things people actually use — today that&apos;s AI
+          tooling and a live client storefront — and I&apos;m always open to
+          freelance work and product collaborations.
+        </p>
+
+        <p>
           I build cool stuff with tech I love, always shipping{" "}
           <span className="inline-flex flex-wrap items-center gap-2">
             <InlineChip href="https://github.com/bichitrabehera">

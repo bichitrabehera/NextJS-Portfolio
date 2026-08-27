@@ -1,3 +1,5 @@
+export type ProjectType = "personal" | "client" | "open-source";
+
 export interface Project {
   name: string;
   description: string;
@@ -5,17 +7,44 @@ export interface Project {
   techStack: string[];
   link: string;
   linkUrl: string;
+  github?: string;
   slug?: string;
+  type?: ProjectType;
+  client?: string;
+  role?: string;
+  featured?: boolean;
 }
-
 export const projects: Record<string, Project> = {
-  iconora: {
-    name: "Iconora",
-    description: "A collection of open-source icons for developers.",
-    image: "/assets/iconor.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Motion"],
-    link: "https://iconora.vercel.app/",
-    linkUrl: "iconora.vercel.app",
+  audiolab: {
+    name: "AudioLab",
+    description:
+      "Browser-based audio effects studio built with the Web Audio API, featuring a 9-band equalizer, 8D stereo processing, real-time frequency visualization, and audio playback controls.",
+    image: "/assets/audiolab.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Web Audio API",
+      "Canvas API",
+      "Tailwind CSS",
+      "Cloudflare",
+    ],
+    link: "https://soundlab.bichitra.workers.dev/",
+    linkUrl: "soundlab.bichitra.workers.dev",
+    github: "https://github.com/bichitrabehera/audiolab",
+    slug: "audiolab",
+    type: "personal",
+    featured: true,
+  },
+  natureFoodsOrigin: {
+    name: "Nature Foods Origin",
+    description:
+      "Full-stack e-commerce platform for Nature Foods Origin, featuring a premium responsive UI, online ordering and payments, product management, cart and checkout workflows, and a dedicated admin dashboard for managing products, orders, and store operations.",
+    image: "/assets/naturefoodsorigin.png",
+    techStack: ["Next.js", "Tailwind CSS"],
+    link: "https://naturefoodsorigin.in/",
+    linkUrl: "naturefoodsorigin.in",
+    type: "client",
+    featured: true,
   },
   tixlyAI: {
     name: "Tixly",
@@ -32,34 +61,18 @@ export const projects: Record<string, Project> = {
     ],
     link: "https://tixly.bichitrabehera.dev/",
     linkUrl: "tixly.bichitrabehera.dev",
+    type: "personal",
+    featured: true,
   },
-
-  githubContributionsUI: {
-    name: "GitHub Contributions UI",
-    description:
-      "Open-source React component for displaying GitHub contribution heatmaps with easy integration, theming, and TypeScript support.",
-    image: "/assets/githubui.png",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "npm"],
-    link: "https://github-contributions-ui.vercel.app/",
-    linkUrl: "github-contributions-ui.vercel.app",
+  iconora: {
+    name: "Iconora",
+    description: "A collection of open-source icons for developers.",
+    image: "/assets/iconor.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Motion"],
+    link: "https://iconora.vercel.app/",
+    linkUrl: "iconora.vercel.app",
+    type: "open-source",
   },
-
-  sheBuildsBLR: {
-    name: "SheBuilds BLR",
-    description:
-      "Official website for the SheBuilds Bangalore community, showcasing events, updates, and media through a modern interface.",
-    image: "/assets/shebuildsblr.png",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Cloudinary",
-      "Vercel",
-    ],
-    link: "https://shebuildsblr.vercel.app/",
-    linkUrl: "shebuildsblr.vercel.app",
-  },
-
   readmeAI: {
     name: "README.AI",
     description:
@@ -75,51 +88,7 @@ export const projects: Record<string, Project> = {
     ],
     link: "https://readme-ai-sand.vercel.app/",
     linkUrl: "readme-ai-sand.vercel.app",
-
     slug: "readmeAI",
-  },
-
-  devarena: {
-    name: "DevArena",
-    description:
-      "Hackathon discovery platform that aggregates events from multiple sources using automated scraping and scheduled updates.",
-    image: "/assets/devarena.png",
-    techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Playwright",
-      "BeautifulSoup",
-      "APScheduler",
-      "Vercel",
-      "Render",
-    ],
-    link: "https://dev-arena-nine.vercel.app/",
-    linkUrl: "dev-arena-nine.vercel.app",
-
-    slug: "devarena",
-  },
-
-  dataverse: {
-    name: "DataVerse",
-    description:
-      "Comprehensive department website for AMC Engineering College supporting event management, registrations, and information sharing.",
-    image: "/assets/dataverse.jpg",
-    techStack: [
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-      "MongoDB",
-      "Vercel",
-      "Cloudinary",
-    ],
-    link: "https://dataverseamcec.vercel.app/",
-    linkUrl: "dataverseamcec.vercel.app",
-
-    slug: "dataverse",
+    type: "personal",
   },
 };

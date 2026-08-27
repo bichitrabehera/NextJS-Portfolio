@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Full-stack developer building AI-powered products and scalable web applications. Creator of Tixly and CostAPI. Experienced with React, Next.js, Node.js, TypeScript, PostgreSQL, Redis, Docker, and modern AI tooling.",
+    "Full-stack developer and AI builder. Creator of AudioLab, a browser-based audio effects studio, and Tixly, an AI bug-to-ticket tool. Recently shipped a full client e-commerce platform with live payments. Experienced with React, Next.js, Node.js, TypeScript, PostgreSQL, Redis, Docker, and modern AI tooling.",
 
   keywords: [
     "Bichitra Behera",
@@ -32,7 +32,8 @@ export const metadata: Metadata = {
     "LLM",
     "Generative AI",
     "Tixly",
-    "CostAPI",
+    "AudioLab",
+    "Nature Foods Origin",
     "Web Development",
     "Portfolio",
   ],
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bichitra Behera | Full-Stack Developer & AI Builder",
     description:
-      "Building Tixly, CostAPI, and modern AI-powered products. Full-stack developer focused on scalable systems, developer tools, and exceptional user experiences.",
+      "Creator of AudioLab and Tixly, and the developer behind a live client e-commerce platform. Full-stack developer building AI-powered products, scalable systems, and developer tools.",
     url: "https://bichitrabehera.dev",
     siteName: "Bichitra Behera",
     locale: "en_US",
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     title: "Bichitra Behera | Full-Stack Developer & AI Builder",
     description:
       "Building AI products, developer tools, and scalable web applications with Next.js, TypeScript, Node.js, and modern cloud infrastructure.",
-    creator: "@yourhandle",
+    creator: "@bichitradotdev",
   },
 
   category: "Technology",
