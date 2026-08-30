@@ -1,8 +1,5 @@
 import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
-import { GitHubIcon } from "../ui/github-icon";
-import { LinkedInIcon } from "../ui/linkedin-icon";
+import { GitHubLight, LinkedIn, Gmail } from "developer-icons";
 
 export default function Footer() {
   return (
@@ -14,24 +11,25 @@ export default function Footer() {
           <Link
             href="https://github.com/bichitrabehera"
             target="_blank"
-            className="transition hover:text-white"
+            className="transition-colors hover:text-white"
           >
-            <GitHubIcon/>
+            <GitHubLight className="h-5 w-5" />
           </Link>
 
           <Link
             href="https://linkedin.com/in/bichitrabehera"
             target="_blank"
-            className="transition hover:text-white"
+            className="transition-colors hover:text-white"
           >
-           <LinkedInIcon/>
+            <LinkedIn className="h-5 w-5" />
           </Link>
 
           <Link
             href="mailto:bichitrabehera.345@gmail.com"
-            className="transition hover:text-white"
+            className="transition-colors hover:text-white"
+            aria-label="Email"
           >
-            <MdEmail />
+            <Gmail className="h-5 w-5" />
           </Link>
         </div>
       </div>

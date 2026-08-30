@@ -12,7 +12,7 @@ const kindMeta: Record<
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="text-foreground py-8">
+    <section id="achievements" className="text-foreground py-6">
       <Heading heading="Achievements" />
 
       <div className="space-y-4">
@@ -21,7 +21,7 @@ export default function Achievements() {
 
           return (
             <div
-              className="border-foreground/10 hover:bg-foreground/5 cursor-pointer space-y-1 rounded border p-4 transition hover:border-neutral-900"
+              className="border-foreground/10 space-y-1 rounded border p-4"
               key={index}
             >
               <div className="flex items-start justify-between gap-3">
@@ -42,9 +42,9 @@ export default function Achievements() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-blue-500 hover:underline"
+                    className="text-foreground/60 hover:text-foreground underline underline-offset-4 transition-colors"
                   >
-                    View More
+                    View more
                   </a>
                 )}
               </div>

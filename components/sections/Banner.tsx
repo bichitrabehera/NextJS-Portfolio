@@ -101,8 +101,9 @@ const Banner = () => {
         <motion.button
           type="button"
           onClick={handlePat}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9, rotate: -5 }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "tween", ease: "easeOut", duration: 0.15 }}
           className="cursor-pointer"
           aria-label="Pat the Sauropod"
         >

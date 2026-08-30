@@ -171,7 +171,7 @@ export default function GithubHeatmap() {
   }
 
   return (
-    <section id="github" className="overflow-x-auto py-8">
+    <section id="github" className="overflow-x-auto pb-8 pt-8">
       <div
         className="relative"
         style={{
@@ -221,7 +221,7 @@ export default function GithubHeatmap() {
                       ? `${day.count} contributions on ${formatDate(day.date)}`
                       : undefined
                   }
-                  className="h-[12px] w-[12px] rounded-[2px] transition-all hover:ring-1 hover:ring-white/30"
+                  className="h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1 hover:ring-white/30"
                   style={{
                     backgroundColor: day
                       ? COLORS[day.level]

@@ -38,36 +38,6 @@ export default function ProjectGallery() {
   return (
     <div>
       <div
-        role="tablist"
-        aria-label="Filter projects"
-        className="flex flex-wrap gap-2"
-      >
-        {filters.map((filter, index) => {
-          const selected = active === filter.id;
-
-          return (
-            <button
-              key={filter.id}
-              id={`project-tab-${filter.id}`}
-              type="button"
-              role="tab"
-              aria-selected={selected}
-              aria-controls="project-tab-panel"
-              tabIndex={selected ? 0 : -1}
-              onClick={() => setActive(filter.id)}
-              onKeyDown={handleKeyDown(index)}
-              className={cn(
-                "border-foreground/10 text-foreground/70 rounded border px-3 py-1.5 text-sm transition-all hover:border-neutral-600 hover:bg-foreground/5 hover:text-foreground",
-                selected && "bg-foreground text-background hover:border-foreground",
-              )}
-            >
-              {filter.label}
-            </button>
-          );
-        })}
-      </div>
-
-      <div
         id="project-tab-panel"
         role="tabpanel"
         aria-labelledby={`project-tab-${active}`}

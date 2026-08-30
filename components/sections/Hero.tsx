@@ -1,27 +1,9 @@
+import Button from "@/components/ui/button";
+
 function Home() {
   return (
-    <section id="home" className="mx-auto flex-col py-8 md:flex-row">
-      <div className="mt-10 space-y-6 text-white/60">
-        {/* <p className="mb-8 text-white">
-          Currently shipping{" "}
-          <a
-            href="https://tixly.bichitrabehera.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 transition-opacity hover:opacity-80"
-          >
-            Tixly
-          </a>{" "}
-          &{" "}
-          <a
-            href="https://iconora.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 transition-opacity hover:opacity-80"
-          >
-            Iconora
-          </a>{" "}
-        </p> */}
+    <section id="home" className="mx-auto flex-col py-12 md:flex-row">
+      <div className="mt-10 space-y-6 text-white/40">
         <p>
           Hi, I&apos;m <span className="text-white">Bichitra</span> — a full-stack
           developer building modern web products. I focus on fast, reliable
@@ -51,17 +33,18 @@ function Home() {
 
         <p>
           Got an idea worth building?{" "}
-          <span className="text-white">let&apos;s chat</span>{" "}
-          <span className="inline-flex flex-wrap items-center gap-2">
-            <InlineChip href="https://x.com/bichitradotdev">
-              Twitter DM
-            </InlineChip>
-            <span className="text-xs text-white/35">or</span>
-            <InlineChip href="mailto:bichitrabehera.345@gmail.com">
-              Email me
-            </InlineChip>
-          </span>
+          <span className="text-white">let&apos;s chat</span>
         </p>
+
+        <span className="inline-flex flex-wrap items-center gap-2">
+          <Button as="a" href="https://x.com/bichitradotdev" target="_blank" rel="noopener noreferrer">
+            Twitter DM
+          </Button>
+          <span className="text-xs text-white/35">or</span>
+          <Button as="a" href="mailto:bichitrabehera.345@gmail.com" variant="primary">
+            Email me
+          </Button>
+        </span>
       </div>
     </section>
   );

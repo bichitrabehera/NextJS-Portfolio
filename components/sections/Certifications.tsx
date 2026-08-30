@@ -3,13 +3,13 @@ import Heading from "../ui/Heading";
 
 export default function Achievements() {
   return (
-    <section id="certifications" className="text-foreground py-8">
+    <section id="certifications" className="text-foreground py-6">
       <Heading heading="Certifications" />
 
       <div className="space-y-4">
         {certifications.map((item, index) => (
           <div
-            className="border-foreground/10 hover:bg-foreground/5 flex justify-between items-center  space-y-1 rounded border p-4 transition hover:border-neutral-900 cursor-pointer"
+            className="border-foreground/10 flex justify-between items-center  space-y-1 rounded border p-4"
             key={index}
           >
             <h3 className="text-base">{item.title}</h3>
@@ -19,7 +19,7 @@ export default function Achievements() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-blue-500 hover:underline"
+                className="text-foreground/60 hover:text-foreground text-sm underline underline-offset-4 transition-colors"
               >
                 Verify
               </a>

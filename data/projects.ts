@@ -44,7 +44,7 @@ export const projects: Record<string, Project> = {
     link: "https://naturefoodsorigin.in/",
     linkUrl: "naturefoodsorigin.in",
     type: "client",
-    featured: true,
+    featured: false,
   },
   tixlyAI: {
     name: "Tixly",
