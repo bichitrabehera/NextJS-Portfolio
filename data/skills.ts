@@ -3,6 +3,7 @@ import {
   NextJs,
   TailwindCSS,
   ShadcnUI,
+  
   FramerLight,
   NodeJs,
   ExpressJsLight,

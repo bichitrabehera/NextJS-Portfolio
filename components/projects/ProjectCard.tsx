@@ -17,7 +17,7 @@ function TechStack({ techStack }: { techStack: string[] }) {
             title={tech}
             className="flex items-center justify-center"
           >
-            <p className="text-sm">{tech}</p>
+            <Icon className="h-4 w-4" />
           </div>
         );
       })}
@@ -27,7 +27,7 @@ function TechStack({ techStack }: { techStack: string[] }) {
 
 function FullProjectCard({ project }: { project: Project }) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 mb-10">
       <div className="overflow-hidden rounded-2xl border border-neutral-800 p-2">
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           <Image
@@ -62,14 +62,14 @@ function FullProjectCard({ project }: { project: Project }) {
             rel="noopener noreferrer"
             className="border-border/60 hover:bg-foreground hover:text-background rounded border bg-white/5 px-3 py-1.5 text-xs font-medium transition-colors"
           >
-            View
+            preview
           </a>
         </div>
       </div>
 
       <p className="text-foreground/40 text-[15px]">{project.description}</p>
 
-      <div className="border-foreground/10 flex w-fit items-center gap-2 rounded border px-2 py-2">
+      <div className="border-foreground/10 flex w-fit items-center gap-2">
         <TechStack techStack={project.techStack} />
       </div>
     </div>

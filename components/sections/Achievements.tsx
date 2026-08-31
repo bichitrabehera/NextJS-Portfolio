@@ -42,7 +42,7 @@ export default function Achievements() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground/60 hover:text-foreground underline underline-offset-4 transition-colors"
+                    className="text-foreground/60 text-sm hover:text-foreground underline underline-offset-4 transition-colors"
                   >
                     View more
                   </a>

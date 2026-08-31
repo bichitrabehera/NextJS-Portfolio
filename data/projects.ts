@@ -18,7 +18,7 @@ export const projects: Record<string, Project> = {
   audiolab: {
     name: "AudioLab",
     description:
-      "Browser-based audio effects studio built with the Web Audio API, featuring a 9-band equalizer, 8D stereo processing, real-time frequency visualization, and audio playback controls.",
+      "Browser-based audio studio with a 9-band EQ, 8D stereo effects, real-time visualization.",
     image: "/assets/audiolab.png",
     techStack: [
       "Next.js",
@@ -49,7 +49,7 @@ export const projects: Record<string, Project> = {
   tixlyAI: {
     name: "Tixly",
     description:
-      "AI-powered tool that converts bug screenshots into structured tickets using OCR and LLMs, with Slack integration and support for modern developer workflows.",
+      "AI tool that turns bug screenshots into structured tickets using OCR, LLMs, and Slack integration.",
     image: "/assets/tixlyai.png",
     techStack: [
       "Next.js",
@@ -72,11 +72,12 @@ export const projects: Record<string, Project> = {
     link: "https://iconora.vercel.app/",
     linkUrl: "iconora.vercel.app",
     type: "open-source",
+    featured: true,
   },
   readmeAI: {
     name: "README.AI",
     description:
-      "AI-powered application that generates clean, professional README files by analyzing GitHub repositories and project metadata.",
+      "AI-powered tool that generates professional READMEs from GitHub repositories.",
     image: "/assets/readme.png",
     techStack: [
       "Next.js",
@@ -90,5 +91,6 @@ export const projects: Record<string, Project> = {
     linkUrl: "readme-ai-sand.vercel.app",
     slug: "readmeAI",
     type: "personal",
+    featured: true,
   },
 };
