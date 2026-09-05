@@ -36,14 +36,14 @@ type ContributionDay = {
   level: number;
 };
 
-function getLevel(count: number) {
-  if (count === 0) return 0;
-  if (count <= 3) return 1;
-  if (count <= 6) return 2;
-  if (count <= 9) return 3;
-
-  return 4;
-}
+type ContributionResponse = {
+  contributions: {
+    date: string;
+    count: number;
+    level: number;
+  }[];
+  total: Record<string, number>;
+};
 
 function formatDate(date: string) {
   const [year, month, day] = date.split("-");
@@ -56,6 +56,7 @@ export default function GithubHeatmap() {
     () => new Map(),
   );
 
+  const [totalContributions, setTotalContributions] = useState(0);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -73,21 +74,30 @@ export default function GithubHeatmap() {
           throw new Error("Failed to fetch contributions");
         }
 
-        const data = await res.json();
+        const data: ContributionResponse = await res.json();
+
+        console.log("GitHub contributions data:", data);
 
         const map = new Map<string, ContributionDay>();
 
-        data.contributions.forEach(
-          (d: { date: string; count: number }) => {
-            map.set(d.date, {
-              date: d.date,
-              count: d.count,
-              level: getLevel(d.count),
-            });
-          },
-        );
+        data.contributions.forEach((d) => {
+          map.set(d.date, {
+            date: d.date,
+            count: d.count,
+            level: d.level,
+          });
+        });
 
         setDays(map);
+
+        // data.total is an object like:
+        // { "2025": 123, "2026": 456 }
+        const total = Object.values(data.total).reduce(
+          (sum, value) => sum + Number(value),
+          0,
+        );
+
+        setTotalContributions(total);
       } catch (error) {
         console.error("Failed to load GitHub contributions:", error);
       }
@@ -111,6 +121,8 @@ export default function GithubHeatmap() {
     start.setDate(start.getDate() + 1);
 
     const gridStart = new Date(start);
+
+    // Start from Sunday so the columns align correctly.
     gridStart.setDate(gridStart.getDate() - gridStart.getDay());
 
     const weeks: (ContributionDay | null)[][] = [];
@@ -142,14 +154,10 @@ export default function GithubHeatmap() {
           );
 
           if (cursor.getDate() === 1) {
-            const monthLabel = MONTHS[cursor.getMonth()];
-
-            if (!months.some((item) => item.label === monthLabel)) {
-              months.push({
-                label: monthLabel,
-                week: weekIndex,
-              });
-            }
+            months.push({
+              label: MONTHS[cursor.getMonth()],
+              week: weekIndex,
+            });
           }
         }
 
@@ -171,68 +179,78 @@ export default function GithubHeatmap() {
   }
 
   return (
-    <section id="github" className="overflow-x-auto pb-8 pt-8">
-      <div
-        className="relative"
-        style={{
-          width: DAY_COL_W + weeks.length * STEP,
-        }}
-      >
-        {months.map((month) => (
-          <div
-            key={month.label}
-            className="text-foreground/50 absolute -top-6 text-xs"
-            style={{
-              left: DAY_COL_W + month.week * STEP,
-            }}
-          >
-            {month.label}
-          </div>
-        ))}
-
-        {DAY_LABELS.map((day) => (
-          <div
-            key={day.label}
-            className="text-foreground/50 absolute left-0 flex h-[12px] w-[28px] items-center justify-end text-xs"
-            style={{
-              top: day.index * STEP,
-            }}
-          >
-            {day.label}
-          </div>
-        ))}
-
+    <>
+      <section id="github" className="overflow-x-auto pb-8 pt-8">
         <div
-          className="flex gap-[3px]"
+          className="relative"
           style={{
-            marginLeft: DAY_COL_W,
+            width: DAY_COL_W + weeks.length * STEP,
           }}
         >
-          {weeks.map((week, weekIndex) => (
+          {/* Month labels */}
+          {months.map((month, index) => (
             <div
-              key={weekIndex}
-              className="flex flex-col gap-[3px]"
+              key={`${month.label}-${index}`}
+              className="text-foreground/50 absolute -top-6 text-xs"
+              style={{
+                left: DAY_COL_W + month.week * STEP,
+              }}
             >
-              {week.map((day, dayIndex) => (
-                <div
-                  key={day?.date ?? dayIndex}
-                  title={
-                    day
-                      ? `${day.count} contributions on ${formatDate(day.date)}`
-                      : undefined
-                  }
-                  className="h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1 hover:ring-white/30"
-                  style={{
-                    backgroundColor: day
-                      ? COLORS[day.level]
-                      : "transparent",
-                  }}
-                />
-              ))}
+              {month.label}
             </div>
           ))}
+
+          {/* Day labels */}
+          {DAY_LABELS.map((day) => (
+            <div
+              key={day.label}
+              className="text-foreground/50 absolute left-0 flex h-[12px] w-[28px] items-center justify-end text-xs"
+              style={{
+                top: day.index * STEP,
+              }}
+            >
+              {day.label}
+            </div>
+          ))}
+
+          {/* Contribution grid */}
+          <div
+            className="flex gap-[3px]"
+            style={{
+              marginLeft: DAY_COL_W,
+            }}
+          >
+            {weeks.map((week, weekIndex) => (
+              <div
+                key={weekIndex}
+                className="flex flex-col gap-[3px]"
+              >
+                {week.map((day, dayIndex) => (
+                  <div
+                    key={day?.date ?? `${weekIndex}-${dayIndex}`}
+                    title={
+                      day
+                        ? `${day.count} contributions on ${formatDate(day.date)}`
+                        : undefined
+                    }
+                    className="h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1 hover:ring-white/30"
+                    style={{
+                      backgroundColor: day
+                        ? COLORS[day.level] ?? COLORS[0]
+                        : "transparent",
+                    }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
+      <div className="flex overflow-hidden">
+        <p className=" text-sm">
+          Total Contributions: {totalContributions}
+        </p>
       </div>
-    </section>
+    </>
   );
 }

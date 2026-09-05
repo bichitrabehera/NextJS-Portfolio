@@ -10,8 +10,7 @@ export default function Experience() {
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className={`flex items-center justify-between gap-3 border-foreground/10 py-4 ${index !== 0 ? "border-t" : ""
-              }`}
+            className={`flex items-center justify-between gap-3 border-foreground/10 py-4`}
           >
             <div>
               <h3 className="font-medium">{exp.company}</h3>

@@ -14,6 +14,33 @@ body {
   scroll-behavior: smooth;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  height: 3px;
+  width: 100%;
+
+  background: rgb(2, 9, 71);
+
+  transform-origin: left;
+  transform: scaleX(0);
+
+  animation: grow linear;
+  animation-timeline: scroll();
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

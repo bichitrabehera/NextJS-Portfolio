@@ -1,5 +1,5 @@
 import Button from "@/components/ui/button";
-import { LinkedIn, GitHubLight, Twitter, XLight } from "developer-icons";
+import { LinkedIn, GitHubLight, Twitter, XLight, Gmail } from "developer-icons";
 
 function Home() {
   return (
@@ -44,22 +44,14 @@ function Home() {
         </p>
 
         <span className="inline-flex flex-wrap items-center gap-2">
-          <Button
-            as="a"
-            href="https://x.com/bichitradotdev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter DM
-          </Button>
+          <InlineChip href="https://x.com/bichitradotdev">
+            <XLight className="text-foreground/60 hover:text-foreground h-3 w-3" />
+            X ,</InlineChip>
           <span className="text-xs text-white/35">or</span>
-          <Button
-            as="a"
-            href="mailto:bichitrabehera.345@gmail.com"
-            variant="primary"
-          >
-            Email me
-          </Button>
+          <InlineChip href="mailto:bichitrabehera.345@gmail.com">
+            <Gmail className="text-foreground/60 hover:text-foreground h-3 w-3" />
+            Email
+          </InlineChip>
         </span>
       </div>
     </section>
@@ -80,7 +72,7 @@ function InlineChip({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-white underline underline-offset-4 hover:text-white/50"
+      className="inline-flex items-center gap-1.5 text-white underline underline-offset-4 hover:text-white/50 decoration-blue-500"
     >
       {children}
     </a>

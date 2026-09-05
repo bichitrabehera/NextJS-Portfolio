@@ -28,19 +28,20 @@ function TechStack({ techStack }: { techStack: string[] }) {
 function FullProjectCard({ project }: { project: Project }) {
   return (
     <div className="space-y-3 mb-10">
-      <div className="overflow-hidden rounded-2xl border border-neutral-800 p-2">
+      <div className="group overflow-hidden">
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           <Image
             src={project.image}
             alt={`Screenshot of ${project.name}`}
             fill
-            className="rounded-2xl object-cover opacity-80"
+            className="object-cover opacity-30 transition-all duration-500 group-hover:opacity-80"
           />
+
         </div>
       </div>
 
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-xl font-bold tracking-tight">{project.name}</h2>
+        <h2 className="text-lg ">{project.name}</h2>
 
         <div className="flex items-center gap-4">
           {project.github && (
