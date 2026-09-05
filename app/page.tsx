@@ -12,7 +12,7 @@ export default function Page() {
     <>
       <>
         <div className="text-foreground mx-auto max-w-3xl px-6 selection:bg-neutral-800 selection:text-neutral-200">
-          <Banner />
+          {/* <Banner /> */}
           <Hero />
           <Github />
           <Featured />

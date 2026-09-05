@@ -13,6 +13,22 @@
 body {
   scroll-behavior: smooth;
 }
+.hero-img {
+  animation: shrink linear;
+  animation-timeline: scroll(root);
+
+  /* animation-timeline: view(); */
+  /* animation-range: cover 0% cover 100%; */
+}
+
+@keyframes shrink {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-150px);
+  }
+}
 
 .scroll-progress {
   position: fixed;
