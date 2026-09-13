@@ -13,6 +13,7 @@
 body {
   scroll-behavior: smooth;
 }
+
 .hero-img {
   animation: shrink linear;
   animation-timeline: scroll(root);
@@ -35,15 +36,10 @@ body {
   top: 0;
   left: 0;
   z-index: 9999;
-
   height: 3px;
   width: 100%;
-
-  background: rgb(2, 9, 71);
-
   transform-origin: left;
   transform: scaleX(0);
-
   animation: grow linear;
   animation-timeline: scroll();
 }
@@ -99,12 +95,13 @@ body {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --muted-foreground: var(--muted-foreground);
 }
 
 :root {
-  --background: #101010;
+  --radius: 0.625rem;
+  --background: #000000;
   --foreground: oklch(0.985 0 0);
-
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
@@ -137,10 +134,6 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
   body {
     @apply bg-background text-foreground;
   }

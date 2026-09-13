@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GitHubIcon } from "../ui/github-icon";
 import type { Project } from "@/data/projects";
 import { skillMap } from "@/data/skills";
 
@@ -27,41 +26,29 @@ function TechStack({ techStack }: { techStack: string[] }) {
 
 function FullProjectCard({ project }: { project: Project }) {
   return (
-    <div className="space-y-3 mb-10">
+    <div className="mb-10 space-y-3">
       <div className="group overflow-hidden">
-        <div className="relative aspect-video w-full overflow-hidden rounded-xl">
-          <Image
-            src={project.image}
-            alt={`Screenshot of ${project.name}`}
-            fill
-            className="object-cover opacity-30 transition-all duration-500 group-hover:opacity-80"
-          />
-
+        <div className="relative aspect-video w-full overflow-hidden rounded">
+          <a href={project.link} target="_blank">
+            <Image
+              src={project.image}
+              alt={`Screenshot of ${project.name}`}
+              fill
+              className="object-cover grayscale-100 opacity-20 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+            />
+          </a>
         </div>
       </div>
 
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-lg ">{project.name}</h2>
+        <h2 className="text-lg">{project.name}</h2>
 
         <div className="flex items-center gap-4">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${project.name} source code on GitHub`}
-              title="Source code"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <GitHubIcon size={16} brandColor={false} animateOnHover={false} />
-            </a>
-          )}
-
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-border/60 hover:bg-foreground hover:text-background rounded border bg-white/5 px-3 py-1.5 text-xs font-medium transition-colors"
+            className="border-border/60 rounded border bg-white/5 px-2 py-1 text-sm text-white transition-colors hover:text-neutral-500"
           >
             preview
           </a>

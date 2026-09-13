@@ -18,7 +18,7 @@ export default function Page() {
           <Featured />
           <Experience />
           <Skills />
-          <Highlights/>
+          <Highlights />
           <Footer />
         </div>
       </>

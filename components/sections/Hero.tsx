@@ -1,42 +1,41 @@
 import Button from "@/components/ui/button";
 import { LinkedIn, GitHubLight, Twitter, XLight, Gmail } from "developer-icons";
+import { button } from "motion/react-client";
 
 function Home() {
   return (
     <section id="home" className="mx-auto flex-col py-12 md:flex-row">
       <div className="mt-10 space-y-6 text-white/40">
+        <p>Heyyyy, I&apos;m </p>
         <p>
-          Hi, I&apos;m <span className="text-white font-display text-2xl ">Bichitra Behera.</span>
-        </p>
-        <p>A full-stack
-          developer building modern web products with a focus on clean systems and
-          great UX.
+          <span className="font-display text-3xl text-white">
+            Bichitra Behera.
+          </span>
         </p>
         <p>
-          Always open to freelance work and collaborations.
+          A full-stack developer building modern web products with a focus on
+          clean systems and great UX.
         </p>
+        <p>Always open to freelance work and collaborations.</p>
         <p>
           Find me on{" "}
           <span className="inline-flex flex-wrap items-center gap-2">
             <InlineChip href="https://github.com/bichitrabehera">
               <GitHubLight className="text-foreground/60 hover:text-foreground h-3 w-3" />
-              GitHub ,
+              GitHub
             </InlineChip>
             <InlineChip href="https://x.com/bichitradotdev">
               <XLight className="text-foreground/60 hover:text-foreground h-3 w-3" />
-              X ,</InlineChip>
+              X
+            </InlineChip>
             <InlineChip href="https://www.linkedin.com/in/bichitrabehera">
               <LinkedIn className="text-foreground/60 hover:text-foreground h-3 w-3" />
               LinkedIn
             </InlineChip>
             or{" "}
-            <InlineChip href="/bichitra_behera_resume.pdf">
-              resume
-            </InlineChip>
+            <InlineChip href="/bichitra_behera_resume.pdf">Resume</InlineChip>
           </span>
         </p>
-
-
 
         <p>
           Got something worth building?{" "}
@@ -46,11 +45,12 @@ function Home() {
         <span className="inline-flex flex-wrap items-center gap-2">
           <InlineChip href="https://x.com/bichitradotdev">
             <XLight className="text-foreground/60 hover:text-foreground h-3 w-3" />
-            X ,</InlineChip>
+            X
+          </InlineChip>
           <span className="text-xs text-white/35">or</span>
           <InlineChip href="mailto:bichitrabehera.345@gmail.com">
             <Gmail className="text-foreground/60 hover:text-foreground h-3 w-3" />
-            Email
+            bichitrabehera.345@gmail.com
           </InlineChip>
         </span>
       </div>
@@ -68,13 +68,15 @@ function InlineChip({
   children: React.ReactNode;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-white underline underline-offset-4 hover:text-white/50 decoration-blue-500"
-    >
-      {children}
-    </a>
+    <button>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 rounded border border-neutral-100/10 bg-white/5 px-2 py-0.5 text-white hover:text-white/50"
+      >
+        {children}
+      </a>
+    </button>
   );
 }

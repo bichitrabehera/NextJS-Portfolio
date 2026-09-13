@@ -26,7 +26,7 @@ import {
 export const skillStacks = [
   // Design Engineering — Primary
   {
-    category: "Design Engineering",
+    category: "Design",
     skills: [
       { name: "React", icon: React },
       { name: "Next.js", icon: NextJs },
@@ -41,7 +41,7 @@ export const skillStacks = [
 
   // Backend
   {
-    category: "Backend Engineering",
+    category: "Backend",
     skills: [
       { name: "Node.js", icon: NodeJs },
       { name: "Express", icon: ExpressJsLight },
@@ -55,7 +55,7 @@ export const skillStacks = [
 
   // AI
   {
-    category: "AI Engineering",
+    category: "AI",
     skills: [{ name: "OpenAI", icon: OpenAI }],
   },
 
@@ -68,7 +68,6 @@ export const skillStacks = [
       { name: "GitHub", icon: GitHubLight },
       { name: "Vercel", icon: VercelLight },
       { name: "Cloudflare", icon: Cloudflare },
-      { name: "Linux", icon: Linux },
     ],
   },
 ];

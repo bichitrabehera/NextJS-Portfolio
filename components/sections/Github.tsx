@@ -28,7 +28,13 @@ const DAY_LABELS = [
   { index: 5, label: "Fri" },
 ];
 
-const COLORS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
+const COLORS = [
+  "color-mix(in oklch, var(--muted-foreground) 10%, transparent)",
+  "color-mix(in oklch, var(--muted-foreground) 40%, transparent)",
+  "color-mix(in oklch, var(--muted-foreground) 60%, transparent)",
+  "color-mix(in oklch, var(--muted-foreground) 80%, transparent)",
+  "color-mix(in oklch, var(--muted-foreground) 100%, transparent)",
+];
 
 type ContributionDay = {
   date: string;
@@ -180,14 +186,13 @@ export default function GithubHeatmap() {
 
   return (
     <>
-      <section id="github" className="overflow-x-auto pb-8 pt-8">
+      <section id="github" className="overflow-x-auto pt-8 pb-8">
         <div
           className="relative"
           style={{
             width: DAY_COL_W + weeks.length * STEP,
           }}
         >
-          {/* Month labels */}
           {months.map((month, index) => (
             <div
               key={`${month.label}-${index}`}
@@ -200,20 +205,6 @@ export default function GithubHeatmap() {
             </div>
           ))}
 
-          {/* Day labels */}
-          {DAY_LABELS.map((day) => (
-            <div
-              key={day.label}
-              className="text-foreground/50 absolute left-0 flex h-[12px] w-[28px] items-center justify-end text-xs"
-              style={{
-                top: day.index * STEP,
-              }}
-            >
-              {day.label}
-            </div>
-          ))}
-
-          {/* Contribution grid */}
           <div
             className="flex gap-[3px]"
             style={{
@@ -221,10 +212,7 @@ export default function GithubHeatmap() {
             }}
           >
             {weeks.map((week, weekIndex) => (
-              <div
-                key={weekIndex}
-                className="flex flex-col gap-[3px]"
-              >
+              <div key={weekIndex} className="flex flex-col gap-[3px]">
                 {week.map((day, dayIndex) => (
                   <div
                     key={day?.date ?? `${weekIndex}-${dayIndex}`}
@@ -236,7 +224,7 @@ export default function GithubHeatmap() {
                     className="h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1 hover:ring-white/30"
                     style={{
                       backgroundColor: day
-                        ? COLORS[day.level] ?? COLORS[0]
+                        ? (COLORS[day.level] ?? COLORS[0])
                         : "transparent",
                     }}
                   />
@@ -247,9 +235,7 @@ export default function GithubHeatmap() {
         </div>
       </section>
       <div className="flex overflow-hidden">
-        <p className=" text-sm">
-          Total Contributions: {totalContributions}
-        </p>
+        <p className="text-sm">Total Contributions: {totalContributions}</p>
       </div>
     </>
   );

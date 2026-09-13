@@ -6,28 +6,23 @@ function Skills() {
     <section id="skills" className="py-8">
       <Heading heading="Skills" />
 
-      <div className="mt-8 space-y-8">
+      <div className="space-y-6">
         {skillStacks.map((stack, index) => (
           <div key={stack.category}>
-            <div className="mb-3 flex items-center gap-3">
-              
-
-              <h3
-                className="text font-medium text-foreground underline underline-offset-4 decoration-blue-500"
-
-              >
+            <div className="mb-6 flex items-center gap-3">
+              <h3 className="text text-foreground font-medium">
                 {stack.category}
               </h3>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 space-y-1">
               {stack.skills.map((skill) => {
                 const Icon = skill.icon;
 
                 return (
                   <div
                     key={skill.name}
-                    className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors text-foreground`}
+                    className={`text-foreground flex h-9 items-center gap-2 rounded border border-neutral-200/10 bg-white/5 px-2 py-1 text-sm transition-colors`}
                   >
                     <Icon size={18} />
 

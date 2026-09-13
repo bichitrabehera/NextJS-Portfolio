@@ -16,7 +16,7 @@ export type Highlight = {
 
 export const highlights: Highlight[] = [
   {
-    title: "Published Research Paper",
+    title: " Research Paper",
     organization: "International Journal of Scientific Research",
     description:
       "Co-authored research on Graph Neural Networks for crystal property prediction, exploring AI techniques for materials science and predictive modeling.",
@@ -104,7 +104,7 @@ export const highlights: Highlight[] = [
     kind: "hackathon",
   },
   {
-    title: "Published IoT Research Paper",
+    title: " IoT Research Paper",
     organization: "JETIR",
     description:
       "Published research on an IoT-based gas leakage detection system featuring real-time monitoring and automated alerts.",
