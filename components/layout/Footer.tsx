@@ -1,7 +1,7 @@
 import {
   HandwrittenArrow,
   HandwrittenNote,
-} from "@/components/ui/handwritten-note.tsx";
+} from "@/components/ui/handwritten-note";
 export default function Footer() {
   return (
     <footer className="mx-auto max-w-3xl pt-20">
