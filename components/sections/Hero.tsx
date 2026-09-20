@@ -11,9 +11,9 @@ import ThemeToggle from "@/components/ui/ThemeToggle";
 function Home() {
   return (
     <section id="home" className="mx-auto flex-col py-12 md:flex-row">
-      <div className="flex justify-end">
+      {/* <div className="flex justify-end">
         <ThemeToggle />
-      </div>
+      </div> */}
 
       <div className="text-foreground/60 mt-10 space-y-6">
         <p>Heyyyy, I&apos;m</p>
@@ -24,9 +24,10 @@ function Home() {
           </span>
         </p>
 
-        <p>
-          A full-stack developer building modern web products with a focus on
-          clean systems and great UX.
+        <p className="leading-7">
+          I design and build modern web products with a focus on thoughtful UX,
+          clean engineering, and practical AI. I enjoy taking ideas from an
+          early concept to a polished product that people can actually use.
         </p>
 
         <p>Always open to freelance work and collaborations.</p>
@@ -97,7 +98,7 @@ function InlineChip({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="border-foreground/10 bg-foreground/5 border border-dashed text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border px-2 py-0.5 text-sm transition-colors"
+      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border-dashed px-2 py-0.5 text-sm transition-colors"
     >
       {children}
     </a>
