@@ -16,7 +16,6 @@ import {
   OpenAI,
   VercelLight,
   Figma,
-  Linux,
   TypeScript,
   JavaScript,
   Supabase,

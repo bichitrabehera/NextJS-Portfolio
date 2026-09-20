@@ -82,7 +82,7 @@ export default function GithubHeatmap() {
 
         const data: ContributionResponse = await res.json();
 
-        console.log("GitHub contributions data:", data);
+        // console.log("GitHub contributions data:", data);
 
         const map = new Map<string, ContributionDay>();
 
@@ -221,7 +221,7 @@ export default function GithubHeatmap() {
                         ? `${day.count} contributions on ${formatDate(day.date)}`
                         : undefined
                     }
-                    className="h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1 hover:ring-white/30"
+                    className="hover:ring-foreground/30 h-[12px] w-[12px] rounded-[2px] transition-colors hover:ring-1"
                     style={{
                       backgroundColor: day
                         ? (COLORS[day.level] ?? COLORS[0])

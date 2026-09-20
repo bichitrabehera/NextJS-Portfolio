@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+.theme-icon-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-light {
+  display: inline-block;
+}
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -131,6 +144,35 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+:root[data-theme="light"] {
+  --background: oklab(98.51100000000001% 0 -0.00011);
+  --foreground: oklch(0.205 0.02 265);
+  --border: oklch(0.205 0.02 265 / 12%);
+  --input: oklch(0.205 0.02 265 / 15%);
+  --ring: oklch(0.55 0.12 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.02 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.02 265);
+  --primary: oklch(0.28 0.08 250);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.93 0.01 250);
+  --secondary-foreground: oklch(0.25 0.03 265);
+  --muted: oklch(0.93 0.01 250);
+  --muted-foreground: oklch(0.48 0.03 265);
+  --accent: oklch(0.93 0.01 250);
+  --accent-foreground: oklch(0.25 0.03 265);
+  --destructive: oklch(0.58 0.2 25);
+  --sidebar: oklch(0.97 0.005 90);
+  --sidebar-foreground: oklch(0.205 0.02 265);
+  --sidebar-primary: oklch(0.45 0.15 250);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.93 0.01 250);
+  --sidebar-accent-foreground: oklch(0.25 0.03 265);
+  --sidebar-border: oklch(0.205 0.02 265 / 12%);
+  --sidebar-ring: oklch(0.55 0.12 250);
 }
 
 @layer base {

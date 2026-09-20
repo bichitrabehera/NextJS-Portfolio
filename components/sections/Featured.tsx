@@ -11,7 +11,7 @@ export default function Featured() {
     <section id="featured" className="py-8">
       <Heading heading="Featured" />
 
-      <div className="mx-auto grid max-w-5xl gap-4 lg:grid-cols-2">
+      <div className="mx-auto grid gap-4 lg:grid-cols-2">
         {featuredProjects.map(([key, project]) => (
           <ProjectCard key={key} project={project} />
         ))}

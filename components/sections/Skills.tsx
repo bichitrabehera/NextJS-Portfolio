@@ -22,7 +22,7 @@ function Skills() {
                 return (
                   <div
                     key={skill.name}
-                    className={`text-foreground flex h-9 items-center gap-2 rounded border border-neutral-200/10 bg-white/5 px-2 py-1 text-sm transition-colors`}
+                    className={`border-foreground/10 border-dashed bg-foreground/5 text-foreground flex h-9 items-center gap-2 rounded border px-2 py-1 text-sm transition-colors`}
                   >
                     <Icon size={18} />
 

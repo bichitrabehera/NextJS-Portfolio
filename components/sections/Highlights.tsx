@@ -21,51 +21,46 @@ function Highlights() {
     <section id="highlights" className="py-8">
       <Heading heading="Highlights" />
 
-      <div className="space-y-6">
-        {years.map((year) => (
-          <div key={year} className="flex flex-col space-y-6">
-            <div className="text-neutral-200">{year}</div>
+      <div className="relative">
+        <div className="border-foreground/10 absolute top-0 bottom-0 left-1 border-l border-dashed" />
 
-            <div className="space-y-10">
-              {grouped[year].map((item) => (
-                <div key={item.title}>
-                  <div className="flex items-baseline gap-3">
-                    <h3 className="text-base font-medium">{item.title}</h3>
+        <div className="space-y-12">
+          {years.map((year) => (
+            <div key={year} className="relative">
+              <div className="bg-background relative z-10 mb-6 flex items-center gap-4">
+                <div className="bg-background border-foreground/30 h-2 w-2 rounded-full border-2" />
 
-                    {item.stats && (
-                      <span className="text-foreground/40 text-xs">
-                        {item.stats}
-                      </span>
+                <div>
+                  <div className="text-foreground text-sm font-medium">
+                    {year}
+                  </div>
+                </div>
+              </div>
+
+              <div className="ml-8 space-y-5">
+                {grouped[year].map((highlight, index) => (
+                  <div
+                    key={`${year}-${index}`}
+                    className="text-foreground/70 text-sm leading-6"
+                  >
+                    {highlight.link ? (
+                      <a
+                        href={highlight.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-foreground decoration-foreground/50 underline decoration-dashed underline-offset-4"
+                      >
+                        {highlight.description}
+                      </a>
+                    ) : (
+                      highlight.description
                     )}
                   </div>
-
-                  {item.organization && (
-                    <p className="text-foreground/40 mt-1 text-sm">
-                      {item.organization}
-                    </p>
-                  )}
-
-                  {item.description && (
-                    <p className="text-foreground/55 mt-2 text-sm leading-6">
-                      {item.description}
-                    </p>
-                  )}
-
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-foreground hover:text-foreground/50 mt-2 inline-block rounded border border-neutral-100/20 px-2 py-1 text-sm shadow"
-                    >
-                      Read more
-                    </a>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
