@@ -11,9 +11,9 @@ import ThemeToggle from "@/components/ui/ThemeToggle";
 function Home() {
   return (
     <section id="home" className="mx-auto flex-col py-12 md:flex-row">
-      {/* <div className="flex justify-end">
+      <div className="flex justify-end">
         <ThemeToggle />
-      </div> */}
+      </div>
 
       <div className="text-foreground/60 mt-10 space-y-6">
         <p>Heyyyy, I&apos;m</p>

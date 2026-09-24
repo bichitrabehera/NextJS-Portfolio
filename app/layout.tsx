@@ -24,9 +24,9 @@ export default function RootLayout({
       className={cn("font-sans", geist.variable, instrumentSerif.variable)}
     >
       <body className="flex min-h-screen flex-col">
-        {/* <ThemeProvider> */}
+        <ThemeProvider>
           <main className="flex-1">{children}</main>
-        {/* </ThemeProvider> */}
+        </ThemeProvider>
       </body>
     </html>
   );
