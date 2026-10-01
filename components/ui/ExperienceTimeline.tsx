@@ -417,7 +417,7 @@ export function ExperienceTimeline({
 
     const year = Math.floor(hoverDecimal);
 
-    const month = Math.floor((hoverDecimal - year) * 12);
+    const month = Math.round((hoverDecimal - year) * 12);
 
     return {
       year,
@@ -438,7 +438,7 @@ export function ExperienceTimeline({
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
         onPointerLeave={handlePointerLeave}
-        className={`bg-background w-full overflow-x-auto select-none ${
+        className={`bg-background w-full overflow-hidden overflow-x-auto select-none ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         } `}
       >
@@ -553,12 +553,12 @@ export function ExperienceTimeline({
                   top,
                 }}
               >
-                <span className="text-foreground w-full text-[12px] leading-4 font-medium">
+                <span className="text-foreground w-full text-[14px] leading-4 font-medium">
                   {experience.role}
                 </span>
 
                 {experience.company && (
-                  <span className="text-foreground/40 w-full text-[11px] leading-4">
+                  <span className="text-foreground/40 w-full text-[12px] leading-4">
                     {experience.company}
                   </span>
                 )}

@@ -204,6 +204,17 @@ export default function GithubHeatmap() {
               {month.label}
             </div>
           ))}
+          {DAY_LABELS.map((day) => (
+            <div
+              key={day.index}
+              className="text-foreground/50 absolute left-0 text-xs"
+              style={{
+                top: day.index * STEP,
+              }}
+            >
+              {day.label}
+            </div>
+          ))}
 
           <div
             className="flex gap-[3px]"
@@ -235,7 +246,7 @@ export default function GithubHeatmap() {
         </div>
       </section>
       <div className="flex overflow-hidden">
-        <p className="text-sm">Total Contributions: {totalContributions}</p>
+        <p className="text">Total Contributions: {totalContributions}</p>
       </div>
     </>
   );

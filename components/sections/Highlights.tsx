@@ -31,7 +31,7 @@ function Highlights() {
                 <div className="bg-background border-foreground/30 h-2 w-2 rounded-full border-2" />
 
                 <div>
-                  <div className="text-foreground text-sm font-medium">
+                  <div className="text-foreground font-medium">
                     {year}
                   </div>
                 </div>
@@ -41,14 +41,14 @@ function Highlights() {
                 {grouped[year].map((highlight, index) => (
                   <div
                     key={`${year}-${index}`}
-                    className="text-foreground/70 text-sm leading-6"
+                    className="text-foreground/70 leading-6"
                   >
                     {highlight.link ? (
                       <a
                         href={highlight.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-foreground decoration-foreground/50 underline decoration-dashed underline-offset-4"
+                        className="hover:text-foreground decoration-foreground/50 underline decoration-dashed underline-offset-6"
                       >
                         {highlight.description}
                       </a>

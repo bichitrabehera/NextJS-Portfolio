@@ -1,17 +1,24 @@
-import React from "react";
-
-const Heading = ({
-  heading,
-  // description,
-}: {
+type HeadingProps = {
   heading: string;
-  // description?: string;
-}) => {
-  return (
-    <div className="py-6">
-      <h1 className="mb-2 text-xl"> {heading}</h1>
-    </div>
-  );
+  as?: "h1" | "h2" | "h3";
+  className?: string;
 };
 
-export default Heading;
+export default function Heading({
+  heading,
+  as: Tag = "h2",
+  className = "",
+}: HeadingProps) {
+  return (
+    <div className="py-6">
+      <Tag
+        className={`bg-foreground/10 border-foreground/40 inline-flex items-center gap-1.5 rounded border border-dashed px-4 py-1.5 text-sm font-medium ${className}`}
+      >
+        <span aria-hidden="true" className="text-foreground/50">
+          ~
+        </span>
+        {heading}
+      </Tag>
+    </div>
+  );
+}

@@ -89,7 +89,7 @@ function ProjectModal({
   return (
     <div className="bg-background fixed inset-0 z-[100]">
       <div className="h-full overflow-y-auto">
-        <div className="mx-auto max-w-2xl px-4 py-16 md:px-8 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-16">
           <button
             type="button"
             onClick={onClose}
@@ -113,7 +113,7 @@ function ProjectModal({
 
           {/* Title */}
           <div className="mt-6 flex items-center justify-between gap-4">
-            <h2 className="font-display text-2xl font-bold md:text-3xl">
+            <h2 className="font-display text-2xl tracking-wide md:text-3xl">
               {project.name}
             </h2>
 
@@ -142,7 +142,7 @@ function ProjectModal({
 
           {/* Case study */}
           {project.caseStudy && (
-            <p className="text-foreground/55 mt-6 text-[15px] leading-8">
+            <p className="text-foreground/55 mt-6 leading-8">
               {project.caseStudy}
             </p>
           )}
@@ -154,7 +154,7 @@ function ProjectModal({
           <button
             type="button"
             onClick={onClose}
-            className="text-foreground/50 hover:text-foreground mt-12 flex items-center gap-2 text-sm"
+            className="text-foreground/50 hover:text-foreground mt-12 flex items-center justify-end gap-2 text-sm"
           >
             <CornerDownLeft className="h-4 w-4" />
             return to projects
@@ -176,14 +176,14 @@ function CaseStudySection({
     <section className="max-w-2xl space-y-3">
       <h3 className="text-lg">{title}</h3>
 
-      <p className="text-foreground/50 text-[15px] leading-8">{content}</p>
+      <p className="text-foreground/50 leading-8">{content}</p>
     </section>
   );
 }
 
 function TechStack({ techStack }: { techStack: string[] }) {
   return (
-    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border border-dashed px-2 py-1 text-sm">
+    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border border-dashed px-2 py-1">
       {techStack.map((tech) => {
         const Icon = skillMap[tech];
 

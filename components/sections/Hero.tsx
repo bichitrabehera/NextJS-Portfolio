@@ -70,7 +70,7 @@ function Home() {
             X
           </InlineChip>
 
-          <span className="text-foreground/45 text-xs">or</span>
+          <span className="text-foreground/45">or</span>
 
           <InlineChip href="mailto:bichitrabehera.345@gmail.com">
             <Gmail className="text-foreground/60 hover:text-foreground h-3 w-3" />
@@ -98,7 +98,7 @@ function InlineChip({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border-dashed px-2 py-0.5 text-sm transition-colors"
+      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border-dashed px-2 py-0.5 transition-colors"
     >
       {children}
     </a>
