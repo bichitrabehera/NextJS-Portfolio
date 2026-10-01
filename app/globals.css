@@ -183,3 +183,16 @@ body {
     @apply font-sans;
   }
 }
+
+@font-face {
+  font-family: "some";
+  src: url("/fonts/mono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+
+.some{
+  font-family: "some";
+  /* letter-spacing: em; */
+}

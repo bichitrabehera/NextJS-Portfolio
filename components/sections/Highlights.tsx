@@ -48,7 +48,7 @@ function Highlights() {
                         href={highlight.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-foreground decoration-foreground/50 underline decoration-dashed underline-offset-6"
+                        className="hover:text-foreground decoration-foreground/50 underline underline-dashed underline-offset-4"
                       >
                         {highlight.description}
                       </a>
