@@ -38,8 +38,8 @@ export const projects: Record<string, Project> = {
       "Cloudflare",
     ],
 
-    link: "https://soundlab.bichitrabehera.workers.dev/",
-    linkUrl: "soundlab.bichitrabehera.workers.dev",
+    link: "https://soundlab.bichitra.workers.dev/",
+    linkUrl: "soundlab.bichitra.workers.dev",
     github: "https://github.com/bichitrabehera/audiolab",
     slug: "audiolab",
     type: "personal",
