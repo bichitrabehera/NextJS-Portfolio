@@ -10,18 +10,15 @@ import Exp from "@/components/sections/Exp";
 export default function Page() {
   return (
     <>
-      <>
-        <div className="text-foreground selection:bg-foreground/15 selection:text-foreground mx-auto max-w-3xl px-6">
-          {/* <Banner /> */}
-          <Hero />
-          <Github />
-          <Featured />
-          <Exp />
-          <Skills />
-          <Highlights />
-          <Footer />
-        </div>
-      </>
+      <div className="text-foreground selection:text-foreground mx-auto max-w-3xl px-6 selection:bg-blue-500/60">
+        <Hero />
+        <Github />
+        <Featured />
+        <Exp />
+        <Skills />
+        <Highlights />
+        <Footer />
+      </div>
     </>
   );
 }

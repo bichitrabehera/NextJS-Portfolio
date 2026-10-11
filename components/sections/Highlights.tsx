@@ -31,7 +31,7 @@ function Highlights() {
                 <div className="bg-background border-foreground/30 h-2 w-2 rounded-full border-2" />
 
                 <div>
-                  <div className="text-foreground font-medium">
+                  <div className="text-foreground font">
                     {year}
                   </div>
                 </div>

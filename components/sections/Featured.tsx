@@ -11,10 +11,10 @@ import { HandwrittenArrow, HandwrittenNote } from "../ui/handwritten-note";
 import { ArrowRight, CornerDownLeft } from "lucide-react";
 
 const positions = [
-  "left-[2%] top-[3%] rotate-[-3deg]",
-  "right-[2%] top-[13%] rotate-[3deg]",
-  "left-[5%] top-[33%] rotate-[2deg]",
-  "right-[4%] top-[53%] rotate-[-2deg]",
+  "left-[2%] top-[3%] ",
+  "right-[2%] top-[23%] ",
+  "left-[5%] top-[43%] ",
+  "right-[4%] top-[63%] ",
 ];
 
 export default function FeaturedProjects() {
@@ -34,31 +34,31 @@ export default function FeaturedProjects() {
           </HandwrittenNote>
         </div>
 
-        <div className="relative mt-10 h-100 overflow-hidden md:h-200">
+        <div className="relative mt-10 h-[25rem] overflow-visible md:h-[50rem]">
           {featuredProjects.map((project, index) => (
             <button
               key={project.slug}
               type="button"
               onClick={() => setSelectedProject(project)}
-              className={`group absolute w-[65%] max-w-3xl text-left ${positions[index]}`}
+              className={`group focus-visible:ring-foreground absolute w-[65%] max-w-3xl text-left transition-transform duration-300 hover:z-50 hover:scale-[1.01] hover:rotate-0 focus-visible:z-50 focus-visible:ring-2 focus-visible:outline-none ${positions[index]}`}
             >
-              <div className="border-foreground/20 bg-background overflow-hidden rounded-2xl border border-dashed shadow-sm transition-all duration-300 group-hover:z-50 group-hover:scale-[1.05] group-hover:rotate-0">
-                <div className="relative aspect-video overflow-hidden rounded-md">
+              <div className="border-foreground/20 bg-background/20 overflow-hidden rounded-md border border-dashed p-1 shadow-sm">
+                <div className="relative aspect-video overflow-hidden rounded-sm">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 90vw, 65vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-102"
                   />
 
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 flex items-end justify-between bg-black/0 p-4 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex items-end justify-between bg-black/40 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                     <span className="text-sm font-medium text-white">
                       {project.name}
                     </span>
 
                     <span className="text-xs text-white/80">
-                      view case study{" "}
+                      View case study
                       <ArrowRight className="ml-1 inline h-4 w-4" />
                     </span>
                   </div>
