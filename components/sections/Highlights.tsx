@@ -22,7 +22,7 @@ function Highlights() {
       <Heading heading="Highlights" />
 
       <div className="relative">
-        <div className="border-foreground/10 absolute top-0 bottom-0 left-1 border-l border-dashed" />
+        <div className="border-foreground/10 absolute top-0 bottom-0 left-1 border border-l" />
 
         <div className="space-y-12">
           {years.map((year) => (
@@ -31,9 +31,7 @@ function Highlights() {
                 <div className="bg-background border-foreground/30 h-2 w-2 rounded-full border-2" />
 
                 <div>
-                  <div className="text-foreground font">
-                    {year}
-                  </div>
+                  <div className="text-foreground font">{year}</div>
                 </div>
               </div>
 
@@ -48,7 +46,7 @@ function Highlights() {
                         href={highlight.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-foreground decoration-foreground/50 underline underline-dashed underline-offset-4"
+                        className="hover:text-foreground decoration-foreground/50 underline underline-offset-4"
                       >
                         {highlight.description}
                       </a>

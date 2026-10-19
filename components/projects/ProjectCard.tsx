@@ -4,7 +4,7 @@ import { skillMap } from "@/data/skills";
 
 function TechStack({ techStack }: { techStack: string[] }) {
   return (
-    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border border-dashed px-2 py-1 text-sm">
+    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border border px-2 py-1 text-sm">
       {techStack.map((tech) => {
         const Icon = skillMap[tech];
 
@@ -27,7 +27,7 @@ function TechStack({ techStack }: { techStack: string[] }) {
 function FullProjectCard({ project }: { project: Project }) {
   return (
     <div className="mb-10 space-y-6">
-      <div className="group border-foreground/10 bg-foreground/5 text-foreground hover:bg-foreground/10 overflow-hidden rounded-lg border border-dashed p-1.5 transition-colors">
+      <div className="group border-foreground/10 bg-foreground/5 text-foreground hover:bg-foreground/10 overflow-hidden rounded-lg border border p-1.5 transition-colors">
         <div className="relative aspect-video w-full overflow-hidden rounded-md">
           <a href={project.link} target="_blank">
             <Image
@@ -49,7 +49,7 @@ function FullProjectCard({ project }: { project: Project }) {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-border/60 bg-foreground/5 text-foreground hover:text-foreground/50 rounded border border-dashed px-2 py-1 text-sm transition-colors"
+            className="border-border/60 bg-foreground/5 text-foreground hover:text-foreground/50 rounded border border px-2 py-1 text-sm transition-colors"
           >
             preview
           </a>

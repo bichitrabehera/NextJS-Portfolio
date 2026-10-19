@@ -98,7 +98,7 @@ function InlineChip({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border-dashed px-2 py-0.5 transition-colors"
+      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border px-2 py-0.5 transition-colors"
     >
       {children}
     </a>

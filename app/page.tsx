@@ -3,7 +3,6 @@ import Featured from "@/components/sections/Featured";
 import Skills from "@/components/sections/Skills";
 import Footer from "@/components/layout/Footer";
 import Github from "@/components/sections/Github";
-import Banner from "@/components/sections/Banner";
 import Highlights from "@/components/sections/Highlights";
 import Exp from "@/components/sections/Exp";
 

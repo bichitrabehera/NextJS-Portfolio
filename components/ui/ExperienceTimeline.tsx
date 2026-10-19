@@ -1,13 +1,35 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+// import  experiences  from "@/data/exp";
 
 export type Experience = {
   role: string;
   company?: string;
   duration: string;
-  description?: string;
 };
+export const experiences: Experience[] = [
+  {
+    role: "Web Lead",
+    company: "Compassion Crew",
+    duration: "Jun 2026 – Present",
+  },
+  {
+    role: "Full Stack Dev",
+    company: "SheBuilds Bangalore",
+    duration: "Feb 2026 – Present",
+  },
+  {
+    role: "App Developer",
+    company: "Vayu Aarambh",
+    duration: "Jan 2026 – May 2026",
+  },
+  {
+    role: "Full Stack Dev",
+    company: "Nuericorn Syndicate",
+    duration: "Sept 2025 – Jan 2026",
+  },
+];
 
 const MONTHS: Record<string, number> = {
   jan: 0,
@@ -430,7 +452,16 @@ export function ExperienceTimeline({
   /* ------------------------------------------------------------------------ */
 
   return (
-    <div className="relative">
+    <div
+      className="relative p-1"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(-315deg, oklch(37.1% 0 none) 0, oklch(37.1% 0 none) 1px, transparent 1px, transparent 50%)",
+        backgroundSize: "8px 8px",
+        color: "var(--foreground)",
+        opacity: 1,
+      }}
+    >
       <div
         ref={scrollRef}
         onPointerDown={handlePointerDown}
@@ -459,7 +490,7 @@ export function ExperienceTimeline({
                 {/* Year */}
 
                 <div
-                  className="text-foreground/50 absolute -top-2 flex h-[28px] items-center text-[11px] font-medium tracking-wide"
+                  className="text-foreground/50 absolute -top-2 mt-2 flex h-[28px] items-center text-[11px] font-medium tracking-wide"
                   style={{
                     left: yearX + 10,
                   }}
@@ -490,19 +521,19 @@ export function ExperienceTimeline({
               </div>
             );
           })}
-          <div className="border-foreground/20 absolute top-[40px] right-0 left-0 h-px border border-dashed" />
+          <div className="border-foreground/20 absolute top-[40px] right-0 left-0 h-px border" />
 
           <div
-            className="absolute z-20 w-px bg-blue-400/90"
+            className="absolute z-20 w-px bg-blue-600/90"
             style={{
               left: xFor(nowDecimal),
               top: HEADER_HEIGHT,
               bottom: -3,
             }}
           >
-            <div className="absolute -top-[40px] -left-[3px] h-3.5 w-1.5 rounded-full bg-blue-400" />
+            <div className="absolute -top-[40px] -left-[3px] h-3.5 w-1.5 rounded-full bg-blue-600" />
 
-            <span className="absolute top-1 left-2.5 text-[11px] font-medium whitespace-nowrap text-blue-400">
+            <span className="absolute top-1 left-2.5 text-[11px] font-medium whitespace-nowrap text-blue-600">
               Now
             </span>
           </div>
@@ -512,7 +543,7 @@ export function ExperienceTimeline({
               {/* Vertical guide */}
 
               <div
-                className="border-foreground/20 pointer-events-none absolute z-10 w-px border border-dashed"
+                className="border-foreground/20 pointer-events-none absolute z-10 w-px border"
                 style={{
                   left: xFor(hoverDecimal),
                   top: HEADER_HEIGHT,
@@ -546,7 +577,7 @@ export function ExperienceTimeline({
             return (
               <div
                 key={`${experience.role}-${experience.company ?? index}`}
-                className="bg-foreground/[0.055] hover:bg-foreground/[0.09] border-foreground/10 absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded-sm border border-dashed px-2 py-1 transition-colors"
+                className="bg-foreground/[0.055] hover:bg-foreground/[0.09] border-foreground/10 absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded-sm border px-2 py-1 transition-colors"
                 style={{
                   left,
                   width,
@@ -566,35 +597,12 @@ export function ExperienceTimeline({
             );
           })}
 
-          <div className="border-foreground/10 absolute right-0 bottom-0 left-0 h-px border border-dashed" />
+          <div className="border-foreground/10 absolute right-0 bottom-0 left-0 h-px border" />
         </div>
       </div>
 
-      <div className="from-background via-background/80 pointer-events-none absolute inset-y-0 left-0 z-30 w-12 bg-linear-to-r to-transparent" />
-      <div className="from-background via-background/80 pointer-events-none absolute inset-y-0 right-0 z-30 w-12 bg-linear-to-l to-transparent" />
+      <div className="from-background via-background/90 pointer-events-none absolute inset-y-0 left-0 z-30 w-12 bg-linear-to-r to-transparent" />
+      <div className="from-background via-background/90 pointer-events-none absolute inset-y-0 right-0 z-30 w-12 bg-linear-to-l to-transparent" />
     </div>
   );
 }
-
-export const experiences: Experience[] = [
-  {
-    role: "Web Lead",
-    company: "Compassion Crew",
-    duration: "Jun 2026 – Present",
-  },
-  {
-    role: "Full Stack Dev",
-    company: "SheBuilds Bangalore",
-    duration: "Feb 2026 – Present",
-  },
-  {
-    role: "App Developer",
-    company: "Vayu Aarambh",
-    duration: "Jan 2026 – May 2026",
-  },
-  {
-    role: "Full Stack Dev",
-    company: "Nuericorn Syndicate",
-    duration: "Sept 2025 – Jan 2026",
-  },
-];
