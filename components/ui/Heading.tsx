@@ -11,10 +11,12 @@ export default function Heading({
 }: HeadingProps) {
   return (
     <div className="py-6">
-      <Tag className={`text-xl font-medium ${className}`}>
+      <Tag
+        className={`text-xl font-medium ${className} underline decoration-blue-600 decoration-dotted underline-offset-6`}
+      >
         <span aria-hidden="true" className="text-foreground/50"></span>
         {heading}
-        <span className="ml-1 inline-block h-2 w-2 rounded-full bg-blue-600"></span>
+        {/* <span className="ml-1 inline-block h-2 w-2 rounded-full bg-blue-600"></span> */}
       </Tag>
     </div>
   );

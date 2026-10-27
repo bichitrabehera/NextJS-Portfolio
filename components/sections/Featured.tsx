@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
           </HandwrittenNote>
         </div>
 
-        <div className="] relative mt-10 grid grid-cols-1 gap-4 overflow-visible md:grid-cols-2">
+        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-1">
           {featuredProjects.map((project, index) => (
             <button
               key={project.slug}
@@ -108,7 +108,7 @@ function ProjectModal({
     <div className="bg-background fixed inset-0 z-[100]">
       <div className="h-full overflow-y-auto">
         <div className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-16">
-          <Button onClick={onClose} className="mb-6">
+          <Button as="button" variant="primary" onClick={onClose} className="mb-6">
             {" "}
             <CornerDownLeft className="h-4 w-4" />
             Back

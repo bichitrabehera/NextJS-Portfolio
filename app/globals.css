@@ -187,12 +187,19 @@ body {
 
 @font-face {
   font-family: "some";
-  src: url("/fonts/new.woff2") format("woff2");
+  src: url("/fonts/giest.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chivo";
+  src: url("/fonts/chivolight.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 .some {
-  font-family: "some";
+  font-family: "Chivo";
   /* letter-spacing: em; */
 }

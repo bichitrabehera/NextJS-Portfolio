@@ -4,7 +4,7 @@ import Button from "./button";
 const ReturnButton = () => {
   return (
     <div>
-      <Button as="a" href="/" size="sm">
+      <Button as="a" href="/" size="sm" variant="primary">
         <ArrowLeft className="h-4 w-4" />
         Home
       </Button>

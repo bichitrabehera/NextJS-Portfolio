@@ -19,18 +19,18 @@ function Home() {
         <p>Heyyyy, I&apos;m</p>
 
         <p>
-          <span className="font-display text-foreground text-3xl">
-            Bichitra Behera.
-          </span>
+          <span className="text-foreground text-3xl">Bichitra Behera.</span>
         </p>
 
-        <p className="leading-7">
+        <p className="text-foreground/60">
           I design and build modern web products with a focus on thoughtful UX,
           clean engineering, and practical AI. I enjoy taking ideas from an
           early concept to a polished product that people can actually use.
         </p>
 
-        <p>Always open to freelance work and collaborations.</p>
+        <p className="text-foreground/60">
+          Always open to freelance work and collaborations.
+        </p>
 
         <p>
           Grab a copy of my{" "}
@@ -98,7 +98,7 @@ function InlineChip({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border border px-2 py-0.5 transition-colors"
+      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border px-2 py-0.5 transition-colors"
     >
       {children}
     </a>
