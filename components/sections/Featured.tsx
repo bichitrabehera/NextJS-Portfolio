@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
           </HandwrittenNote>
         </div>
 
-        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-1">
+        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-2">
           {featuredProjects.map((project, index) => (
             <button
               key={project.slug}
@@ -108,7 +108,12 @@ function ProjectModal({
     <div className="bg-background fixed inset-0 z-[100]">
       <div className="h-full overflow-y-auto">
         <div className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-16">
-          <Button as="button" variant="primary" onClick={onClose} className="mb-6">
+          <Button
+            as="button"
+            variant="primary"
+            onClick={onClose}
+            className="mb-6"
+          >
             {" "}
             <CornerDownLeft className="h-4 w-4" />
             Back
@@ -179,7 +184,7 @@ function ProjectModal({
 
 function TechStack({ techStack }: { techStack: string[] }) {
   return (
-    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border px-2 py-1">
+    <div className="border-foreground/10 bg-foreground/5 text-foreground inline-flex flex-wrap items-center gap-2 rounded border px-4 py-2">
       {techStack.map((tech) => {
         const Icon = skillMap[tech];
 
@@ -191,7 +196,7 @@ function TechStack({ techStack }: { techStack: string[] }) {
             title={tech}
             className="flex items-center justify-center"
           >
-            <Icon className="h-4 w-4" />
+            <Icon className="h-5 w-5" />
           </div>
         );
       })}

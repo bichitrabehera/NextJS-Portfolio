@@ -187,7 +187,7 @@ body {
 
 @font-face {
   font-family: "some";
-  src: url("/fonts/giest.woff2") format("woff2");
+  src: url("/fonts/latin.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
 }
@@ -199,7 +199,16 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "writing";
+  src: url("/fonts/writing.woff2") format("woff2");
+}
+
 .some {
   font-family: "Chivo";
   /* letter-spacing: em; */
+}
+
+.writing {
+  font-family: "writing";
 }

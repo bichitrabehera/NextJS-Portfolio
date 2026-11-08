@@ -16,7 +16,7 @@ function Home() {
       </div>
 
       <div className="text-foreground/60 mt-10 space-y-6">
-        <p>Heyyyy, I&apos;m</p>
+        <p className="text-xl font-bold">Hey, I&apos;m</p>
 
         <p>
           <span className="text-foreground text-3xl">Bichitra Behera.</span>

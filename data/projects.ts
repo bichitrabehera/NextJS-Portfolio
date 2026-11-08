@@ -18,6 +18,35 @@ export interface Project {
 }
 
 export const projects: Record<string, Project> = {
+  worksy: {
+    name: "Worksy",
+
+    description:
+      "AI-powered job discovery platform for students and freshers, featuring personalized job recommendations, profile-based onboarding, saved jobs, and application tracking.",
+
+    caseStudy:
+      "I built Worksy to simplify job discovery for students and freshers by connecting their skills, preferences, and career goals with relevant opportunities. The platform features profile-based onboarding, personalized job listings, bookmarking, and application tracking, with direct links to external application pages. I focused on creating a streamlined experience with a responsive interface and reusable components.",
+
+    image: "/assets/worksy.png",
+
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "Clerk",
+      "PostgreSQL",
+    ],
+
+    link: "https://worksy.bichitrabehera.dev/",
+    linkUrl: "worksy.bichitrabehera.dev",
+
+    github: "",
+
+    slug: "worksy",
+    type: "personal",
+    featured: true,
+  },
   audiolab: {
     name: "AudioLab",
 
@@ -107,29 +136,5 @@ export const projects: Record<string, Project> = {
     slug: "iconora",
     type: "open-source",
     featured: true,
-  },
-
-  readmeAI: {
-    name: "README.AI",
-
-    description:
-      "AI-powered tool that generates professional READMEs from GitHub repositories.",
-
-    image: "/assets/readme.png",
-
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "NextAuth",
-      "GitHub API",
-      "Ollama",
-    ],
-
-    link: "https://readme-ai-bichitra.vercel.app/",
-    linkUrl: "readme-ai-bichitra.vercel.app",
-    slug: "readme-ai",
-    type: "personal",
-    featured: false,
   },
 };
