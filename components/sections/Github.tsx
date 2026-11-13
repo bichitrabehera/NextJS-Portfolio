@@ -246,7 +246,9 @@ export default function GithubHeatmap() {
         </div>
       </section>
       <div className="flex overflow-hidden">
-        <p className="text">Total Contributions: {totalContributions}</p>
+        <p className="text-sm text-foreground/60">
+          Total Contributions: {totalContributions}
+        </p>
       </div>
     </>
   );

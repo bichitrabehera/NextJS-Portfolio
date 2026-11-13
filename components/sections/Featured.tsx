@@ -34,31 +34,23 @@ export default function FeaturedProjects() {
           </HandwrittenNote>
         </div>
 
-        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-2">
+        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-1">
           {featuredProjects.map((project, index) => (
             <button
               key={project.slug}
               type="button"
               onClick={() => setSelectedProject(project)}
-              className={`group focus-visible:ring-foreground max-w-3xl text-left transition-transform duration-300 hover:z-50 hover:scale-[1.01] hover:rotate-0 focus-visible:z-50 focus-visible:ring-2 focus-visible:outline-none`}
+              className={`group focus-visible:ring-foreground max-w-4xl text-left transition-transform duration-300 focus-visible:z-50 focus-visible:ring-2 focus-visible:outline-none`}
             >
-              <div
-                className="border-foreground/20 bg-background overflow-hidden rounded-md border p-1 shadow-sm"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(-315deg, oklch(27.1% 0 none) 0, oklch(27.1% 0 none) 1px, transparent 1px, transparent 50%)",
-                  backgroundSize: "8px 8px",
-                  color: "var(--foreground)",
-                  opacity: 1,
-                }}
-              >
+              <div className="bg-foreground/5 overflow-hidden rounded p-10">
                 <div className="relative aspect-video overflow-hidden rounded-sm">
                   <Image
                     src={project.image}
                     alt={`Screenshot of ${project.name}`}
                     fill
                     sizes="(max-width: 768px) 90vw, 65vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-102"
+                    className="object-cover transition-transform duration-500"
+                    loading="eager"
                   />
 
                   <div className="absolute inset-0 flex items-end justify-between bg-black/40 p-4 opacity-100 transition-opacity duration-300">
@@ -107,7 +99,7 @@ function ProjectModal({
   return (
     <div className="bg-background fixed inset-0 z-[100]">
       <div className="h-full overflow-y-auto">
-        <div className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 py-8 md:px-8 md:py-12">
           <Button
             as="button"
             variant="primary"
@@ -119,37 +111,27 @@ function ProjectModal({
             Back
           </Button>
 
-          <div
-            className="border-foreground/10 bg-foreground/5 overflow-hidden rounded-lg border p-1"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(-315deg, oklch(37.1% 0 none) 0, oklch(37.1% 0 none) 1px, transparent 1px, transparent 50%)",
-              backgroundSize: "8px 8px",
-              color: "var(--foreground)",
-              opacity: 1,
-            }}
-          >
+          <div className="bg-foreground/5 overflow-hidden rounded p-10">
             <div className="relative aspect-video overflow-hidden rounded-md">
               <Image
                 src={project.image}
                 alt={`Screenshot of ${project.name}`}
                 fill
                 className="object-cover"
+                loading="eager"
               />
             </div>
           </div>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <h2 className="font-display text-2xl tracking-wide md:text-3xl">
-              {project.name}
-            </h2>
+            <h2 className="text-xl leading-tight">{project.name}</h2>
 
             <div className="flex gap-2">
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-border/60 bg-foreground/5 hover:bg-foreground/10 rounded border px-2.5 py-1 text-sm"
+                className="bg-foreground/5 hover:bg-foreground/10 rounded px-2.5 py-2 text-sm"
               >
                 Live ↗
               </a>
@@ -159,7 +141,7 @@ function ProjectModal({
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-border/60 bg-foreground/5 hover:bg-foreground/10 rounded border px-2.5 py-1 text-sm"
+                  className="bg-foreground/5 hover:bg-foreground/10 rounded px-2.5 py-2 text-sm"
                 >
                   GitHub ↗
                 </a>
@@ -168,9 +150,7 @@ function ProjectModal({
           </div>
 
           {project.caseStudy && (
-            <p className="text-foreground/55 mt-6 leading-8">
-              {project.caseStudy}
-            </p>
+            <p className="text-foreground/80 mt-6">{project.caseStudy}</p>
           )}
 
           <div className="mt-8">

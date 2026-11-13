@@ -454,13 +454,6 @@ export function ExperienceTimeline({
   return (
     <div
       className="relative p-1"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(-315deg, oklch(37.1% 0 none) 0, oklch(37.1% 0 none) 1px, transparent 1px, transparent 50%)",
-        backgroundSize: "8px 8px",
-        color: "var(--foreground)",
-        opacity: 1,
-      }}
     >
       <div
         ref={scrollRef}
@@ -490,7 +483,7 @@ export function ExperienceTimeline({
                 {/* Year */}
 
                 <div
-                  className="text-foreground/50 absolute -top-2 mt-2 flex h-[28px] items-center text-[11px] font-medium tracking-wide"
+                  className="text-foreground/50 absolute -top-2 mt-2 flex h-[28px] items-center text-xs font-medium tracking-wide"
                   style={{
                     left: yearX + 10,
                   }}
@@ -512,7 +505,7 @@ export function ExperienceTimeline({
                   }).map((_, month) => (
                     <div
                       key={month}
-                      className="text-foreground/40 flex-1 text-center text-[10px] leading-none"
+                      className="text-foreground/40 flex-1 text-center text-xs leading-none"
                     >
                       {month + 1}
                     </div>
@@ -533,7 +526,7 @@ export function ExperienceTimeline({
           >
             <div className="absolute -top-[40px] -left-[3px] h-3.5 w-1.5 rounded-full bg-blue-600" />
 
-            <span className="absolute top-1 left-2.5 text-[11px] font-medium whitespace-nowrap text-blue-600">
+            <span className="absolute top-1 left-2.5 text-xs font-medium whitespace-nowrap text-blue-600">
               Now
             </span>
           </div>
@@ -554,7 +547,7 @@ export function ExperienceTimeline({
               {/* Month tooltip */}
 
               <div
-                className="bg-foreground text-background pointer-events-none absolute z-30 -translate-x-1/2 rounded-md px-2 py-1 text-[12px] font-medium shadow-sm"
+                className="bg-foreground text-background pointer-events-none absolute z-30 -translate-x-1/2 rounded-md px-2 py-1 text-xs font-medium shadow-sm"
                 style={{
                   left: xFor(hoverDecimal),
                   top: 5,
@@ -577,19 +570,19 @@ export function ExperienceTimeline({
             return (
               <div
                 key={`${experience.role}-${experience.company ?? index}`}
-                className="bg-foreground/[0.055] hover:bg-foreground/[0.09] border-foreground/10 absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded-sm border px-2 py-1 transition-colors"
+                className="bg-foreground/[0.055] hover:bg-foreground/[0.09] absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded px-2 py-1 transition-colors"
                 style={{
                   left,
                   width,
                   top,
                 }}
               >
-                <span className="text-foreground w-full text-[14px] leading-4 font-medium">
+                <span className="text-foreground w-full text-sm leading-5 font-medium">
                   {experience.role}
                 </span>
 
                 {experience.company && (
-                  <span className="text-foreground/40 w-full text-[12px] leading-4">
+                  <span className="text-foreground/40 w-full text-xs leading-5">
                     {experience.company}
                   </span>
                 )}

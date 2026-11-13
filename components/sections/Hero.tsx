@@ -15,29 +15,33 @@ function Home() {
         <ThemeToggle />
       </div>
 
-      <div className="text-foreground/60 mt-10 space-y-6">
-        <p className="text-xl font-bold">Hey, I&apos;m</p>
-
-        <p>
-          <span className="text-foreground text-3xl">Bichitra Behera.</span>
+      <div className="text-foreground mt-10 space-y-6">
+        <p className="font-bold">
+          Hey, I&apos;m
         </p>
 
-        <p className="text-foreground/60">
+        <p>
+          <span className="text-foreground text-xl">
+            Bichitra Behera.
+          </span>
+        </p>
+
+        <p className="text-foreground/80">
           I design and build modern web products with a focus on thoughtful UX,
           clean engineering, and practical AI. I enjoy taking ideas from an
           early concept to a polished product that people can actually use.
         </p>
 
-        <p className="text-foreground/60">
+        <p className="text-foreground/80">
           Always open to freelance work and collaborations.
         </p>
 
-        <p>
+        <p className="text-foreground/80">
           Grab a copy of my{" "}
           <InlineChip href="/bichitra_behera_resume.pdf">Resume</InlineChip>
         </p>
 
-        <p>
+        <p className="text-foreground/80">
           Find me on {"    "}
           <span className="mt-2 inline-flex flex-wrap items-center gap-2">
             <InlineChip href="https://github.com/bichitrabehera">
@@ -52,28 +56,28 @@ function Home() {
             </InlineChip>
 
             <InlineChip href="https://www.linkedin.com/in/bichitrabehera">
-              <LinkedIn className="text-foreground/60 hover:text-foreground h-3 w-3" />
+              <LinkedIn className="text-foreground hover:text-foreground h-3 w-3" />
               LinkedIn
             </InlineChip>
           </span>
         </p>
 
-        <p>
+        <p className="text-foreground/80">
           Got something worth building?{" "}
           <span className="text-foreground">let&apos;s talk.</span>
         </p>
 
         <span className="inline-flex flex-wrap items-center gap-2">
           <InlineChip href="https://x.com/bichitradotdev">
-            <XDark className="theme-icon-dark text-foreground/60 hover:text-foreground h-3 w-3" />
-            <XLight className="theme-icon-light text-foreground/60 hover:text-foreground h-3 w-3" />
+            <XDark className="theme-icon-dark text-foreground hover:text-foreground h-3 w-3" />
+            <XLight className="theme-icon-light text-foreground hover:text-foreground h-3 w-3" />
             X
           </InlineChip>
 
           <span className="text-foreground/45">or</span>
 
           <InlineChip href="mailto:bichitrabehera.345@gmail.com">
-            <Gmail className="text-foreground/60 hover:text-foreground h-3 w-3" />
+            <Gmail className="text-foreground hover:text-foreground h-3 w-3" />
             bichitrabehera.345@gmail.com
           </InlineChip>
         </span>

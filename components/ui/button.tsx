@@ -2,7 +2,7 @@ import { type AnchorHTMLAttributes, type ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 const base =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded border text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50";
 
 const sizes = {
   sm: "px-3 py-1 ",
@@ -11,7 +11,7 @@ const sizes = {
 } as const;
 
 const variants = {
-  primary: "bg-background border-border text-foreground hover:bg-foreground/10",
+  primary: "bg-foreground/5 border-border text-foreground hover:bg-foreground/10",
   secondary:
     " bg-transparent text-foreground/80 hover:border-foreground/40 hover:bg-foreground/5 hover:text-foreground",
   ghost:

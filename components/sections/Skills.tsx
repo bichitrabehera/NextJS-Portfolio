@@ -10,9 +10,7 @@ function Skills() {
         {skillStacks.map((stack, index) => (
           <div key={stack.category}>
             <div className="mb-6 flex items-center gap-3">
-              <h3 className="text text-foreground font-medium">
-                {stack.category}
-              </h3>
+              <h3 className="text-foreground font-medium">{stack.category}</h3>
             </div>
 
             <div className="flex flex-wrap gap-2 space-y-1">
@@ -22,7 +20,7 @@ function Skills() {
                 return (
                   <div
                     key={skill.name}
-                    className={`border-foreground/10 bg-foreground/5 text-foreground text flex h-9 items-center gap-2 rounded border px-2 py-1 transition-colors`}
+                    className={`border-foreground/1 bg-foreground/5 text-foreground text flex h-9 items-center gap-2 rounded border px-2 py-1 transition-colors`}
                   >
                     <Icon size={18} />
 
