@@ -29,45 +29,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.hero-img {
-  animation: shrink linear;
-  animation-timeline: scroll(root);
-
-  /* animation-timeline: view(); */
-  /* animation-range: cover 0% cover 100%; */
-}
-
-@keyframes shrink {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-150px);
-  }
-}
-
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  height: 3px;
-  width: 100%;
-  transform-origin: left;
-  transform: scaleX(0);
-  animation: grow linear;
-  animation-timeline: scroll();
-}
-
-@keyframes grow {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -236,8 +197,6 @@ body {
     font-size: var(--text-lg);
     line-height: var(--leading-snug);
   }
-
-
 }
 
 @font-face {
@@ -247,23 +206,18 @@ body {
   font-style: normal;
 }
 
+.some {
+  font-family: "some";
+  /* letter-spacing: em; */
+}
+
 @font-face {
-  font-family: "Chivo";
-  src: url("/fonts/giest.woff2") format("woff2");
+  font-family: "display";
+  src: url("/fonts/giest_mono.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "writing";
-  src: url("/fonts/writing.woff2") format("woff2");
-}
-
-.some {
-  font-family: "Chivo";
-  /* letter-spacing: em; */
-}
-
-.writing {
-  font-family: "writing";
+.display {
+  font-family: "display";
 }

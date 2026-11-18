@@ -9,7 +9,7 @@ import Exp from "@/components/sections/Exp";
 export default function Page() {
   return (
     <>
-      <div className="text-foreground selection:text-foreground mx-auto max-w-3xl px-6 leading-7 selection:bg-blue-500/50">
+      <div className="text-foreground selection:text-foreground mx-auto max-w-2xl px-6 leading-7 selection:bg-blue-500/50">
         <Hero />
         <Github />
         <Featured />

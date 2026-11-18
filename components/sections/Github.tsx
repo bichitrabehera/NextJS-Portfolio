@@ -186,7 +186,7 @@ export default function GithubHeatmap() {
 
   return (
     <>
-      <section id="github" className="overflow-x-auto pt-8 pb-8">
+      <section id="github" className="overflow-x-auto pt-8 pb-4 p-2 border-dashed border-foreground/20 rounded-lg border">
         <div
           className="relative"
           style={{
@@ -245,7 +245,7 @@ export default function GithubHeatmap() {
           </div>
         </div>
       </section>
-      <div className="flex overflow-hidden">
+      <div className="flex overflow-hidden mt-4">
         <p className="text-sm text-foreground/60">
           Total Contributions: {totalContributions}
         </p>

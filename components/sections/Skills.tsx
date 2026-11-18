@@ -1,4 +1,5 @@
 import { skillStacks } from "@/data/skills";
+import type { ElementType } from "react";
 import Heading from "../ui/Heading";
 
 function Skills() {
@@ -6,7 +7,7 @@ function Skills() {
     <section id="skills" className="py-8">
       <Heading heading="Skills" />
 
-      <div className="space-y-6">
+      <div className="mt-6 space-y-6">
         {skillStacks.map((stack, index) => (
           <div key={stack.category}>
             <div className="mb-6 flex items-center gap-3">
@@ -15,14 +16,14 @@ function Skills() {
 
             <div className="flex flex-wrap gap-2 space-y-1">
               {stack.skills.map((skill) => {
-                const Icon = skill.icon;
+                const Icon = skill.icon as ElementType<{ size?: number }> | null;
 
                 return (
                   <div
                     key={skill.name}
-                    className={`border-foreground/1 bg-foreground/5 text-foreground text flex h-9 items-center gap-2 rounded border px-2 py-1 transition-colors`}
+                    className={`border-foreground/20 bg-foreground/5 text-foreground flex h-9 items-center gap-2 rounded border border-dashed px-4 py-1 text-sm transition-colors`}
                   >
-                    <Icon size={18} />
+                    {Icon ? <Icon size={18} /> : null}
 
                     <span>{skill.name}</span>
                   </div>

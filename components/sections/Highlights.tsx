@@ -21,7 +21,7 @@ function Highlights() {
     <section id="highlights" className="py-8">
       <Heading heading="Highlights" />
 
-      <div className="relative">
+      <div className="relative mt-6">
         <div className="border-foreground/10 absolute top-0 bottom-0 left-1 border border-l" />
 
         <div className="space-y-12">
@@ -31,13 +31,13 @@ function Highlights() {
                 <div className="bg-background border-foreground/30 h-2 w-2 rounded-full border-2" />
 
                 <div>
-                  <div className="text-foreground text-lg font-medium tracking-tight">
+                  <div className="text-foreground text font-medium tracking-tight">
                     {year}
                   </div>
                 </div>
               </div>
 
-              <div className="ml-8 space-y-5">
+              <div className="ml-8 space-y-5 text-justify">
                 {grouped[year].map((highlight, index) => (
                   <div
                     key={`${year}-${index}`}

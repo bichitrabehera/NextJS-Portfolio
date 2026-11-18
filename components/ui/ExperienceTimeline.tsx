@@ -483,7 +483,7 @@ export function ExperienceTimeline({
                 {/* Year */}
 
                 <div
-                  className="text-foreground/50 absolute -top-2 mt-2 flex h-[28px] items-center text-xs font-medium tracking-wide"
+                  className="text-foreground/50 absolute -top-2 mt-0 flex h-[28px] items-center text-xs font-medium tracking-wide"
                   style={{
                     left: yearX + 10,
                   }}
@@ -570,7 +570,7 @@ export function ExperienceTimeline({
             return (
               <div
                 key={`${experience.role}-${experience.company ?? index}`}
-                className="bg-foreground/[0.055] hover:bg-foreground/[0.09] absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded px-2 py-1 transition-colors"
+                className="bg-foreground/[0.055] absolute flex flex-col items-start justify-center gap-0.5 overflow-hidden rounded px-2 py-1 transition-colors border border-dashed border-foreground/20"
                 style={{
                   left,
                   width,
@@ -590,7 +590,6 @@ export function ExperienceTimeline({
             );
           })}
 
-          <div className="border-foreground/10 absolute right-0 bottom-0 left-0 h-px border" />
         </div>
       </div>
 

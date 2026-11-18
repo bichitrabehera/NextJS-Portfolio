@@ -11,7 +11,8 @@ const sizes = {
 } as const;
 
 const variants = {
-  primary: "bg-foreground/5 border-border text-foreground hover:bg-foreground/10",
+  primary:
+    "bg-foreground/5 border  border-foreground/5 text-foreground hover:bg-foreground/10",
   secondary:
     " bg-transparent text-foreground/80 hover:border-foreground/40 hover:bg-foreground/5 hover:text-foreground",
   ghost:

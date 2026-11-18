@@ -10,40 +10,30 @@ import ThemeToggle from "@/components/ui/ThemeToggle";
 
 function Home() {
   return (
-    <section id="home" className="mx-auto flex-col py-12 md:flex-row">
-      <div className="flex justify-end">
-        <ThemeToggle />
-      </div>
+    <section id="home" className="mx-auto flex-col pt-24 pb-12 md:flex-row">
+      <div className="text-foreground space-y-4 text-justify">
+        <p>Hey, I&apos;m</p>
 
-      <div className="text-foreground mt-10 space-y-6">
-        <p className="font-bold">
-          Hey, I&apos;m
+        <p>
+          <span className="font-bold text-xl display">Bichitra Behera.</span>
         </p>
 
         <p>
-          <span className="text-foreground text-xl">
-            Bichitra Behera.
-          </span>
-        </p>
-
-        <p className="text-foreground/80">
           I design and build modern web products with a focus on thoughtful UX,
           clean engineering, and practical AI. I enjoy taking ideas from an
           early concept to a polished product that people can actually use.
         </p>
 
-        <p className="text-foreground/80">
-          Always open to freelance work and collaborations.
-        </p>
+        <p>Always open to freelance work and collaborations.</p>
 
-        <p className="text-foreground/80">
+        <p>
           Grab a copy of my{" "}
           <InlineChip href="/bichitra_behera_resume.pdf">Resume</InlineChip>
         </p>
 
-        <p className="text-foreground/80">
+        <p>
           Find me on {"    "}
-          <span className="mt-2 inline-flex flex-wrap items-center gap-2">
+          <span className="inline-flex flex-wrap items-center gap-2">
             <InlineChip href="https://github.com/bichitrabehera">
               <GitHubDark className="theme-icon-dark h-3 w-3" />
               <GitHubLight className="theme-icon-light h-3 w-3" />
@@ -62,7 +52,7 @@ function Home() {
           </span>
         </p>
 
-        <p className="text-foreground/80">
+        <p>
           Got something worth building?{" "}
           <span className="text-foreground">let&apos;s talk.</span>
         </p>
@@ -102,7 +92,7 @@ function InlineChip({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="border-foreground/10 bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border px-2 py-0.5 transition-colors"
+      className="border-foreground/20 border-dashed bg-foreground/5 text-foreground hover:text-foreground/50 inline-flex items-center gap-1.5 rounded border px-2 py-0.5 transition-colors"
     >
       {children}
     </a>

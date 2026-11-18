@@ -1,32 +1,3 @@
-// import Heading from "../ui/Heading";
-// import { experiences } from "@/data/exp";
-
-// export default function Experience() {
-//   return (
-//     <section id="experience" className="py-8">
-//       <Heading heading="Experience" />
-
-//       <div>
-//         {experiences.map((exp, index) => (
-//           <div
-//             key={index}
-//             className={`border-foreground/10 flex items-center justify-between gap-3 py-4`}
-//           >
-//             <div>
-//               <h3 className="font-medium">{exp.company}</h3>
-//               <p className="text-foreground/60 text-sm">{exp.role}</p>
-//             </div>
-
-//             <p className="text-foreground/40 text-sm whitespace-nowrap">
-//               {exp.duration}
-//             </p>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
 import { experiences, ExperienceTimeline } from "../ui/ExperienceTimeline";
 import { HandwrittenArrow, HandwrittenNote } from "../ui/handwritten-note";
 import Heading from "../ui/Heading";
@@ -40,11 +11,13 @@ function Exp() {
           Hold and scroll <HandwrittenArrow />
         </HandwrittenNote>
       </div>
-      <ExperienceTimeline
+      <div className="border-foreground/20 border-dashed rounded-lg border-y py-2">
+        <ExperienceTimeline
         startYear={2025}
         endYear={2028}
         experiences={experiences}
       />
+      </div>
     </section>
   );
 }

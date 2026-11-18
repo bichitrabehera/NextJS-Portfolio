@@ -2,71 +2,81 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { skillMap } from "@/data/skills";
 import { projects, type Project } from "@/data/projects";
 import Heading from "../ui/Heading";
 import { HandwrittenArrow, HandwrittenNote } from "../ui/handwritten-note";
-import { ArrowRight, CornerDownLeft } from "lucide-react";
+import { CornerDownLeft } from "lucide-react";
 import Button from "../ui/button";
-
-const positions = [
-  "left-[2%] top-[3%] ",
-  "right-[2%] top-[23%] ",
-  "left-[5%] top-[43%] ",
-  "right-[4%] top-[63%] ",
-];
 
 export default function FeaturedProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const featuredProjects = Object.values(projects).filter(
-    (project) => project.featured,
-  );
+  const allProjects = Object.values(projects);
+
+  const featuredProjects = allProjects.filter((project) => project.featured);
+
+  const otherProjects = allProjects.filter((project) => !project.featured);
 
   return (
     <>
       <section className="py-8">
-        <Heading heading="Featured Projects" />
-        <div className="flex justify-end py-4">
+        <Heading heading="Featured" />
+
+        <div className="flex justify-end pb-12">
           <HandwrittenNote>
             Click on a project to view more details <HandwrittenArrow />
           </HandwrittenNote>
         </div>
 
-        <div className="] relative mt-10 grid grid-cols-1 gap-10 overflow-visible md:grid-cols-1">
-          {featuredProjects.map((project, index) => (
-            <button
-              key={project.slug}
-              type="button"
-              onClick={() => setSelectedProject(project)}
-              className={`group focus-visible:ring-foreground max-w-4xl text-left transition-transform duration-300 focus-visible:z-50 focus-visible:ring-2 focus-visible:outline-none`}
-            >
-              <div className="bg-foreground/5 overflow-hidden rounded p-10">
-                <div className="relative aspect-video overflow-hidden rounded-sm">
-                  <Image
-                    src={project.image}
-                    alt={`Screenshot of ${project.name}`}
-                    fill
-                    sizes="(max-width: 768px) 90vw, 65vw"
-                    className="object-cover transition-transform duration-500"
-                    loading="eager"
-                  />
-
-                  <div className="absolute inset-0 flex items-end justify-between bg-black/40 p-4 opacity-100 transition-opacity duration-300">
-                    <span className="text-sm font-medium text-white">
-                      {project.name}
-                    </span>
-
-                    <span className="text-xs text-white/80">
-                      View case study
-                      <ArrowRight className="ml-1 inline h-4 w-4" />
-                    </span>
+        <div className="mt-6">
+          <div className="flex flex-col gap-14">
+            {featuredProjects.map((project, index) => (
+              <div
+                key={project.slug ?? project.name}
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedProject(project)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+                className="group border-foreground/20 focus-visible:ring-foreground max-w-2xl cursor-pointer rounded-xl border border-dashed p-6 text-left transition-colors"
+              >
+                <div className="bg-foreground/5 overflow-hidden rounded-lg">
+                  <div className="relative aspect-video overflow-hidden rounded-sm">
+                    <Image
+                      src={project.image}
+                      alt={`Screenshot of ${project.name}`}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 65vw"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className="object-cover transition-transform duration-500"
+                    />
                   </div>
                 </div>
+
+                {/* Details */}
+                <div className="flex flex-col gap-3 pt-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <h4 className="text-base font-medium">{project.name}</h4>
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-            </button>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 flex justify-start">
+          <HandwrittenNote>More experiments on GitHub </HandwrittenNote>
         </div>
       </section>
 
@@ -89,72 +99,103 @@ function ProjectModal({
 }) {
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
-
     document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
-  return (
-    <div className="bg-background fixed inset-0 z-[100]">
-      <div className="h-full overflow-y-auto">
-        <div className="mx-auto max-w-3xl px-4 py-8 md:px-8 md:py-12">
-          <Button
-            as="button"
-            variant="primary"
-            onClick={onClose}
-            className="mb-6"
-          >
-            {" "}
-            <CornerDownLeft className="h-4 w-4" />
-            Back
-          </Button>
+  }, [onClose]);
 
-          <div className="bg-foreground/5 overflow-hidden rounded p-10">
-            <div className="relative aspect-video overflow-hidden rounded-md">
+  return (
+    <div
+      className="bg-background/80 fixed inset-0 z-[100] overflow-y-auto p-4 backdrop-blur-sm"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div className="flex min-h-full items-center justify-center py-8">
+        <div className="border-foreground/20 bg-background w-full max-w-2xl rounded-xl border border-dashed p-5 md:p-6">
+          {/* Header */}
+          <div className="mb-5 flex items-center justify-between">
+            <span className="text-muted-foreground text-xs">
+              Project / {project.name}
+            </span>
+
+            <button
+              className="bg-foreground/5 hover:bg-foreground/10 rounded px-3 py-1 text-sm transition-colors flex items-center gap-2"
+              onClick={onClose}
+            >
+              <CornerDownLeft className="h-4 w-4" />
+              Back
+            </button>
+          </div>
+
+          {/* Project Image */}
+          <div className="bg-foreground/5 overflow-hidden rounded-lg">
+            <div className="relative aspect-video overflow-hidden rounded-sm">
               <Image
                 src={project.image}
                 alt={`Screenshot of ${project.name}`}
                 fill
+                sizes="(max-width: 768px) 90vw, 640px"
                 className="object-cover"
-                loading="eager"
               />
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-between gap-4">
-            <h2 className="text-xl leading-tight">{project.name}</h2>
+          {/* Project Details */}
+          <div className="flex flex-col gap-4 pt-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <h2 className="text-lg font-medium">{project.name}</h2>
 
-            <div className="flex gap-2">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-foreground/5 hover:bg-foreground/10 rounded px-2.5 py-2 text-sm"
-              >
-                Live ↗
-              </a>
-
-              {project.github && (
+              <div className="flex gap-2">
                 <a
-                  href={project.github}
+                  href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-foreground/5 hover:bg-foreground/10 rounded px-2.5 py-2 text-sm"
+                  className="bg-foreground/5 hover:bg-foreground/10 rounded px-3 py-1 text-sm transition-colors"
                 >
-                  GitHub ↗
+                  Live ↗
                 </a>
-              )}
+
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-foreground/5 hover:bg-foreground/10 rounded px-3 py-2 text-sm transition-colors"
+                  >
+                    GitHub ↗
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
 
-          {project.caseStudy && (
-            <p className="text-foreground/80 mt-6">{project.caseStudy}</p>
-          )}
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {project.description}
+            </p>
 
-          <div className="mt-8">
-            <TechStack techStack={project.techStack} />
+            {project.caseStudy && (
+              <p className="text-foreground/80 text-sm leading-relaxed">
+                {project.caseStudy}
+              </p>
+            )}
+
+            {/* Technology Stack */}
+            <div className="border-foreground/10 mt-2 border-t border-dashed pt-5">
+              <span className="text-muted-foreground mb-3 block text-xs">
+                Built with
+              </span>
+
+              <TechStack techStack={project.techStack} />
+            </div>
           </div>
         </div>
       </div>
