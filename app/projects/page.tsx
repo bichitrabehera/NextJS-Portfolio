@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const allProjects = Object.values(projects);
 
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-6 pb-24">
+    <main className="mx-auto min-h-screen max-w-2xl px-6 py-16">
       <div className="mb-12">
         <div className="mt-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <p className="text-muted-foreground max-w-xl leading-relaxed">
